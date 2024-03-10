@@ -197,6 +197,7 @@
                                 <ul class="slide-menu">
                                     <li class="side-menu-label1"><a href="javascript:void(0)">Apps</a></li>
                                     <li><a href="{{ url('admin/users/') }}" class="slide-item {{ Request::is('admin/users*') ? 'active' : '' }}"> Manage Users</a></li>
+                                    <li><a href="{{ url('admin/tourists/') }}" class="slide-item {{ Request::is('admin/tourists*') ? 'active' : '' }}"> Manage Tourists</a></li>
                                 </ul>
                             </li>
                         </ul>

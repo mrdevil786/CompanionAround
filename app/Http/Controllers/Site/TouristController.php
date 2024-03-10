@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Site;
 use Exception;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Tourist;
 use Laravel\Socialite\Facades\Socialite;
 
 class TouristController extends Controller
@@ -15,8 +16,26 @@ class TouristController extends Controller
 
     public function googleHandle(){
         try {
-            $user = Socialite::driver('google')->user();
-            dd($user);
+            
+            $tourist = Socialite::driver('google')->user();
+            $findUser = Tourist::where('email',$tourist->email)->first();
+
+            if(!$findUser){
+
+                $findUser = new Tourist();
+
+                $findUser->full_name = $tourist->name;
+                $findUser->email = $tourist->email;
+                $findUser->avatar = $tourist->avatar;
+                $findUser->status = "active";
+
+                $findUser->save();
+
+            }
+
+            session()->put('id',$findUser->id);
+            return redirect('/');
+
         } catch (Exception $e) {
             dd($e->getMessage());
         }

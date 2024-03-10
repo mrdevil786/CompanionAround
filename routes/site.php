@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Site\SiteController;
+use App\Http\Controllers\Site\TouristController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -11,5 +11,5 @@ Route::get('/about', function () {
     return 'This is about page.';
 });
 
-Route::get('/googleLogin', [SiteController::class, 'googleLogin']);
-Route::get('/auth/google/callback', [SiteController::class, 'googleHandle']);
+Route::get('/googleLogin', [TouristController::class, 'googleLogin']);
+Route::get('/auth/google/callback', [TouristController::class, 'googleHandle']);
