@@ -3,12 +3,12 @@
 namespace App\Http\Controllers\Site;
 
 use Exception;
+use App\Models\Tourist;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Tourist;
 use Laravel\Socialite\Facades\Socialite;
 
-class TouristController extends Controller
+class TouristsController extends Controller
 {
     public function googleLogin(){
         return Socialite::driver('google')->redirect();
