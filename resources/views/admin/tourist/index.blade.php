@@ -27,7 +27,7 @@
                                     <th class="wd-15p border-bottom-0">#</th>
                                     <th class="wd-20p border-bottom-0">Name</th>
                                     <th class="wd-15p border-bottom-0">Email</th>
-                                    <th class="wd-15p border-bottom-0">Email</th>
+                                    <th class="wd-15p border-bottom-0">Avatar</th>
                                     <th class="wd-25p border-bottom-0">Created At</th>
                                     <th class="wd-25p border-bottom-0">Updated At</th>
                                     @if (auth()->user()->user_role == 1)
