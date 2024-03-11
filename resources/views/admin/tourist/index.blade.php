@@ -25,8 +25,8 @@
                             <thead>
                                 <tr>
                                     <th class="wd-15p border-bottom-0">#</th>
-                                    <th class="wd-15p border-bottom-0">Role</th>
                                     <th class="wd-20p border-bottom-0">Name</th>
+                                    <th class="wd-15p border-bottom-0">Email</th>
                                     <th class="wd-15p border-bottom-0">Email</th>
                                     <th class="wd-25p border-bottom-0">Created At</th>
                                     <th class="wd-25p border-bottom-0">Updated At</th>
@@ -37,30 +37,20 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($users as $user)
+                                @foreach ($tourists as $tourist)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>
-                                            @if ($user->user_role == 1)
-                                                Admin
-                                            @elseif($user->user_role == 2)
-                                                Manager
-                                            @elseif($user->user_role == 3)
-                                                Member
-                                            @else
-                                                Unknown
-                                            @endif
-                                        </td>
-                                        <td>{{ $user->name }}</td>
-                                        <td>{{ $user->email }}</td>
-                                        <td>{{ $user->created_at }}</td>
-                                        <td>{{ $user->updated_at }}</td>
+                                        <td>{{ $tourist->full_name }}</td>
+                                        <td>{{ $tourist->email }}</td>
+                                        <td>{{ $tourist->avatar }}</td>
+                                        <td>{{ $tourist->created_at }}</td>
+                                        <td>{{ $tourist->updated_at }}</td>
                                         @if (auth()->user()->user_role == 1)
                                             <td class="text-center">
                                                 <label class="custom-switch form-switch mb-0">
                                                     <input type="checkbox" name="custom-switch-radio"
-                                                        class="custom-switch-input" data-user-id="{{ $user->id }}"
-                                                        {{ $user->status == 'active' ? 'checked' : '' }}>
+                                                        class="custom-switch-input" data-status-id="{{ $tourist->id }}"
+                                                        {{ $tourist->status == 'active' ? 'checked' : '' }}>
                                                     <span class="custom-switch-indicator"></span>
                                                 </label>
                                             </td>
@@ -70,13 +60,13 @@
 
                                             @if (auth()->user()->user_role != 3)
                                                 <x-buttons.action-pill-button
-                                                    href="{{ route('admin.users.edit', $user->id) }}"
+                                                    href="{{ route('admin.tourists.edit', $tourist->id) }}"
                                                     iconClass="fa fa-pencil" iconColor="warning"
                                                     modalTarget="editUserModal" />
                                             @endif
                                             @if (auth()->user()->user_role == 1)
                                                 <x-buttons.action-pill-button
-                                                    href="{{ route('admin.users.destroy', $user->id) }}"
+                                                    href="{{ route('admin.tourists.destroy', $tourist->id) }}"
                                                     iconClass="fa fa-trash" iconColor="danger" />
                                             @endif
                                         </td>
@@ -90,18 +80,6 @@
         </div>
     </div>
     <!-- End Row -->
-
-    <!--Add Modal - Right Offcanvas-->
-    <x-modal.right-offcanvas title="Add New User" action="{{ route('admin.users.store') }}" method="POST">
-
-        <x-fields.input-field label="Full Name" name="name" />
-        <x-fields.input-field label="Email" name="email" />
-        <x-fields.input-field label="Password" name="password" type="password" />
-        <x-fields.input-field label="Confirm Password" name="password_confirmation" type="password" />
-        <x-fields.dropdown-field label="User Role" name="role" :options="[1 => 'Administrator', 2 => 'Editor', 3 => 'Viewer']" />
-
-    </x-modal.right-offcanvas>
-    <!--/Right Offcanvas-->
 
 @endsection
 
@@ -124,11 +102,11 @@
     <script>
         $(document).ready(function() {
             $('input[name="custom-switch-radio"]').change(function() {
-                var userId = $(this).data('user-id');
+                var userId = $(this).data('status-id');
                 var status = $(this).prop('checked') ? 'active' : 'blocked';
 
                 $.ajax({
-                    url: "{{ route('admin.users.status') }}",
+                    url: "{{ route('admin.tourists.status') }}",
                     method: "PUT",
                     data: {
                         id: userId,

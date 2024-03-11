@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\Site\TouristsController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\Web\AuthController;
 use App\Http\Controllers\Web\BasicController;
+use App\Http\Controllers\Web\TouristsController;
 
 Route::prefix('admin')->middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'loginView'])->name('view.login');

@@ -61,7 +61,7 @@
                                             <td class="text-center">
                                                 <label class="custom-switch form-switch mb-0">
                                                     <input type="checkbox" name="custom-switch-radio"
-                                                        class="custom-switch-input" data-user-id="{{ $user->id }}"
+                                                        class="custom-switch-input" data-status-id="{{ $user->id }}"
                                                         {{ $user->status == 'active' ? 'checked' : '' }}>
                                                     <span class="custom-switch-indicator"></span>
                                                 </label>
@@ -126,7 +126,7 @@
     <script>
         $(document).ready(function() {
             $('input[name="custom-switch-radio"]').change(function() {
-                var userId = $(this).data('user-id');
+                var userId = $(this).data('status-id');
                 var status = $(this).prop('checked') ? 'active' : 'blocked';
 
                 $.ajax({
