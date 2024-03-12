@@ -73,7 +73,7 @@ return [
         'tourists' => [
             'driver' => 'eloquent',
             'model' => App\Models\Tourist::class,
-        ],
+        ],    
     ],
 
     /*

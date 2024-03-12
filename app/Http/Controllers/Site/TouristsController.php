@@ -26,26 +26,28 @@ class TouristsController extends Controller
     {
         try {
             $tourist = Socialite::driver('google')->user();
-            $findUser = Tourist::where('email', $tourist->email)->first();
+            $findTourist = Tourist::where('email', $tourist->email)->first();
 
-            if ($findUser) {
-                $findUser->full_name = $tourist->name;
-                $findUser->avatar = $tourist->avatar;
-                $findUser->touch();
-                $findUser->save();
+            if ($findTourist) {
+                $findTourist->user_id = $tourist->id;
+                $findTourist->full_name = $tourist->name;
+                $findTourist->avatar = $tourist->avatar;
+                $findTourist->touch();
+                $findTourist->save();
             } else {
-                $findUser = new Tourist();
-                $findUser->full_name = $tourist->name;
-                $findUser->email = $tourist->email;
-                $findUser->avatar = $tourist->avatar;
-                $findUser->social = "google";
-                $findUser->status = "active";
-                $findUser->save();
+                $findTourist = new Tourist();
+                $findTourist->user_id = $tourist->id;
+                $findTourist->full_name = $tourist->name;
+                $findTourist->email = $tourist->email;
+                $findTourist->avatar = $tourist->avatar;
+                $findTourist->social = "google";
+                $findTourist->status = "active";
+                $findTourist->save();
             }
 
-            Auth::login($findUser);
+            Auth::guard('tourist')->login($findTourist);
 
-            return redirect('/');
+            return redirect('/about');
         } catch (Exception $e) {
             Log::error('Google authentication error: ' . $e->getMessage());
         }
