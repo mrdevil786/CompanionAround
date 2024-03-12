@@ -40,6 +40,11 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        
+        'tourist' => [
+            'driver' => 'session',
+            'provider' => 'tourists',
+        ],
     ],
 
     /*
@@ -65,10 +70,10 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'tourists' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Tourist::class,
+        ],
     ],
 
     /*

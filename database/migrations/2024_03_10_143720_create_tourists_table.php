@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('full_name');
             $table->string('email');
             $table->string('avatar');
+            $table->string('social');
             $table->timestamps();
             $table->enum('status', ['active', 'blocked'])->default('active');
         });

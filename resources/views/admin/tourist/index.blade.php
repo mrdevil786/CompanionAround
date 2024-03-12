@@ -25,9 +25,10 @@
                             <thead>
                                 <tr>
                                     <th class="wd-15p border-bottom-0">#</th>
+                                    <th class="wd-15p border-bottom-0">Image</th>
                                     <th class="wd-20p border-bottom-0">Name</th>
                                     <th class="wd-15p border-bottom-0">Email</th>
-                                    <th class="wd-15p border-bottom-0">Avatar</th>
+                                    <th class="wd-15p border-bottom-0">Id</th>
                                     <th class="wd-25p border-bottom-0">Created At</th>
                                     <th class="wd-25p border-bottom-0">Updated At</th>
                                     @if (auth()->user()->user_role == 1)
@@ -40,11 +41,28 @@
                                 @foreach ($tourists as $tourist)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
+
+                                        <td>
+                                            <a href="javascript:void(0)" data-bs-toggle="dropdown"
+                                                class="nav-link leading-none d-flex">
+                                                <img src="{{ $tourist->avatar }}"
+                                                    alt="profile-user"
+                                                    class="avatar  profile-user brround cover-image">
+                                            </a>
+                                        </td>
+
                                         <td>{{ $tourist->full_name }}</td>
+
                                         <td>{{ $tourist->email }}</td>
-                                        <td>{{ $tourist->avatar }}</td>
+
+                                        <td class="text-center">
+                                            <i class="fa fa-{{ $tourist->social }}" aria-hidden="true"></i>
+                                        </td>
+
                                         <td>{{ $tourist->created_at }}</td>
+
                                         <td>{{ $tourist->updated_at }}</td>
+
                                         @if (auth()->user()->user_role == 1)
                                             <td class="text-center">
                                                 <label class="custom-switch form-switch mb-0">
@@ -55,6 +73,7 @@
                                                 </label>
                                             </td>
                                         @endif
+
                                         <td class="text-center">
                                             <x-buttons.action-pill-button iconClass="fa fa-eye" iconColor="secondary" />
 
@@ -70,6 +89,7 @@
                                                     iconClass="fa fa-trash" iconColor="danger" />
                                             @endif
                                         </td>
+
                                     </tr>
                                 @endforeach
                             </tbody>
