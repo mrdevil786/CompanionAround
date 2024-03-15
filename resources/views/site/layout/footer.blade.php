@@ -27,22 +27,22 @@
                     <h4 class="text-white mb-3">Gallery</h4>
                     <div class="row g-2 pt-2">
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/package-1.jpg" alt="">
+                            <img class="img-fluid bg-light p-1" src="{{asset('site/img/package-1.jpg')}}" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/package-2.jpg" alt="">
+                            <img class="img-fluid bg-light p-1" src="{{asset('site/img/package-2.jpg')}}" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/package-3.jpg" alt="">
+                            <img class="img-fluid bg-light p-1" src="{{asset('site/img/package-3.jpg')}}" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/package-2.jpg" alt="">
+                            <img class="img-fluid bg-light p-1" src="{{asset('site/img/package-2.jpg')}}" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/package-3.jpg" alt="">
+                            <img class="img-fluid bg-light p-1" src="{{asset('site/img/package-3.jpg')}}" alt="">
                         </div>
                         <div class="col-4">
-                            <img class="img-fluid bg-light p-1" src="img/package-1.jpg" alt="">
+                            <img class="img-fluid bg-light p-1" src="{{asset('site/img/package-1.jpg')}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -97,6 +97,7 @@
 
     <!-- Template Javascript -->
     <script src="{{ asset('site/js/main.js') }}"></script>
+    @yield('website-custom-script')
 </body>
 
 </html>

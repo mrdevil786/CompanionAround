@@ -30,6 +30,7 @@
 
     <!-- Template Stylesheet -->
     <link href="{{asset('site/css/style.css')}}" rel="stylesheet">
+    @yield('website-custom-style')
 </head>
 
 <body>
@@ -94,6 +95,8 @@
                     </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="" class="btn btn-primary rounded-pill py-2 px-4">Register</a>
+				<a href="{{url('/findCompanion')}}" class="btn btn-primary rounded-pill py-2 px-4">Find Companion</a>
+				&nbsp;
+				<a href="{{url('/login')}}" class="btn btn-primary rounded-pill py-2 px-4">Login</a>
             </div>
         </nav>
