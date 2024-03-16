@@ -17,5 +17,6 @@ Route::get('/about', [SiteController::class, 'about']);
 Route::get('/service', [SiteController::class, 'service']);
 Route::get('/packages', [SiteController::class, 'packages']);
 Route::get('/contact', [SiteController::class, 'contact']);
+
 Route::get('/googleLogin', [TouristsController::class, 'googleLogin']);
 Route::get('/auth/google/callback', [TouristsController::class, 'googleHandle']);
