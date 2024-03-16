@@ -39,7 +39,7 @@
                 <div class="row g-3" style="padding-bottom:20px">
                 </div>
                 <div class="col-12" style="padding-top:12px">
-                    <a href="{{ URL::to('googleLogin') }}" class="btn btn-primary w-100 py-3" type="submit" style="background-color:#c9453a">Continue with Google <i class="fab fa-google"></i></a>
+                    <button class="btn btn-primary w-100 py-3" type="submit" style="background-color:#c9453a">Continue with Google <i class="fab fa-google"></i></button>
                 </div>
                 <div class="col-12" style="padding-top:12px">
                     <a class="btn btn-primary w-100 py-3" type="submit" style="background-color:#1A73E8">Continue with facebook <i class="fab fa-facebook"></i></a>
