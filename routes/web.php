@@ -11,7 +11,7 @@ Route::prefix('admin')->middleware('guest')->group(function () {
     Route::post('/login', [AuthController::class, 'login'])->name('submit.login');
 });
 
-Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'web'])->group(function () {
+Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'web', 'checkAdminStatus'])->group(function () {
 
     Route::get('/', [BasicController::class, 'dashboard'])->name('dashboard');
     Route::get('logout', [AuthController::class, 'logout'])->name('user.logout');
@@ -26,7 +26,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'web'])->gro
             Route::get('/{id}/destroy', [TouristsController::class, 'destroy'])->name('destroy');
             Route::put('status', [TouristsController::class, 'status'])->name('status');
         });
-
     });
 
     Route::middleware('manager')->group(function () {
@@ -41,7 +40,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'web'])->gro
             Route::get('edit/{id}', [TouristsController::class, 'edit'])->name('edit');
             Route::put('update/{id}', [TouristsController::class, 'update'])->name('update');
         });
-
     });
 
     Route::middleware('member')->group(function () {
@@ -54,7 +52,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'web'])->gro
             Route::get('/', [TouristsController::class, 'index'])->name('index');
             Route::get('view/{id}', [TouristsController::class, 'showUser'])->name('show');
         });
-        
     });
 });
 
