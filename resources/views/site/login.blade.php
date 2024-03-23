@@ -1,13 +1,13 @@
 @extends('site.layout.main')
 
 @section('website-page-title', 'Login | Signup')
+
 @section('website-custom-style')
     <style>
     </style>
 @endsection
+
 @section('website-main-section')
-
-
 
     <div class="container-fluid bg-primary py-5 mb-5 hero-header">
         <div class="container py-5">
@@ -20,6 +20,7 @@
     </div>
     </div>
     <!-- Navbar & Hero End -->
+
     <!-- Contact Start -->
 
     <div class="container-xxl py-5">
