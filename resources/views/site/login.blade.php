@@ -1,6 +1,6 @@
 @extends('site.layout.main')
 
-@section('website-page-title', 'Find Companion')
+@section('website-page-title', 'Login | Signup')
 @section('website-custom-style')
 <style>
     .btnSlider {
