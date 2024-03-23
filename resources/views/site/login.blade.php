@@ -1,6 +1,6 @@
 @extends('site.layout.main')
 
-@section('page-title', 'Find Companion')
+@section('website-page-title', 'Find Companion')
 @section('website-custom-style')
 <style>
     .btnSlider {
