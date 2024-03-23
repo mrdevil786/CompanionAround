@@ -4,6 +4,10 @@ use App\Http\Controllers\Site\TouristsController;
 use App\Http\Controllers\Site\SiteController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/profile', function () {
+    return view('site.profile');
+});
+
 Route::group(['middleware' => 'tourist'], function () {
     Route::get('/about', function () {
         return 'This is about page.';

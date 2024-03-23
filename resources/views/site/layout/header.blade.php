@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Tourist - Travel Agency HTML Template</title>
+    <title>@yield('website-page-title') - {{ env('APP_NAME') }}</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -80,7 +80,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="{{ url('/') }}" class="nav-item nav-link active">Home</a>
                     <a href="{{url('/about')}}" class="nav-item nav-link">About</a>
                     <a href="{{url('/service')}}" class="nav-item nav-link">Services</a>
                     <a href="{{url('/packages')}}" class="nav-item nav-link">Packages</a>
