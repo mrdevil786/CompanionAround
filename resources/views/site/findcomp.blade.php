@@ -3,8 +3,7 @@
 @section('website-page-title', 'Find Companion')
 
 @section('website-custom-style')
-    <style>
-    </style>
+    <style></style>
 @endsection
 
 @section('website-main-section')
@@ -49,10 +48,9 @@
         </div>
     </div>
     <!-- Contact End -->
-    
+
 @endsection
 
 @section('website-custom-script')
-<script>
-</script>
+    <script></script>
 @endsection

@@ -3,8 +3,7 @@
 @section('website-page-title', 'Login | Signup')
 
 @section('website-custom-style')
-    <style>
-    </style>
+    <style></style>
 @endsection
 
 @section('website-main-section')
@@ -114,6 +113,7 @@
 
     <!-- Contact End -->
 @endsection
+
 @section('website-custom-script')
     <script></script>
 @endsection
