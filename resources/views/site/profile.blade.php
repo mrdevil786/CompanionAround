@@ -1,13 +1,13 @@
 @extends('site.layout.main')
 
 @section('website-page-title', 'Profile')
+
 @section('website-custom-style')
 <style>
 </style>
 @endsection
+
 @section('website-main-section')
-
-
 
 <div class="container-fluid bg-primary py-5 mb-5 hero-header">
     <div class="container py-5">
@@ -49,6 +49,7 @@
 </div>
 <!-- Contact End -->
 @endsection
+
 @section('website-custom-script')
 <script>
 </script>
