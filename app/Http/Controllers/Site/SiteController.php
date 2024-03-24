@@ -28,7 +28,7 @@ class SiteController extends Controller
             'mobile' => 'required|digits:10',
             'password' => 'required|string'
         ]);
-        return  $check = TourGuide::where('email', $request->email)->first();
+        $check = TourGuide::where('email', $request->email)->first();
         if ($check) {
             return redirect()->back()->with(['error' => 'You have already registered']);
         }
