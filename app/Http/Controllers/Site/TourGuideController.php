@@ -11,7 +11,7 @@ class TourGuideController extends Controller
 {
     public function dashboard()
     {
-        return view('dashboard');
+        return view('site.profile');
     }
     public function updateProfile(Request $request)
     {
