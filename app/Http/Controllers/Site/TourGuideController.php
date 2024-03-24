@@ -13,6 +13,7 @@ class TourGuideController extends Controller
     {
         return view('site.profile');
     }
+    
     public function updateProfile(Request $request)
     {
         $request->validate([
