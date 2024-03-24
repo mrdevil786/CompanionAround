@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Site\TouristsController;
 use App\Http\Controllers\Site\SiteController;
+use App\Http\Controllers\Site\TourGuideController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/profile', function () {
@@ -16,6 +17,7 @@ Route::group(['middleware' => 'tourist'], function () {
 
 Route::get('/', [TouristsController::class, 'index']);
 Route::get('/findCompanion', [SiteController::class, 'findCompanion']);
+
 Route::get('/login', [SiteController::class, 'login']);
 Route::get('/about', [SiteController::class, 'about']);
 Route::get('/service', [SiteController::class, 'service']);
@@ -24,3 +26,14 @@ Route::get('/contact', [SiteController::class, 'contact']);
 
 Route::get('/googleLogin', [TouristsController::class, 'googleLogin']);
 Route::get('/auth/google/callback', [TouristsController::class, 'googleHandle']);
+Route::controller(SiteController::class)->group(function () {
+    Route::get('/login', 'login')->name('login');
+    Route::get('/logout', 'logout')->name('logout');
+    Route::post('/post-signup', 'signUp')->name('post-signup');
+    Route::post('/post-login', 'postLogin')->name('post-login');
+});
+Route::prefix('tourguide')->name('tourguide.')->middleware(['auth:tourguard', 'web'])->group(function () {
+    Route::controller(TourGuideController::class)->name('guide')->group(function () {
+        Route::get('/', 'dashboard');
+    });
+});
