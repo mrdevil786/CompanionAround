@@ -42,6 +42,7 @@
                 <div id="divLogin" class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
 
                     <form>
+                        
                         <div class="row g-3" style="padding-bottom:20px">
                         </div>
                         <div class="col-12" style="padding-top:12px">
@@ -52,6 +53,7 @@
                             <a class="btn btn-primary w-100 py-3" type="submit" style="background-color:#1A73E8">Continue
                                 with facebook <i class="fab fa-facebook"></i></a>
                         </div>
+
                     </form>
 
                 </div>
