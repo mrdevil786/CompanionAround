@@ -5,6 +5,10 @@ use App\Http\Controllers\Site\SiteController;
 use App\Http\Controllers\Site\TourGuideController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('/profile', function () {
+    return view('site.profile');
+});
+
 Route::group(['middleware' => 'tourist'], function () {
     Route::get('/about', function () {
         return 'This is about page.';
@@ -13,6 +17,13 @@ Route::group(['middleware' => 'tourist'], function () {
 
 Route::get('/', [TouristsController::class, 'index']);
 Route::get('/findCompanion', [SiteController::class, 'findCompanion']);
+
+Route::get('/login', [SiteController::class, 'login']);
+Route::get('/about', [SiteController::class, 'about']);
+Route::get('/service', [SiteController::class, 'service']);
+Route::get('/packages', [SiteController::class, 'packages']);
+Route::get('/contact', [SiteController::class, 'contact']);
+
 Route::get('/googleLogin', [TouristsController::class, 'googleLogin']);
 Route::get('/auth/google/callback', [TouristsController::class, 'googleHandle']);
 Route::controller(SiteController::class)->group(function () {

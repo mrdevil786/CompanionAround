@@ -1,6 +1,6 @@
 @extends('site.layout.main')
 
-@section('page-title', 'Home')
+@section('website-page-title', 'Home')
 @section('website-custom-style')
 <style>
     .container-fluid.bg-primary {

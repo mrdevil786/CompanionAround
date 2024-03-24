@@ -47,6 +47,7 @@ class SiteController extends Controller
             'message' => 'Singup successfully!'
         ]);
     }
+    
     public function postLogin(Request $request)
     {
         $request->validate([
@@ -63,11 +64,29 @@ class SiteController extends Controller
             }
         }
     }
+
     public function logout()
     {
         if (auth('tourguard')->check()) {
             auth('tourguard')->logout();
         }
         return redirect('/');
+    }
+
+    public function about()
+    {
+        return view('site.about');
+    }
+    public function service()
+    {
+        return view('site.service');
+    }
+    public function packages()
+    {
+        return view('site.packages');
+    }
+    public function contact()
+    {
+        return view('site.contact');
     }
 }
