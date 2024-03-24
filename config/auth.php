@@ -40,10 +40,14 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
-        
+
         'tourist' => [
             'driver' => 'session',
             'provider' => 'tourists',
+        ],
+        'tourguard' => [
+            'driver' => 'session',
+            'provider' => 'tourguards',
         ],
     ],
 
@@ -73,7 +77,11 @@ return [
         'tourists' => [
             'driver' => 'eloquent',
             'model' => App\Models\Tourist::class,
-        ],    
+        ],
+        'tourguards' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\TourGuide::class,
+        ],
     ],
 
     /*
