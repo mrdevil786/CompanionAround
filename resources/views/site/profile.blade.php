@@ -388,27 +388,6 @@
 <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.print.min.js"></script>
 <script>
-    // $(document).ready(function() {
-    //     // Example data for the table
-    //     var userData = [
-    //         { name: "John Doe", email: "john@example.com", role: "Admin" },
-    //         { name: "Jane Smith", email: "jane@example.com", role: "User" },
-    //         { name: "Michael Johnson", email: "michael@example.com", role: "Moderator" }
-    //     ];
-
-    //     // Loop through the user data and append rows to the table
-    //     $.each(userData, function(index, user) {
-    //         var row = '<tr>' +
-    //                     '<td>' + user.name + '</td>' +
-    //                     '<td>' + user.email + '</td>' +
-    //                     '<td>' + user.role + '</td>' +
-    //                   '</tr>';
-    //         $('#profile-table tbody').append(row);
-    //     });
-    // });
-    // $(document).ready(function() {
-    //         $('#profile-table').DataTable();
-    //     });
     new DataTable('#profile-table', {
     layout: {
         topStart: {
