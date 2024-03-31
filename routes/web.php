@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TourGuideController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\Web\AuthController;
@@ -32,6 +33,11 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'web', 'chec
         Route::prefix('testimonials')->name('testimonials.')->group(function () {
             Route::get('/{id}/destroy', [TestimonialController::class, 'destroy'])->name('destroy');
             Route::put('status', [TestimonialController::class, 'status'])->name('status');
+        });
+        Route::controller(TourGuideController::class)->prefix('tourguides')->name('tourguides.')->group(function () {
+            Route::get('/', 'index')->name('index');
+            Route::get('/{id}/destroy', 'destroy')->name('destroy');
+            Route::put('status', 'status')->name('status');
         });
     });
 

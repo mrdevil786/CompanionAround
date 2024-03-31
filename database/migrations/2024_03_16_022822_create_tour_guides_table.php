@@ -23,9 +23,10 @@ return new class extends Migration
             $table->string('country')->nullable();
             $table->string('state')->nullable();
             $table->string('city')->nullable();
-            $table->text('short_descsription')->nullable();
+            $table->text('short_description')->nullable();
             $table->longText('description')->nullable();
             $table->string('profile')->nullable();
+            $table->string('status')->default('blocked');
             $table->timestamps();
         });
     }

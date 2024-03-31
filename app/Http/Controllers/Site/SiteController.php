@@ -47,7 +47,7 @@ class SiteController extends Controller
             'message' => 'Singup successfully!'
         ]);
     }
-    
+
     public function postLogin(Request $request)
     {
         $request->validate([
@@ -58,7 +58,7 @@ class SiteController extends Controller
             if (Auth::guard('tourguard')->attempt($request->only(['email', 'password']))) {
                 return response([
                     'success' => true,
-                    'route' => route('tourguide.guide'),
+                    'route' => route('tourguide.guide.index'),
                     'message' => 'Loggedin SUccessfully!'
                 ]);
             }
@@ -88,5 +88,11 @@ class SiteController extends Controller
     public function contact()
     {
         return view('site.contact');
+    }
+
+    public function getTourGuide()
+    {
+        $tourguides = TourGuide::where('status', 'active')->latest()->get();
+        return $tourguides;
     }
 }
