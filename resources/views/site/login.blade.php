@@ -157,7 +157,7 @@
                     console.log(response);
                     if (response.success) {
                         Notiflix.Notify.success('SingUp Successfully!');
-                        window.location.href = "{{ route('tourguide.guide') }}"
+                        window.location.href = "{{ route('tourguide.guide.index') }}"
                     }
                 }
             });

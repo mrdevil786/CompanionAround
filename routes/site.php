@@ -31,9 +31,12 @@ Route::controller(SiteController::class)->group(function () {
     Route::get('/logout', 'logout')->name('logout');
     Route::post('/post-signup', 'signUp')->name('post-signup');
     Route::post('/post-login', 'postLogin')->name('post-login');
+    Route::get('get-tourguide', 'getTourGuide')->name('get-tourguide');
 });
 Route::prefix('tourguide')->name('tourguide.')->middleware(['auth:tourguard', 'web'])->group(function () {
-    Route::controller(TourGuideController::class)->name('guide')->group(function () {
-        Route::get('/', 'dashboard');
+    Route::controller(TourGuideController::class)->name('guide.')->group(function () {
+        Route::get('/', 'dashboard')->name('index');
+        Route::get('edit', 'edit')->name('edit');
+        Route::post('update', 'updateProfile')->name('update');
     });
 });

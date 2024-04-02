@@ -91,7 +91,7 @@
             <a href="" class="navbar-brand p-0">
                 <!-- <h1 class="text-primary m-0"><i class="fa fa-map-marker-alt me-3"></i>Tourist</h1>
                 <img src="img/logo.png" alt="Logo"> -->
-                <img src="{{asset('site/img/CA.svg')}}" alt="Logo" style="width:150%">
+                <img src="{{ asset('site/img/CA.svg') }}" alt="Logo" style="width:150%">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
@@ -99,11 +99,11 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav ms-auto py-0">
                     <a href="{{ url('/') }}" class="nav-item nav-link active">Home</a>
-                    <a href="{{url('/about')}}" class="nav-item nav-link">About</a>
-                    <a href="{{url('/service')}}" class="nav-item nav-link">Services</a>
-                    <a href="{{url('/tour-guides')}}" class="nav-item nav-link">Tour Guides</a>
-                    <a href="{{url('/tour-operators')}}" class="nav-item nav-link">Tour Operators</a>
-                    <a href="{{url('/contact')}}" class="nav-item nav-link">Contact</a>
+                    <a href="{{ url('/about') }}" class="nav-item nav-link">About</a>
+                    <a href="{{ url('/service') }}" class="nav-item nav-link">Services</a>
+                    <a href="{{ url('/tour-guides') }}" class="nav-item nav-link">Tour Guides</a>
+                    <a href="{{ url('/tour-operators') }}" class="nav-item nav-link">Tour Operators</a>
+                    <a href="{{ url('/contact') }}" class="nav-item nav-link">Contact</a>
                 </div>
                 <a href="{{ url('/findCompanion') }}" class="btn btn-primary rounded-pill py-2 px-4">Find
                     Companion</a>
@@ -112,7 +112,8 @@
                     <a href="{{ url('/login') }}" class="btn btn-primary rounded-pill py-2 px-4">Login</a>
                 @endguest
                 @auth('tourguard')
-                    <a href="{{ route('tourguide.guide') }}" class="btn btn-primary rounded-pill py-2 px-4">Dashboard</a>
+                    <a href="{{ route('tourguide.guide.index') }}"
+                        class="btn btn-primary rounded-pill py-2 px-4">Dashboard</a>
                 @endauth
             </div>
         </nav>

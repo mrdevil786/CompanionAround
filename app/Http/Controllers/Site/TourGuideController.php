@@ -11,7 +11,14 @@ class TourGuideController extends Controller
 {
     public function dashboard()
     {
-        return view('site.profile');
+        $user = TourGuide::findOrFail(auth('tourguard')->user()->id);
+        return view('site.profile', compact('user'));
+    }
+
+    public function edit(Request $request)
+    {
+        $user = TourGuide::findOrFail($request->id);
+        return $user;
     }
 
     public function updateProfile(Request $request)
@@ -29,6 +36,7 @@ class TourGuideController extends Controller
             'short_description' => 'required',
             'profile' => 'required|mimes:png,jpg,jpeg,webp,svg,gif'
         ]);
+        // return $request->all();
         $user = TourGuide::findOrFail(auth('tourguard')->user()->id);
         $user->name = $request->name;
         $user->email = $request->email;
@@ -39,13 +47,12 @@ class TourGuideController extends Controller
         $user->country = $request->country;
         $user->state = $request->state;
         $user->city = $request->city;
-        $user->shot_description = $request->shot_description;
+        $user->short_description = $request->short_description;
         if ($request->profile) {
             $user->profile = FileUploader::uploadFile($request->profile, 'images/tour-guides');
         }
+        $user->status = 'active';
         $user->save();
-        return response([
-            'success' => 'Profile detail updated successfully@'
-        ]);
+        return redirect()->back()->with('success', 'Profile detail updated successfully!');
     }
 }
