@@ -17,19 +17,6 @@
             border-radius: 10px;
         }
 
-        /*.price-range-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-
-        .slider {
-            width: 300px;
-            height: 20px;
-            margin-left: 10px;
-        }*/
         .additional-div-2 {
             margin-top: 10px;
             display: flex;
@@ -38,7 +25,6 @@
             width: 100%;
             margin-left: 0px;
             height: 14vh;
-            /* Set height to 80% of the viewport height */
         }
 
         .checkbox-label {
@@ -55,29 +41,18 @@
             margin-top: 20px;
             padding-bottom: 20px;
             border-bottom: 1px solid #ccc;
-            /* Fine grey line border at the bottom */
         }
 
-        /* CSS styles for the text */
         .price-range-text {
             margin-right: 30px;
-            /* Add margin for spacing between text and slider */
             padding-left: 20px;
         }
 
-        /* CSS styles for the slider */
-        /*.slider {
-            width: calc(100% - 150px);
-            height: 20px;
-        }*/
         .slider-container {
             position: relative;
-            /*width: 78%;*/
             width: calc(100% - 150px);
             height: 10px;
-            /* Adjust height as needed */
             background-color: #ddd;
-            /* Track color */
             cursor: pointer;
         }
 
@@ -87,7 +62,6 @@
             left: 0;
             width: 100%;
             height: 2px;
-            /* Track height */
             background-color: #86B817 !important;
             transform: translateY(-50%);
         }
@@ -96,67 +70,46 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            /* Initial position of the thumb */
             width: 20px;
-            /* Adjust width as needed */
             height: 20px;
-            /* Adjust height as needed */
             background-color: #fff;
-            /* Thumb color */
             border: 1px solid #86B817 !important;
-            /* Thumb border color */
             border-radius: 50%;
-            /* Rounded shape */
             transform: translate(-50%, -50%);
         }
 
         .slider-label-start {
             position: absolute;
             top: -20px;
-            /* Adjust the vertical position as needed */
             left: -12px;
-            /* Adjust the horizontal position as needed */
             font-size: 14px;
-            /* Adjust the font size as needed */
             color: #333;
-            /* Adjust the color as needed */
         }
 
         .slider-label-end {
             position: absolute;
             top: -20px;
-            /* Adjust the vertical position as needed */
             right: -14px;
             font-size: 14px;
-            /* Adjust the font size as needed */
             color: #333;
-            /* Adjust the color as needed */
         }
 
         .slider-amount {
             position: absolute;
             top: -30px;
-            /* Adjust the position as needed */
             transform: translateX(-50%);
             white-space: nowrap;
         }
 
-        /* CSS styles for the slider track */
         .slider {
             width: calc(100% - 150px);
-            /*height: 20px;*/
         }
 
-        /* Styles for the slider track */
         .slider::-webkit-slider-runnable-track {
             width: 100%;
-            /* Set the width of the track */
             height: 4px;
-            /* Set the height of the track */
             background-color: #ccc;
-            /* Set the background color of the track */
             border-radius: 2px;
-            /* Set border radius to make it rounded */
         }
     </style>
 @endsection
@@ -905,11 +858,11 @@
                 if (activeThumbId.slice(-1) === 'b') {
                     sliderAmount1.style.left = position + '%';
                     sliderAmount1.textContent = '$' + calculateAmount(
-                    position); // Calculate amount based on position
+                        position); // Calculate amount based on position
                 } else {
                     sliderAmount2.style.left = position + '%';
                     sliderAmount2.textContent = '$' + calculateAmount(
-                    position); // Calculate amount based on position
+                        position); // Calculate amount based on position
                 }
             }
 
