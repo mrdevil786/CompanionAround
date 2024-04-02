@@ -22,6 +22,7 @@ Route::get('/login', [SiteController::class, 'login']);
 Route::get('/about', [SiteController::class, 'about']);
 Route::get('/service', [SiteController::class, 'service']);
 Route::get('/tour-guides', [SiteController::class, 'tour_guides']);
+Route::get('/tour-operators', [SiteController::class, 'tour_operators']);
 Route::get('/contact', [SiteController::class, 'contact']);
 
 Route::get('/googleLogin', [TouristsController::class, 'googleLogin']);

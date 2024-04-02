@@ -77,14 +77,22 @@ class SiteController extends Controller
     {
         return view('site.about');
     }
+
     public function service()
     {
         return view('site.service');
     }
+
     public function tour_guides()
     {
         return view('site.tour-guides');
     }
+
+    public function tour_operators()
+    {
+        return view('site.tour-operators');
+    }
+
     public function contact()
     {
         return view('site.contact');

@@ -97,14 +97,25 @@
                 <span class="fa fa-bars"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
+
+
                 <div class="navbar-nav ms-auto py-0">
-                    <a href="{{ url('/') }}" class="nav-item nav-link active">Home</a>
-                    <a href="{{ url('/about') }}" class="nav-item nav-link">About</a>
-                    <a href="{{ url('/service') }}" class="nav-item nav-link">Services</a>
-                    <a href="{{ url('/tour-guides') }}" class="nav-item nav-link">Tour Guides</a>
-                    <a href="{{ url('/tour-operators') }}" class="nav-item nav-link">Tour Operators</a>
-                    <a href="{{ url('/contact') }}" class="nav-item nav-link">Contact</a>
+                    <a href="{{ url('/') }}"
+                        class="nav-item nav-link {{ Request::is('/') ? 'active' : '' }}">Home</a>
+                    <a href="{{ url('/about') }}"
+                        class="nav-item nav-link {{ Request::is('about') ? 'active' : '' }}">About</a>
+                    <a href="{{ url('/service') }}"
+                        class="nav-item nav-link {{ Request::is('service') ? 'active' : '' }}">Services</a>
+                    <a href="{{ url('/tour-guides') }}"
+                        class="nav-item nav-link {{ Request::is('tour-guides') ? 'active' : '' }}">Tour Guides</a>
+                    <a href="{{ url('/tour-operators') }}"
+                        class="nav-item nav-link {{ Request::is('tour-operators') ? 'active' : '' }}">Tour
+                        Operators</a>
+                    <a href="{{ url('/contact') }}"
+                        class="nav-item nav-link {{ Request::is('contact') ? 'active' : '' }}">Contact</a>
                 </div>
+
+
                 <a href="{{ url('/findCompanion') }}" class="btn btn-primary rounded-pill py-2 px-4">Find
                     Companion</a>
                 &nbsp;
