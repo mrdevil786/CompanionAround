@@ -3,27 +3,26 @@
 namespace App\Helpers;
 
 use Exception;
-use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
-use File;
 use Illuminate\Support\Str;
 
 class FileUploader
 {
-    public static function uploadFile($file, string $customPath = "", $deleteOldFile = null): string
+    public static function uploadFile(UploadedFile $uploadedFile, string $targetPath = "", $deleteOldFile = null): string
     {
         try {
             if ($deleteOldFile) {
                 Storage::delete($deleteOldFile);
             }
 
-            $extension = $file->getClientOriginalExtension();
+            $extension = $uploadedFile->getClientOriginalExtension();
             $fileName = Str::random(25) . '.' . $extension;
 
-            $filePath = $customPath ? $customPath . '/' . $fileName : $fileName;
+            $filePath = $targetPath ? $targetPath . '/' . $fileName : $fileName;
 
-            $file->storeAs($customPath, $fileName);
+            $uploadedFile->storeAs($targetPath, $fileName);
 
             return $filePath;
         } catch (Exception $e) {

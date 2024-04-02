@@ -26,6 +26,7 @@ Route::get('/contact', [SiteController::class, 'contact']);
 
 Route::get('/googleLogin', [TouristsController::class, 'googleLogin']);
 Route::get('/auth/google/callback', [TouristsController::class, 'googleHandle']);
+
 Route::controller(SiteController::class)->group(function () {
     Route::get('/login', 'login')->name('login');
     Route::get('/logout', 'logout')->name('logout');

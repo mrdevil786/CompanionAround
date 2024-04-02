@@ -14,285 +14,277 @@
         <div class="container py-5">
             <div class="row justify-content-center py-5">
                 <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-3 text-white animated slideInDown">Login</h1>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb justify-content-center">
-                            <li class="breadcrumb-item"><a href="#">Home</a></li>
-                            <li class="breadcrumb-item"><a href="#">Pages</a></li>
-                            <li class="breadcrumb-item text-white active" aria-current="page">login or Sign Up</li>
-                        </ol>
-                    </nav>
+                    <h1 class="display-3 text-white animated slideInDown">Dashboard</h1>
                 </div>
             </div>
         </div>
     </div>
     </div>
     <!-- Navbar & Hero End -->
-    <!-- Contact Start -->
+
+    {{-- ##############################################################################################     --}}
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3 mb-5">My Profile</h6>
-                <!--<h1 class="mb-5">Contact For Any Query</h1>-->
+                <h6 class="section-title bg-white text-center text-primary px-3 mb-5">My Dashboard</h6>
             </div>
             <div class="row g-4">
-                <div class="col-md-12 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="d-flex align-items-start">
-                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist"
-                            aria-orientation="vertical">
-                            <button class="nav-link rounded-pill active" id="v-pills-home-tab" data-bs-toggle="pill"
-                                data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
-                                aria-selected="true">Dashboard</button>
-                            <button class="nav-link rounded-pill" id="v-pills-profile-tab" data-bs-toggle="pill"
-                                data-bs-target="#v-pills-profile" type="button" role="tab"
-                                aria-controls="v-pills-profile" aria-selected="false">Profile</button>
-                            <button class="nav-link rounded-pill" id="v-pills-history-tab" data-bs-toggle="pill"
-                                data-bs-target="#v-pills-history" type="button" role="tab"
-                                aria-controls="v-pills-history" aria-selected="false">History</button>
-                            <a href="{{ route('logout') }}" class="nav-link rounded-pill">Logout</a>
-                            <!--<button class="nav-link rounded-pill" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</button>-->
+                <div class="col-lg-2">
+                    <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <button class="nav-link rounded-pill active" id="v-pills-home-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
+                            aria-selected="true">Dashboard</button>
+                        <button class="nav-link rounded-pill" id="v-pills-profile-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
+                            aria-selected="false">Profile</button>
+                        <button class="nav-link rounded-pill" id="v-pills-history-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-history" type="button" role="tab" aria-controls="v-pills-history"
+                            aria-selected="false">History</button>
+                        <div class="col-12 mt-5">
+                            <a href="{{ route('logout') }}" class="btn btn-secondary rounded-pill w-100"
+                                type="submit">Logout <i class="fas fa-sign-out-alt ms-2"></i>
+                            </a>
                         </div>
-                        <div class="tab-content" id="v-pills-tabContent">
-                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
-                                aria-labelledby="v-pills-home-tab">
-                                <div class="row g-4">
-                                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                                        <div class="service-item rounded pt-3">
-                                            <div class="p-4">
-                                                <div class="d-flex justify-content-start align-items-center mb-2">
-                                                    <i class="fa fa-3x fa-globe text-primary mr-2"></i>
-                                                    <h5 class="mb-0" style="margin-left: 60px !important">3</h5>
-                                                </div>
-                                                <h5 style="text-align:center">WorldWide Tours</h5>
-                                                {{-- <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p> --}}
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                            aria-labelledby="v-pills-home-tab">
+                            <div class="row g-4">
+                                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="service-item rounded pt-3">
+                                        <div class="p-4">
+                                            <div class="d-flex justify-content-start align-items-center mb-2">
+                                                <i class="fa fa-3x fa-globe text-primary mr-2"></i>
+                                                <h5 class="mb-0" style="margin-left: 60px !important">3</h5>
                                             </div>
+                                            <h5 style="text-align:center">WorldWide Tours</h5>
+                                            {{-- <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p> --}}
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                                        <div class="service-item rounded pt-3">
-                                            <div class="p-4">
-                                                <div class="d-flex justify-content-start align-items-center mb-2">
-                                                    <i class="fa fa-3x fa-hotel text-primary mr-2"></i>
-                                                    <h5 class="mb-0" style="margin-left: 60px !important">3</h5>
-                                                </div>
-                                                <h5 style="text-align:center">Hotel Reservation</h5>
-                                                {{-- <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p> --}}
+                                </div>
+                                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                                    <div class="service-item rounded pt-3">
+                                        <div class="p-4">
+                                            <div class="d-flex justify-content-start align-items-center mb-2">
+                                                <i class="fa fa-3x fa-hotel text-primary mr-2"></i>
+                                                <h5 class="mb-0" style="margin-left: 60px !important">3</h5>
                                             </div>
+                                            <h5 style="text-align:center">Hotel Reservation</h5>
+                                            {{-- <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p> --}}
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                                        <div class="service-item rounded pt-3">
-                                            <div class="p-4">
-                                                <div class="d-flex justify-content-start align-items-center mb-2">
-                                                    <i class="fa fa-3x fa-user text-primary mr-2"></i>
-                                                    <h5 class="mb-0" style="margin-left: 60px !important">3</h5>
-                                                </div>
-                                                {{-- <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p> --}}
-                                                <h5 style="text-align:center">Travel Guides</h5>
+                                </div>
+                                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                                    <div class="service-item rounded pt-3">
+                                        <div class="p-4">
+                                            <div class="d-flex justify-content-start align-items-center mb-2">
+                                                <i class="fa fa-3x fa-user text-primary mr-2"></i>
+                                                <h5 class="mb-0" style="margin-left: 60px !important">3</h5>
                                             </div>
+                                            {{-- <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p> --}}
+                                            <h5 style="text-align:center">Travel Guides</h5>
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                                        <div class="service-item rounded pt-3">
-                                            <div class="p-4">
-                                                <div class="d-flex justify-content-start align-items-center mb-2">
-                                                    <i class="fa fa-3x fa-cog text-primary mr-2"></i>
-                                                    <h5 class="mb-0" style="margin-left: 60px !important">3</h5>
-                                                </div>
-                                                <h5 style="text-align:center">Event Management</h5>
-                                                {{-- <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p> --}}
+                                </div>
+                                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                                    <div class="service-item rounded pt-3">
+                                        <div class="p-4">
+                                            <div class="d-flex justify-content-start align-items-center mb-2">
+                                                <i class="fa fa-3x fa-cog text-primary mr-2"></i>
+                                                <h5 class="mb-0" style="margin-left: 60px !important">3</h5>
                                             </div>
+                                            <h5 style="text-align:center">Event Management</h5>
+                                            {{-- <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p> --}}
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                                        <div class="service-item rounded pt-3">
-                                            <div class="p-4">
-                                                <div class="d-flex justify-content-start align-items-center mb-2">
-                                                    <i class="fa fa-3x fa-globe text-primary mr-2"></i>
-                                                    <h5 class="mb-0" style="margin-left: 60px !important">3</h5>
-                                                </div>
-                                                <h5 style="text-align:center">WorldWide Tours</h5>
-                                                {{-- <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p> --}}
+                                </div>
+                                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="service-item rounded pt-3">
+                                        <div class="p-4">
+                                            <div class="d-flex justify-content-start align-items-center mb-2">
+                                                <i class="fa fa-3x fa-globe text-primary mr-2"></i>
+                                                <h5 class="mb-0" style="margin-left: 60px !important">3</h5>
                                             </div>
+                                            <h5 style="text-align:center">WorldWide Tours</h5>
+                                            {{-- <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p> --}}
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                                        <div class="service-item rounded pt-3">
-                                            <div class="p-4">
-                                                <div class="d-flex justify-content-start align-items-center mb-2">
-                                                    <i class="fa fa-3x fa-hotel text-primary mr-2"></i>
-                                                    <h5 class="mb-0" style="margin-left: 60px !important">3</h5>
-                                                </div>
-                                                <h5 style="text-align:center">Hotel Reservation</h5>
-                                                {{-- <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p> --}}
+                                </div>
+                                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
+                                    <div class="service-item rounded pt-3">
+                                        <div class="p-4">
+                                            <div class="d-flex justify-content-start align-items-center mb-2">
+                                                <i class="fa fa-3x fa-hotel text-primary mr-2"></i>
+                                                <h5 class="mb-0" style="margin-left: 60px !important">3</h5>
                                             </div>
+                                            <h5 style="text-align:center">Hotel Reservation</h5>
+                                            {{-- <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p> --}}
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                                        <div class="service-item rounded pt-3">
-                                            <div class="p-4">
-                                                <div class="d-flex justify-content-start align-items-center mb-2">
-                                                    <i class="fa fa-3x fa-user text-primary mr-2"></i>
-                                                    <h5 class="mb-0" style="margin-left: 60px !important">3</h5>
-                                                </div>
-                                                <h5 style="text-align:center">Travel Guides</h5>
-                                                {{-- <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p> --}}
+                                </div>
+                                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                                    <div class="service-item rounded pt-3">
+                                        <div class="p-4">
+                                            <div class="d-flex justify-content-start align-items-center mb-2">
+                                                <i class="fa fa-3x fa-user text-primary mr-2"></i>
+                                                <h5 class="mb-0" style="margin-left: 60px !important">3</h5>
                                             </div>
+                                            <h5 style="text-align:center">Travel Guides</h5>
+                                            {{-- <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p> --}}
                                         </div>
                                     </div>
-                                    <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                                        <div class="service-item rounded pt-3">
-                                            <div class="p-4">
-                                                <div class="d-flex justify-content-start align-items-center mb-2">
-                                                    <i class="fa fa-3x fa-cog text-primary mr-2"></i>
-                                                    <h5 class="mb-0" style="margin-left: 60px !important">3</h5>
-                                                </div>
-                                                <h5 style="text-align:center">Event Management</h5>
-                                                {{-- <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p> --}}
+                                </div>
+                                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
+                                    <div class="service-item rounded pt-3">
+                                        <div class="p-4">
+                                            <div class="d-flex justify-content-start align-items-center mb-2">
+                                                <i class="fa fa-3x fa-cog text-primary mr-2"></i>
+                                                <h5 class="mb-0" style="margin-left: 60px !important">3</h5>
                                             </div>
+                                            <h5 style="text-align:center">Event Management</h5>
+                                            {{-- <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p> --}}
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
-                                aria-labelledby="v-pills-profile-tab">
-                                <div class="container">
-                                    <div class="main-body">
-                                        <div class="row gutters-sm">
-                                            <div class="col-md-4 mb-3">
-                                                <div class="card" style="width:150%">
-                                                    <div class="card-body">
-                                                        <div class="d-flex flex-column align-items-center text-center">
-                                                            <img src="{{ asset('storage/app/' . $user->profile ?? 'site/img/no-profile.jpg') }}"
-                                                                alt="Admin" class="rounded-circle" width="150">
-                                                            <div class="mt-3">
-                                                                <h4>{{ $user->name }}</h4>
-                                                                <p class="text-muted font-size-sm">
-                                                                    {{ $user->city . ' ' . $user->state . ' ' . $user->country }}
-                                                                </p>
-                                                                <button class="btn btn-primary">Follow</button>
-                                                                <button class="btn btn-outline-primary">Message</button>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-8">
-                                                <div class="card mb-3" style="margin-left: 6vw;width:178%">
-                                                    <div class="card-body">
-                                                        <div class="row">
-                                                            <div class="col-sm-3">
-                                                                <h6 class="mb-0">Full Name</h6>
-                                                            </div>
-                                                            <div class="col-sm-9" style="color: #86B817">
-                                                                {{ $user->name }}
-                                                            </div>
-                                                        </div>
-                                                        <hr>
-                                                        <div class="row">
-                                                            <div class="col-sm-3">
-                                                                <h6 class="mb-0">Email</h6>
-                                                            </div>
-                                                            <div class="col-sm-9" style="color: #86B817">
-                                                                {{ $user->email }}
-                                                            </div>
-                                                        </div>
-                                                        <hr>
-                                                        <div class="row">
-                                                            <div class="col-sm-3">
-                                                                <h6 class="mb-0">Mobile</h6>
-                                                            </div>
-                                                            <div class="col-sm-9" style="color: #86B817">
-                                                                {{ $user->mobile }}
-                                                            </div>
-                                                        </div>
-                                                        <hr>
-                                                        <div class="row">
-                                                            <div class="col-sm-3">
-                                                                <h6 class="mb-0">Address</h6>
-                                                            </div>
-                                                            <div class="col-sm-9" style="color: #86B817">
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                            aria-labelledby="v-pills-profile-tab">
+                            <div class="container">
+                                <div class="main-body">
+                                    <div class="row gutters-sm">
+                                        <div class="col-md-4 mb-3">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="d-flex flex-column align-items-center text-center">
+                                                        <img src="{{ asset($user->profile ?? 'site/img/no-profile.jpg') }}"
+                                                            alt="Admin" class="rounded-circle" width="150">
+                                                        <div class="mt-3">
+                                                            <h4>{{ $user->name }}</h4>
+                                                            <p class="text-muted font-size-sm">
                                                                 {{ $user->city . ' ' . $user->state . ' ' . $user->country }}
-                                                            </div>
-                                                        </div>
-                                                        <hr>
-                                                        <div class="row">
-                                                            <div class="col-sm-12">
-                                                                {{-- <a class="btn btn-info " target="__blank" href="https://www.bootdey.com/snippets/view/profile-edit-data-and-skills">Edit</a> --}}
-                                                                <button class="btn btn-primary edit-profile"
-                                                                    data-id="{{ $user->id }}">Edit</button>
-                                                            </div>
+                                                            </p>
+                                                            <button class="btn btn-primary">Follow</button>
+                                                            <button class="btn btn-outline-primary">Message</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
+                                        <div class="col-md-8">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <div class="row mb-3">
+                                                        <div class="col-sm-3">
+                                                            <h6 class="mb-0">Full Name</h6>
+                                                        </div>
+                                                        <div class="col-sm-9 text-primary">
+                                                            {{ $user->name }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-3">
+                                                        <div class="col-sm-3">
+                                                            <h6 class="mb-0">Email</h6>
+                                                        </div>
+                                                        <div class="col-sm-9 text-primary">
+                                                            {{ $user->email }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-3">
+                                                        <div class="col-sm-3">
+                                                            <h6 class="mb-0">Mobile</h6>
+                                                        </div>
+                                                        <div class="col-sm-9 text-primary">
+                                                            {{ $user->mobile }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mb-3">
+                                                        <div class="col-sm-3">
+                                                            <h6 class="mb-0">Address</h6>
+                                                        </div>
+                                                        <div class="col-sm-9 text-primary">
+                                                            {{ $user->city . ' ' . $user->state . ' ' . $user->country }}
+                                                        </div>
+                                                    </div>
+                                                    <div class="row text-center">
+                                                        <div class="col-sm-12">
+                                                            <button class="btn btn-primary edit-profile"
+                                                                data-id="{{ $user->id }}">Edit</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="v-pills-history" role="tabpanel"
-                                aria-labelledby="v-pills-history-tab">
-                                <table id="profile-table" class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Role</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Role</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Role</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- Table rows will be added dynamically using jQuery -->
-                                        <tr>
-                                            <td>John Doe</td>
-                                            <td>john@example.com</td>
-                                            <td>Admin</td>
-                                            <td>John Doe</td>
-                                            <td>john@example.com</td>
-                                            <td>Admin</td>
-                                            <td>John Doe</td>
-                                            <td>john@example.com</td>
-                                            <td>Admin</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jane Smith</td>
-                                            <td>jane@example.com</td>
-                                            <td>User</td>
-                                            <td>Jane Smith</td>
-                                            <td>jane@example.com</td>
-                                            <td>User</td>
-                                            <td>Jane Smith</td>
-                                            <td>jane@example.com</td>
-                                            <td>User</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Michael Johnson</td>
-                                            <td>michael@example.com</td>
-                                            <td>Moderator</td>
-                                            <td>Michael Johnson</td>
-                                            <td>michael@example.com</td>
-                                            <td>Moderator</td>
-                                            <td>Michael Johnson</td>
-                                            <td>michael@example.com</td>
-                                            <td>Moderator</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!--<div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">This is setting tab.</div>-->
                         </div>
+                        <div class="tab-pane fade" id="v-pills-history" role="tabpanel"
+                            aria-labelledby="v-pills-history-tab">
+                            <div class="container">
+                                <div class="table-responsive">
+                                    <table id="profile-table" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Role</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Role</th>
+                                                <th>Name</th>
+                                                <th>Email</th>
+                                                <th>Role</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>John Doe</td>
+                                                <td>john@example.com</td>
+                                                <td>Admin</td>
+                                                <td>John Doe</td>
+                                                <td>john@example.com</td>
+                                                <td>Admin</td>
+                                                <td>John Doe</td>
+                                                <td>john@example.com</td>
+                                                <td>Admin</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Jane Smith</td>
+                                                <td>jane@example.com</td>
+                                                <td>User</td>
+                                                <td>Jane Smith</td>
+                                                <td>jane@example.com</td>
+                                                <td>User</td>
+                                                <td>Jane Smith</td>
+                                                <td>jane@example.com</td>
+                                                <td>User</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Michael Johnson</td>
+                                                <td>michael@example.com</td>
+                                                <td>Moderator</td>
+                                                <td>Michael Johnson</td>
+                                                <td>michael@example.com</td>
+                                                <td>Moderator</td>
+                                                <td>Michael Johnson</td>
+                                                <td>michael@example.com</td>
+                                                <td>Moderator</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Contact End -->
+    {{-- ##############################################################################################     --}}
 
     {{-- Edit profile Modal --}}
     <div class="modal fade" id="editProfile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
