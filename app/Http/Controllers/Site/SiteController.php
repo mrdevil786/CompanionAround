@@ -81,9 +81,9 @@ class SiteController extends Controller
     {
         return view('site.service');
     }
-    public function packages()
+    public function tour_guides()
     {
-        return view('site.packages');
+        return view('site.tour-guides');
     }
     public function contact()
     {

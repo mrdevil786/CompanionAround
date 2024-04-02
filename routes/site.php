@@ -21,7 +21,7 @@ Route::get('/findCompanion', [SiteController::class, 'findCompanion']);
 Route::get('/login', [SiteController::class, 'login']);
 Route::get('/about', [SiteController::class, 'about']);
 Route::get('/service', [SiteController::class, 'service']);
-Route::get('/packages', [SiteController::class, 'packages']);
+Route::get('/tour-guides', [SiteController::class, 'tour_guides']);
 Route::get('/contact', [SiteController::class, 'contact']);
 
 Route::get('/googleLogin', [TouristsController::class, 'googleLogin']);
