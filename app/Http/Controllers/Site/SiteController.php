@@ -85,7 +85,8 @@ class SiteController extends Controller
 
     public function tour_guides()
     {
-        return view('site.tour-guides');
+        $tourGuides = TourGuide::where('status', 'active')->latest()->get();
+        return view('site.tour-guides', compact('tourGuides'));
     }
 
     public function tour_operators()
@@ -96,11 +97,5 @@ class SiteController extends Controller
     public function contact()
     {
         return view('site.contact');
-    }
-
-    public function getTourGuide()
-    {
-        $tourguides = TourGuide::where('status', 'active')->latest()->get();
-        return $tourguides;
     }
 }

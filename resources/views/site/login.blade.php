@@ -118,7 +118,7 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input class="form-control" placeholder="Password" name="password"
+                                            <input type="password" class="form-control" placeholder="Password" name="password"
                                                 id="message"></input>
                                             <label for="message">Password</label>
                                         </div>
