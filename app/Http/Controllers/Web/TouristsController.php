@@ -35,4 +35,9 @@ class TouristsController extends Controller
 
         return redirect()->route('admin.tourists.index')->with('success', 'User deleted successfully!');
     }
+    public function profile($id)
+    {
+        $tourist = Tourist::with(['touristguide'])->findOrFail($id);
+        return view('admin.tourist.profile', compact('tourist'));
+    }
 }

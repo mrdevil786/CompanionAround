@@ -45,13 +45,14 @@
                                         <td>
                                             <a href="javascript:void(0)" data-bs-toggle="dropdown"
                                                 class="nav-link leading-none d-flex">
-                                                <img src="{{ $tourist->avatar }}"
-                                                    alt="profile-user"
+                                                <img src="{{ $tourist->avatar }}" alt="profile-user"
                                                     class="avatar  profile-user brround cover-image">
                                             </a>
                                         </td>
 
-                                        <td>{{ $tourist->full_name }}</td>
+                                        <td><a
+                                                href="{{ route('admin.tourists.profile', $tourist->id) }}">{{ $tourist->full_name }}</a>
+                                        </td>
 
                                         <td>{{ $tourist->email }}</td>
 
@@ -77,7 +78,7 @@
                                         <td class="text-center">
                                             <x-buttons.action-pill-button iconClass="fa fa-eye" iconColor="secondary" />
                                         </td>
-                                        
+
                                     </tr>
                                 @endforeach
                             </tbody>

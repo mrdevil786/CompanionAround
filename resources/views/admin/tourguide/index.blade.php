@@ -35,7 +35,9 @@
                                 @foreach ($tourGuides as $guide)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $guide->name }}</td>
+                                        <td><a
+                                                href="{{ route('admin.tourguides.profile', $guide->id) }}">{{ $guide->name }}</a>
+                                        </td>
                                         <td>{{ $guide->email }}</td>
                                         <td>{{ $guide->mobile }}</td>
                                         <td>{{ Str::ucfirst($guide->gender) }}</td>

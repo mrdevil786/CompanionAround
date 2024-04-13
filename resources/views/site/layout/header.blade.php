@@ -115,16 +115,20 @@
                         class="nav-item nav-link {{ Request::is('contact') ? 'active' : '' }}">Contact</a>
                 </div>
 
-
-                <a href="{{ url('/findCompanion') }}" class="btn btn-primary rounded-pill py-2 px-4">Find
-                    Companion</a>
-                &nbsp;
-                @guest('tourguard')
-                    <a href="{{ url('/login') }}" class="btn btn-primary rounded-pill py-2 px-4">Login</a>
-                @endguest
-                @auth('tourguard')
+                @if (auth('tourist')->check())
+                    <a href="{{ route('tourist.tourist.index') }}"
+                        class="btn btn-primary rounded-pill py-2 px-4">Dashboard</a>
+                @elseif (auth('tourguard')->check())
                     <a href="{{ route('tourguide.guide.index') }}"
                         class="btn btn-primary rounded-pill py-2 px-4">Dashboard</a>
-                @endauth
+                @else
+                    <a href="{{ url('/login') }}" class="btn btn-primary rounded-pill py-2 px-4">Login</a>
+                    &nbsp;
+                    <a href="{{ url('/findCompanion') }}" class="btn btn-primary rounded-pill py-2 px-4">Find
+                        Companion</a>
+                @endif
+
+                @guest('tourist')
+                @endguest
             </div>
         </nav>

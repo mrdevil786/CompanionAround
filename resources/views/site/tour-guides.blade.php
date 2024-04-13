@@ -68,8 +68,14 @@
                                     <div class="d-flex justify-content-center mb-2">
                                         <a href="#" class="btn btn-sm btn-primary px-3 border-end"
                                             style="border-radius: 30px 0 0 30px;">Read More</a>
-                                        <a href="#" class="btn btn-sm btn-primary px-3"
-                                            style="border-radius: 0 30px 30px 0;">Book Now</a>
+                                        @auth('tourist')
+                                            <a href="javascript:void(0)" data-id="{{ $tourGuide->id }}"
+                                                class="btn btn-sm btn-primary px-3 connect"
+                                                style="border-radius: 0 30px 30px 0;">Book Now</a>
+                                        @else
+                                            <a href="{{ url('/findCompanion') }}" class="btn btn-sm btn-primary px-3"
+                                                style="border-radius: 0 30px 30px 0;">Book Now</a>
+                                        @endauth
                                     </div>
                                 </div>
                             </div>
@@ -180,5 +186,28 @@
 
 @endsection
 @section('website-custom-script')
-
+    <script>
+        $('.connect').on('click', function() {
+            const id = $(this).data('id');
+            if (confirm('Sure you want to connect?')) {
+                Notiflix.Loading.standard('Please wait...');
+                $.ajax({
+                    type: "post",
+                    url: "{{ route('tourist.tourist.connect') }}",
+                    data: {
+                        id: id,
+                        _token: "{{ csrf_token() }}"
+                    },
+                    success: function(response) {
+                        Notiflix.Loading.remove();
+                        if (response.success) {
+                            Notiflix.Notify.success(response.message);
+                            window.location.href = "{{ route('tourist.tourist.index') }}"
+                        }
+                        console.log(response);
+                    }
+                });
+            }
+        });
+    </script>
 @endsection

@@ -9,9 +9,11 @@ Route::get('/profile', function () {
     return view('site.profile');
 });
 
-Route::group(['middleware' => 'tourist'], function () {
-    Route::get('/about', function () {
-        return 'This is about page.';
+Route::prefix('tourist')->name('tourist.')->middleware(['auth:tourist', 'web'])->group(function () {
+    Route::controller(TouristsController::class)->name('tourist.')->group(function () {
+        Route::get('/', 'dashboard')->name('index');
+        Route::post('connect', 'requestConnection')->name('connect');
+        Route::get('/logout', 'logout')->name('logout');
     });
 });
 
@@ -40,5 +42,6 @@ Route::prefix('tourguide')->name('tourguide.')->middleware(['auth:tourguard', 'w
         Route::get('/', 'dashboard')->name('index');
         Route::get('edit', 'edit')->name('edit');
         Route::post('update', 'updateProfile')->name('update');
+        Route::post('request-action', 'requestAction')->name('request-action');
     });
 });
