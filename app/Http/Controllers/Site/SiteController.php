@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Site;
 
 use App\Models\TourGuide;
+use App\Models\TourOperator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -28,22 +29,34 @@ class SiteController extends Controller
             'mobile' => 'required|digits:10',
             'password' => 'required|string'
         ]);
-        $check = TourGuide::where('email', $request->email)->first();
-        if ($check) {
-            return redirect()->back()->with(['error' => 'You have already registered']);
-        }
         if ($request->type === 'tour_guide') {
+            $check = TourGuide::where('email', $request->email)->first();
+            if ($check) {
+                return redirect()->back()->with(['error' => 'You have already registered']);
+            }
             $user = TourGuide::create([
                 'name' => $request->name,
                 'mobile' => $request->mobile,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
             ]);
+            Auth::guard('tourguard')->login($user);
+            $route = route('tourguide.guide.index');
+        }
+        if ($request->type === 'tour_operator') {
+            $user = TourOperator::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'mobile' => $request->mobile,
+                'password' => Hash::make($request->password),
+            ]);
+            Auth::guard('touroperator')->login($user);
+            $route = route('touroperator.operator.index');
         }
 
-        Auth::guard('tourguard')->login($user);
         return response([
             'success' => true,
+            'route' => $route,
             'message' => 'Singup successfully!'
         ]);
     }
@@ -51,7 +64,7 @@ class SiteController extends Controller
     public function postLogin(Request $request)
     {
         $request->validate([
-            'email' => 'required|email|exists:tour_guides,email',
+            'email' => 'required|email',
             'password' => 'required|string'
         ]);
         if ($request->type === 'tour_guide') {
@@ -63,12 +76,24 @@ class SiteController extends Controller
                 ]);
             }
         }
+        if ($request->type === 'tour_operator') {
+            if (Auth::guard('touroperator')->attempt($request->only(['email', 'password']))) {
+                return response([
+                    'success' => true,
+                    'route' => route('touroperator.operator.index'),
+                    'message' => 'Loggedin SUccessfully!'
+                ]);
+            }
+        }
     }
 
     public function logout()
     {
         if (auth('tourguard')->check()) {
             auth('tourguard')->logout();
+        }
+        if (auth('touroperator')->check()) {
+            auth('touroperator')->logout();
         }
         return redirect('/');
     }

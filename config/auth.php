@@ -49,6 +49,10 @@ return [
             'driver' => 'session',
             'provider' => 'tourguards',
         ],
+        'touroperator' => [
+            'driver' => 'session',
+            'provider' => 'touroperators',
+        ],
     ],
 
     /*
@@ -81,6 +85,10 @@ return [
         'tourguards' => [
             'driver' => 'eloquent',
             'model' => App\Models\TourGuide::class,
+        ],
+        'touroperators' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\TourOperator::class,
         ],
     ],
 
