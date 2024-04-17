@@ -118,8 +118,8 @@
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
-                                            <input type="password" class="form-control" placeholder="Password" name="password"
-                                                id="message"></input>
+                                            <input type="password" class="form-control" placeholder="Password"
+                                                name="password" id="message"></input>
                                             <label for="message">Password</label>
                                         </div>
                                     </div>
@@ -157,7 +157,7 @@
                     console.log(response);
                     if (response.success) {
                         Notiflix.Notify.success('SingUp Successfully!');
-                        window.location.href = "{{ route('tourguide.guide.index') }}"
+                        window.location.href = response.route;
                     }
                 }
             });

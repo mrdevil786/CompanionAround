@@ -9,7 +9,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class Tourist extends Authenticatable
 {
-    use HasFactory, Notifiable ;
+    use HasFactory, Notifiable;
 
     protected $guarded = [];
+    public function touristguide()
+    {
+        return $this->hasMany(TouristGuide::class);
+    }
 }

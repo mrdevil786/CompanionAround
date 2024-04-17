@@ -12,4 +12,8 @@ class TourGuide extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
     protected $guarded = [];
+    public function touristguide()
+    {
+        return $this->hasMany(TouristGuide::class);
+    }
 }

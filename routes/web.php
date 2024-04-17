@@ -28,6 +28,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'web', 'chec
         Route::prefix('tourists')->name('tourists.')->group(function () {
             Route::get('/{id}/destroy', [TouristsController::class, 'destroy'])->name('destroy');
             Route::put('status', [TouristsController::class, 'status'])->name('status');
+            Route::get('profile/{id}', [TouristsController::class, 'profile'])->name('profile');
         });
 
         Route::prefix('testimonials')->name('testimonials.')->group(function () {
@@ -36,6 +37,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'web', 'chec
         });
         Route::controller(TourGuideController::class)->prefix('tourguides')->name('tourguides.')->group(function () {
             Route::get('/', 'index')->name('index');
+            Route::get('profile/{id}', 'profile')->name('profile');
             Route::get('/{id}/destroy', 'destroy')->name('destroy');
             Route::put('status', 'status')->name('status');
         });

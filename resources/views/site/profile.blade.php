@@ -37,6 +37,9 @@
                         <button class="nav-link rounded-pill" id="v-pills-profile-tab" data-bs-toggle="pill"
                             data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
                             aria-selected="false">Profile</button>
+                        <button class="nav-link rounded-pill" id="v-pills-connection-request" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-connection" type="button" role="tab"
+                            aria-controls="v-pills-profile" aria-selected="false">Connection Request</button>
                         <button class="nav-link rounded-pill" id="v-pills-history-tab" data-bs-toggle="pill"
                             data-bs-target="#v-pills-history" type="button" role="tab" aria-controls="v-pills-history"
                             aria-selected="false">History</button>
@@ -221,58 +224,89 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="v-pills-history" role="tabpanel"
-                            aria-labelledby="v-pills-history-tab">
+                        <div class="tab-pane fade" id="v-pills-connection" role="tabpanel"
+                            aria-labelledby="v-pills-connection-request">
                             <div class="container">
                                 <div class="table-responsive">
                                     <table id="profile-table" class="table">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
+                                                <th>#Sr.No</th>
+                                                <th>Status</th>
+                                                <th>Action</th>
+                                                <th>Tourist</th>
                                                 <th>Email</th>
-                                                <th>Role</th>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>Role</th>
-                                                <th>Name</th>
-                                                <th>Email</th>
-                                                <th>Role</th>
+                                                <th>Created At</th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @forelse ($connectionRequest as $cr)
+                                                <tr>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td>
+                                                        <span
+                                                            class="badge rounded-pill bg-warning">{{ Str::ucfirst($cr->status) }}</span>
+                                                    </td>
+                                                    <td>
+                                                        <a href="javascript:void()"
+                                                            class="btn btn-sm btn-success requestAction"
+                                                            data-id={{ $cr->id }} data-action="accept"><i
+                                                                class="fa fa-check"></i><br>
+                                                            Accept</a>
+                                                        <a href="javascript:void()"
+                                                            class="btn btn-sm btn-danger requestAction"
+                                                            data-id={{ $cr->id }} data-action="reject"><i
+                                                                class="fa fa-check"></i><br> Reject</a>
+                                                    </td>
+                                                    <td>{{ $cr->tourist->full_name }}</td>
+                                                    <td>{{ $cr->tourist->email }}</td>
+                                                    <td><span class="badge rounded-pill bg-success">
+                                                            {{ date('M jS, Y h:i A', strtotime($cr->created_at)) }}</span>
+                                                    </td>
+                                                </tr>
+                                            @empty
+                                            @endforelse
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-history" role="tabpanel"
+                            aria-labelledby="v-pills-history-tab">
+                            <div class="container">
+                                <div class="table-responsive">
+                                    <table id="history-table" class="table">
+                                        <thead>
                                             <tr>
-                                                <td>John Doe</td>
-                                                <td>john@example.com</td>
-                                                <td>Admin</td>
-                                                <td>John Doe</td>
-                                                <td>john@example.com</td>
-                                                <td>Admin</td>
-                                                <td>John Doe</td>
-                                                <td>john@example.com</td>
-                                                <td>Admin</td>
+                                                <th>#Sr.No</th>
+                                                <th>Status</th>
+                                                <th>Tourist</th>
+                                                <th>Email</th>
+                                                <th>Connected At</th>
                                             </tr>
-                                            <tr>
-                                                <td>Jane Smith</td>
-                                                <td>jane@example.com</td>
-                                                <td>User</td>
-                                                <td>Jane Smith</td>
-                                                <td>jane@example.com</td>
-                                                <td>User</td>
-                                                <td>Jane Smith</td>
-                                                <td>jane@example.com</td>
-                                                <td>User</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Michael Johnson</td>
-                                                <td>michael@example.com</td>
-                                                <td>Moderator</td>
-                                                <td>Michael Johnson</td>
-                                                <td>michael@example.com</td>
-                                                <td>Moderator</td>
-                                                <td>Michael Johnson</td>
-                                                <td>michael@example.com</td>
-                                                <td>Moderator</td>
-                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @forelse ($connectionHistory as $history)
+                                                <tr>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td>
+                                                        <span
+                                                            class="badge rounded-pill bg-warning">{{ Str::ucfirst($history->status) }}</span>
+                                                    </td>
+                                                    <td>{{ $history->tourist->full_name }}</td>
+                                                    <td>{{ $history->tourist->email }}</td>
+                                                    <td>
+                                                        @if ($history->status == 'accept')
+                                                            <span class="badge rounded-pill bg-success">
+                                                                {{ date('M jS, Y h:i A', strtotime($history->connected_at)) }}</span>
+                                                        @else
+                                                            {{ '-' }}
+                                                        @endif
+                                                    </td>
+                                                </tr>
+
+                                            @empty
+                                            @endforelse
                                         </tbody>
                                     </table>
                                 </div>
@@ -421,6 +455,13 @@
                 }
             }
         });
+        new DataTable('#history-table', {
+            layout: {
+                topStart: {
+                    buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                }
+            }
+        });
 
         $(document).on('change', '#guide_type', function() {
             const value = $(this).val();
@@ -460,6 +501,38 @@
                 });
             }
             $(modal).modal('show');
+        });
+
+        $('.requestAction').on('click', function() {
+            const id = $(this).data('id');
+            const action = $(this).data('action');
+            if (confirm('Sure you want ' + action + ' ?')) {
+                Notiflix.Loading.standard('Please wait...');
+                $.ajax({
+                    type: "post",
+                    url: "{{ route('tourguide.guide.request-action') }}",
+                    data: {
+                        id: id,
+                        _token: "{{ csrf_token() }}",
+                        action: action
+                    },
+                    success: function(response) {
+                        Notiflix.Loading.remove();
+                        if (response.success == 'accepted') {
+                            Notiflix.Notify.success(response.message);
+                            setTimeout(() => {
+                                location.reload();
+                            }, 500);
+                        } else if (response.success == 'rejected') {
+                            Notiflix.Notify.failure(response.message);
+                            setTimeout(() => {
+                                location.reload();
+                            }, 500);
+                        }
+                        console.log(response);
+                    }
+                });
+            }
         });
     </script>
 @endsection

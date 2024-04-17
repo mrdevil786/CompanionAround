@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Site;
 use App\Helpers\FileUploader;
 use App\Http\Controllers\Controller;
 use App\Models\TourGuide;
+use App\Models\TouristGuide;
 use Illuminate\Http\Request;
 
 class TourGuideController extends Controller
@@ -12,7 +13,9 @@ class TourGuideController extends Controller
     public function dashboard()
     {
         $user = TourGuide::findOrFail(auth('tourguard')->user()->id);
-        return view('site.profile', compact('user'));
+        $connectionHistory = TouristGuide::with(['tourist', 'tourguide'])->where('status', '!=', 'pending')->where('tour_guide_id', auth('tourguard')->user()->id)->get();
+        $connectionRequest = TouristGuide::with(['tourist', 'tourguide'])->where('status', '=', 'pending')->where('tour_guide_id', auth('tourguard')->user()->id)->get();
+        return view('site.profile', compact('user', 'connectionHistory', 'connectionRequest'));
     }
 
     public function edit(Request $request)
@@ -54,5 +57,33 @@ class TourGuideController extends Controller
         $user->status = 'active';
         $user->save();
         return redirect()->back()->with('success', 'Profile detail updated successfully!');
+    }
+
+    public function requestAction(Request $request)
+    {
+        $request->validate([
+            'id' => 'required|numeric',
+            'action' => 'required|in:accept,reject'
+        ]);
+        // return $request->all();
+        $tourist = TouristGuide::findOrFail($request->id);
+        if ($request->action == 'accept') {
+            $tourist->update([
+                'status' => 'accepted',
+                'connected_at' => now(),
+            ]);
+            return response([
+                'success' => 'accepted',
+                'message' => 'Request accepted successfully!'
+            ]);
+        } elseif ($request->action == 'reject') {
+            $tourist->update([
+                'status' => 'rejected',
+            ]);
+            return response([
+                'success' => 'rejected',
+                'message' => 'Request rejected successfully!'
+            ]);
+        }
     }
 }
