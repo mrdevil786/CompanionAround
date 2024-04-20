@@ -477,7 +477,7 @@
             if (id) {
                 $.ajax({
                     type: "get",
-                    url: "{{ route('tourguide.guide.edit', '+id+') }}",
+                    url: "{{ route('touroperator.guide.edit', '+id+') }}",
                     data: {
                         id: id,
                         _token: "{{ csrf_token() }}"
@@ -509,7 +509,7 @@
                 Notiflix.Loading.standard('Please wait...');
                 $.ajax({
                     type: "post",
-                    url: "{{ route('tourguide.guide.request-action') }}",
+                    url: "{{ route('touroperator.guide.request-action') }}",
                     data: {
                         id: id,
                         _token: "{{ csrf_token() }}",
