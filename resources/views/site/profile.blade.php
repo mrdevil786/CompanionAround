@@ -1,6 +1,6 @@
 @extends('site.layout.main')
 
-@section('website-page-title', 'Profile')
+@section('website-page-title', 'Tour-Guide Profile')
 @section('website-custom-style')
     <style>
     </style>
