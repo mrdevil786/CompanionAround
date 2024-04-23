@@ -31,14 +31,14 @@
             <div class="row g-4">
                 <div class="col-lg-2">
                     <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <button class="nav-link rounded-pill active" id="v-pills-home-tab" data-bs-toggle="pill"
+                        <button class="nav-link rounded-1 active" id="v-pills-home-tab" data-bs-toggle="pill"
                             data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
                             aria-selected="true">Dashboard</button>
-                        <button class="nav-link rounded-pill" id="v-pills-history-tab" data-bs-toggle="pill"
+                        <button class="nav-link rounded-1" id="v-pills-history-tab" data-bs-toggle="pill"
                             data-bs-target="#v-pills-history" type="button" role="tab" aria-controls="v-pills-history"
                             aria-selected="false">History</button>
                         <div class="col-12 mt-5">
-                            <a href="{{ route('tourist.tourist.logout') }}" class="btn btn-secondary rounded-pill w-100"
+                            <a href="{{ route('tourist.tourist.logout') }}" class="btn btn-secondary rounded-1 w-100"
                                 type="submit">Logout <i class="fas fa-sign-out-alt ms-2"></i>
                             </a>
                         </div>
