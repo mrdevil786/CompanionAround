@@ -329,7 +329,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ route('tourguide.guide.update') }}" enctype="multipart/form-data" method="post">
+                    <form action="{{ route('touroperator.operator.update') }}" enctype="multipart/form-data" method="post">
                         @csrf
                         <div class="row">
                             <div class="col-lg-4 col-12">
@@ -494,7 +494,7 @@
             if (id) {
                 $.ajax({
                     type: "get",
-                    url: "{{ route('touroperator.guide.edit', '+id+') }}",
+                    url: "{{ route('touroperator.operator.edit', '+id+') }}",
                     data: {
                         id: id,
                         _token: "{{ csrf_token() }}"
@@ -526,7 +526,7 @@
                 Notiflix.Loading.standard('Please wait...');
                 $.ajax({
                     type: "post",
-                    url: "{{ route('touroperator.guide.request-action') }}",
+                    url: "{{ route('touroperator.operator.request-action') }}",
                     data: {
                         id: id,
                         _token: "{{ csrf_token() }}",

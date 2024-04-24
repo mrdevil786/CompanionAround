@@ -6,6 +6,7 @@ use App\Models\TourOperator;
 use Illuminate\Http\Request;
 use App\Helpers\FileUploader;
 use App\Http\Controllers\Controller;
+use App\Models\TourGuide;
 
 class TourOperatorController extends Controller
 {
@@ -54,5 +55,33 @@ class TourOperatorController extends Controller
         $user->status = 'active';
         $user->save();
         return redirect()->back()->with('success', 'Profile detail updated successfully!');
+    }
+
+    public function requestAction(Request $request)
+    {
+        $request->validate([
+            'id' => 'required|numeric',
+            'action' => 'required|in:accept,reject'
+        ]);
+        // return $request->all();
+        $tourist = TourGuide::findOrFail($request->id);
+        if ($request->action == 'accept') {
+            $tourist->update([
+                'status' => 'accepted',
+                'connected_at' => now(),
+            ]);
+            return response([
+                'success' => 'accepted',
+                'message' => 'Request accepted successfully!'
+            ]);
+        } elseif ($request->action == 'reject') {
+            $tourist->update([
+                'status' => 'rejected',
+            ]);
+            return response([
+                'success' => 'rejected',
+                'message' => 'Request rejected successfully!'
+            ]);
+        }
     }
 }
