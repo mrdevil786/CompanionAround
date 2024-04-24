@@ -121,6 +121,9 @@
                 @elseif (auth('tourguard')->check())
                     <a href="{{ route('tourguide.guide.index') }}"
                         class="btn btn-primary rounded-1 py-2 px-4">Dashboard</a>
+                @elseif (auth('touroperator')->check())
+                    <a href="{{ route('touroperator.operator.index') }}"
+                        class="btn btn-primary rounded-1 py-2 px-4">Dashboard</a>
                 @else
                     <a href="{{ url('/login') }}" class="btn btn-primary rounded-1 py-2 px-4">Login</a>
                     &nbsp;
