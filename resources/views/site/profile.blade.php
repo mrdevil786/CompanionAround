@@ -1,12 +1,21 @@
 @extends('site.layout.main')
 
-@section('website-page-title', 'Profile')
+@section('website-page-title', 'Tour-Guide Profile')
 @section('website-custom-style')
     <style>
     </style>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.0.1/css/buttons.dataTables.css">
+    <script>
+$(document).ready(function() {
+    $('#datatable').dataTable();
+    
+     $("[data-toggle=tooltip]").tooltip();
+    
+} );
+
+</script>
 @endsection
 
 @section('website-main-section')
@@ -31,20 +40,20 @@
             <div class="row g-4">
                 <div class="col-lg-2">
                     <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <button class="nav-link rounded-pill active" id="v-pills-home-tab" data-bs-toggle="pill"
+                        <button class="nav-link rounded-1 active" id="v-pills-home-tab" data-bs-toggle="pill"
                             data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home"
                             aria-selected="true">Dashboard</button>
-                        <button class="nav-link rounded-pill" id="v-pills-profile-tab" data-bs-toggle="pill"
+                        <button class="nav-link rounded-1" id="v-pills-profile-tab" data-bs-toggle="pill"
                             data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
                             aria-selected="false">Profile</button>
-                        <button class="nav-link rounded-pill" id="v-pills-connection-request" data-bs-toggle="pill"
+                        <button class="nav-link rounded-1" id="v-pills-connection-request" data-bs-toggle="pill"
                             data-bs-target="#v-pills-connection" type="button" role="tab"
                             aria-controls="v-pills-profile" aria-selected="false">Connection Request</button>
-                        <button class="nav-link rounded-pill" id="v-pills-history-tab" data-bs-toggle="pill"
+                        <button class="nav-link rounded-1" id="v-pills-history-tab" data-bs-toggle="pill"
                             data-bs-target="#v-pills-history" type="button" role="tab" aria-controls="v-pills-history"
                             aria-selected="false">History</button>
                         <div class="col-12 mt-5">
-                            <a href="{{ route('logout') }}" class="btn btn-secondary rounded-pill w-100"
+                            <a href="{{ route('logout') }}" class="btn btn-secondary rounded-1 w-100"
                                 type="submit">Logout <i class="fas fa-sign-out-alt ms-2"></i>
                             </a>
                         </div>
@@ -332,73 +341,82 @@
                 <div class="modal-body">
                     <form action="{{ route('tourguide.guide.update') }}" enctype="multipart/form-data" method="post">
                         @csrf
+
                         <div class="row">
                             <div class="col-lg-4 col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" name="name"
+                            <label for="name">Your Name</label>
+                                    <input type="text" class="form-control rounded-1" id="name" name="name"
                                         placeholder="Your Name">
-                                    <label for="name">Your Name</label>
-                                </div>
+                                    
+                             
                             </div>
                             <div class="col-lg-4 col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="email" name="email"
+                            <label for="email">Your Email</label>
+                                    <input type="text" class="form-control rounded-1" id="email" name="email"
                                         placeholder="Your Email">
-                                    <label for="email">Your Email</label>
-                                </div>
+                                   
+                              
                             </div>
                             <div class="col-lg-4 col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="mobile" name="mobile"
+                            <label for="mobile">Your Mobile</label>
+                                    <input type="text" class="form-control rounded-1" id="mobile" name="mobile"
                                         placeholder="Your Mobile">
-                                    <label for="mobile">Your Mobile</label>
-                                </div>
+                                    
+                               
                             </div>
+                        </div>
+                        <br>
+                        <div class="row">
                             <div class="col-lg-4 col-12">
-                                <div class="form-floating">
-                                    <select name="guide_type" id="guide_type" class="form-control">
+                            <label for="guide_type">Guide Type</label>
+                                    <select name="guide_type" id="guide_type" class="form-control rounded-1">
                                         <option value="" selected disabled>Select Guide Type</option>
                                         <option value="free">Free</option>
                                         <option value="chargeable">Chargeable</option>
                                     </select>
-                                    <label for="guide_type">Guide Type</label>
-                                </div>
+                                   
+                                
                             </div>
                             <div class="col-lg-4 col-12 charges-div">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="charges" name="charges"
+                            <label for="charges">Your Charges</label>
+                                    <input type="text" class="form-control rounded-1" id="charges" name="charges"
                                         placeholder="Your Charges">
-                                    <label for="charges">Your Charges</label>
-                                </div>
+                                    
+                                
                             </div>
                             <div class="col-lg-4 col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="city" name="city"
+                            <label for="city">Your City</label>
+                                    <input type="text" class="form-control rounded-1" id="city" name="city"
                                         placeholder="Your City">
-                                    <label for="city">Your City</label>
-                                </div>
+                                   
                             </div>
+                        </div>
+                            <br/>
+                            <div class="row">
                             <div class="col-lg-4 col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="state" name="state"
+                            <label for="state">Your State</label>
+                                    <input type="text" class="form-control rounded-1" id="state" name="state"
                                         placeholder="Your State">
-                                    <label for="state">Your State</label>
-                                </div>
+                                    
+                              
                             </div>
                             <div class="col-lg-4 col-12">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="country" name="country"
+                            <label for="country">Your Country</label>
+                                    <input type="text" class="form-control rounded-1" id="country" name="country"
                                         placeholder="Your Country">
-                                    <label for="country">Your Country</label>
-                                </div>
+                                   
+                                
                             </div>
                             <div class="col-lg-4 col-12">
-                                <div class="form-floating">
-                                    <input type="file" class="form-control" id="profile" name="profile"
+                            <label for="profile">Profile</label>
+                                    <input type="file" class="form-control rounded-1" id="profile" name="profile"
                                         placeholder="Upload Profile">
-                                    <label for="profile">Profile</label>
-                                </div>
+                                   
+                                
                             </div>
+                            </div>
+                            <br/>
+                            <div class="row">
                             <div class="col-lg-4 col-12">
                                 <label for="gender">Gender</label>
                                 <div class="form-check form-check-inline">
@@ -417,16 +435,23 @@
                                     <label class="form-check-label" for="inlineRadio3">Other</label>
                                 </div>
                             </div>
-                            <div class="col-lg-12 col-12">
-                                <div class="form-floating">
-                                    <textarea name="short_description" id="short_description" rows="5"></textarea>
-                                    <label for="short_description">Short Description</label>
-                                </div>
                             </div>
-                            <div class="col-lg-12 col-12 text-center">
-                                <button type="submit" class="btn btn-sm btn-success">Submit</button>
+                            <br/>
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                            <div class="form-group">
+                                <label for="short_description">Short Description</label>
+                                <textarea class="form-control rounded-1" name="short_description" id="short_description" rows="2"></textarea>
+                            </div>                               
                             </div>
                         </div>
+                        <br/>
+                        <div class="row">
+                            <div class="col-lg-12 col-12 text-center">
+                                <button type="submit" class="btn btn-md btn-success rounded-1">Submit</button>
+                            </div>
+                        </div>
+
                     </form>
                 </div>
             </div>

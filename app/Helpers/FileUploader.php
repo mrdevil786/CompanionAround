@@ -20,9 +20,15 @@ class FileUploader
             $extension = $uploadedFile->getClientOriginalExtension();
             $fileName = Str::random(25) . '.' . $extension;
 
+            $publicPath = public_path();
+
+            if (!is_dir($publicPath . '/' . $targetPath)) {
+                mkdir($publicPath . '/' . $targetPath, 0777, true);
+            }
+
             $filePath = $targetPath ? $targetPath . '/' . $fileName : $fileName;
 
-            $uploadedFile->storeAs($targetPath, $fileName);
+            $uploadedFile->move($publicPath . '/' . $targetPath, $fileName);
 
             return $filePath;
         } catch (Exception $e) {

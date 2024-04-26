@@ -117,14 +117,17 @@
 
                 @if (auth('tourist')->check())
                     <a href="{{ route('tourist.tourist.index') }}"
-                        class="btn btn-primary rounded-pill py-2 px-4">Dashboard</a>
+                        class="btn btn-primary rounded-1 py-2 px-4">Dashboard</a>
                 @elseif (auth('tourguard')->check())
                     <a href="{{ route('tourguide.guide.index') }}"
-                        class="btn btn-primary rounded-pill py-2 px-4">Dashboard</a>
+                        class="btn btn-primary rounded-1 py-2 px-4">Dashboard</a>
+                @elseif (auth('touroperator')->check())
+                    <a href="{{ route('touroperator.operator.index') }}"
+                        class="btn btn-primary rounded-1 py-2 px-4">Dashboard</a>
                 @else
-                    <a href="{{ url('/login') }}" class="btn btn-primary rounded-pill py-2 px-4">Login</a>
+                    <a href="{{ url('/login') }}" class="btn btn-primary rounded-1 py-2 px-4">Login</a>
                     &nbsp;
-                    <a href="{{ url('/findCompanion') }}" class="btn btn-primary rounded-pill py-2 px-4">Find
+                    <a href="{{ url('/findCompanion') }}" class="btn btn-primary rounded-1 py-2 px-4">Find
                         Companion</a>
                 @endif
 

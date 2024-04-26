@@ -33,7 +33,7 @@ Route::get('/auth/google/callback', [TouristsController::class, 'googleHandle'])
 
 Route::controller(SiteController::class)->group(function () {
     Route::get('/login', 'login')->name('login');
-    Route::get('/logout', 'logout')->name('logout');    
+    Route::get('/logout', 'logout')->name('logout');
     Route::post('/post-signup', 'signUp')->name('post-signup');
     Route::post('/post-login', 'postLogin')->name('post-login');
     Route::get('get-tourguide', 'getTourGuide')->name('get-tourguide');
@@ -51,5 +51,6 @@ Route::prefix('touroperator')->name('touroperator.')->middleware(['auth:touroper
         Route::get('/', 'dashboard')->name('index');
         Route::get('edit', 'edit')->name('edit');
         Route::post('update', 'updateProfile')->name('update');
+        Route::post('request-action', 'requestAction')->name('request-action');
     });
 });

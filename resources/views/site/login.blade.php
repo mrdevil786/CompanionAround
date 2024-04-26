@@ -29,12 +29,12 @@
                     <ul class="nav nav-pills mb-5 justify-content-center" id="pills-tab" role="tablist">
 
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link rounded-pill active me-3" id="pills-home-tab" data-bs-toggle="pill"
+                            <button class="nav-link rounded-1 active me-3" id="pills-home-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
                                 aria-selected="true" style="border: 1px solid #86B817;">Login</button>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <button class="nav-link rounded-pill" id="pills-profile-tab" data-bs-toggle="pill"
+                            <button class="nav-link rounded-1" id="pills-profile-tab" data-bs-toggle="pill"
                                 data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
                                 aria-selected="false" style="border: 1px solid #86B817;">Signup</button>
                         </li>

@@ -51,9 +51,11 @@ class TourGuideController extends Controller
         $user->state = $request->state;
         $user->city = $request->city;
         $user->short_description = $request->short_description;
-        if ($request->profile) {
-            $user->profile = FileUploader::uploadFile($request->profile, 'images/tour-guides');
+
+        if ($request->hasFile('profile')) {
+            $user->profile = FileUploader::uploadFile($request->file('profile'), 'storage/images/tour-guides', $user->profile);
         }
+
         $user->status = 'active';
         $user->save();
         return redirect()->back()->with('success', 'Profile detail updated successfully!');
