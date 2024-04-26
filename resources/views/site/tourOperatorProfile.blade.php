@@ -25,6 +25,7 @@
             </div>
         </div>
     </div>
+    {{ auth('touroperator')->user()->name }}
     <!-- Navbar & Hero End -->
 @endsection
 @section('website-custom-script')
