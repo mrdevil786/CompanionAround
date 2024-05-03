@@ -333,114 +333,70 @@
                         method="post">
                         @csrf
                         <div class="row">
-                            <div class="col-lg-4 col-12">
-                                <label for="name">Your Name</label>
+
+                            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                                <label for="name">Business Name</label>
                                 <input type="text" class="form-control rounded-1" id="name" name="name"
-                                    placeholder="Your Name">
-
-
+                                    placeholder="Business Name">
                             </div>
-                            <div class="col-lg-4 col-12">
-                                <label for="email">Your Email</label>
+
+                            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                                <label for="email">Business Email</label>
                                 <input type="text" class="form-control rounded-1" id="email" name="email"
-                                    placeholder="Your Email">
-
-
+                                    placeholder="Business Email">
                             </div>
-                            <div class="col-lg-4 col-12">
-                                <label for="mobile">Your Mobile</label>
+
+                            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                                <label for="mobile">Business Mobile</label>
                                 <input type="text" class="form-control rounded-1" id="mobile" name="mobile"
-                                    placeholder="Your Mobile">
-
-
+                                    placeholder="Business Mobile">
                             </div>
-                        </div>
-                        <br />
-                        <div class="row">
-                            <div class="col-lg-4 col-12">
-                                <label for="guide_type">Guide Type</label>
-                                <select name="guide_type" id="guide_type" class="form-control rounded-1">
-                                    <option value="" selected disabled>Select Guide Type</option>
-                                    <option value="free">Free</option>
-                                    <option value="chargeable">Chargeable</option>
-                                </select>
 
-
-                            </div>
-                            <div class="col-lg-4 col-12 charges-div">
-                                <label for="charges">Your Charges</label>
-                                <input type="text" class="form-control rounded-1" id="charges" name="charges"
-                                    placeholder="Your Charges">
-
-
-                            </div>
-                            <div class="col-lg-4 col-12">
-                                <label for="city">Your City</label>
-                                <input type="text" class="form-control rounded-1" id="city" name="city"
-                                    placeholder="Your City">
-
-
-                            </div>
-                        </div>
-                        <br />
-                        <div class="row">
-
-                            <div class="col-lg-4 col-12">
-                                <label for="state">Your State</label>
-                                <input type="text" class="form-control rounded-1" id="state" name="state"
-                                    placeholder="Your State">
-
-
-                            </div>
-                            <div class="col-lg-4 col-12">
+                            <div class="col-lg-4 col-md-6 col-12 mb-3">
                                 <label for="country">Your Country</label>
                                 <input type="text" class="form-control rounded-1" id="country" name="country"
                                     placeholder="Your Country">
-
-
                             </div>
-                            <div class="col-lg-4 col-12">
-                                <label for="profile">Profile</label>
+
+                            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                                <label for="state">Your State</label>
+                                <input type="text" class="form-control rounded-1" id="state" name="state"
+                                    placeholder="Your State">
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                                <label for="city">Your City</label>
+                                <input type="text" class="form-control rounded-1" id="city" name="city"
+                                    placeholder="Your City">
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-12 mb-3">
+                                <label for="zipcode">Zipcode</label>
+                                <input type="text" class="form-control rounded-1" id="zipcode" name="zipcode"
+                                    placeholder="Zipcode">
+                            </div>
+
+                            <div class="col-lg-6 col-md-6 col-12 mb-3">
+                                <label for="profile">Business Logo</label>
                                 <input type="file" class="form-control rounded-1" id="profile" name="profile"
-                                    placeholder="Upload Profile">
-
-
+                                    placeholder="Business Logo">
                             </div>
-                        </div>
-                        <br />
-                        <div class="row">
-                            <div class="col-lg-4 col-12">
-                                <label for="gender">Gender</label>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio2"
-                                        value="male">
-                                    <label class="form-check-label" for="inlineRadio2">Male</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio1"
-                                        value="female">
-                                    <label class="form-check-label" for="inlineRadio1">Female</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio3"
-                                        value="other">
-                                    <label class="form-check-label" for="inlineRadio3">Other</label>
+
+                            <div class="col-lg-6 col-md-6 col-12 mb-3">
+                                <div class="form-group">
+                                    <label for="address">Address</label>
+                                    <textarea class="form-control rounded-1" name="address" id="address" rows="2"></textarea>
                                 </div>
                             </div>
-                        </div>
-                        <br />
 
-                        <div class="row">
-                            <div class="col-lg-12 col-12">
+                            <div class="col-lg-6 col-md-6 col-12 mb-3">
                                 <div class="form-group">
                                     <label for="short_description">Short Description</label>
                                     <textarea class="form-control rounded-1" name="short_description" id="short_description" rows="2"></textarea>
                                 </div>
                             </div>
-                        </div>
-                        <br />
-                        <div class="row">
-                            <div class="col-lg-12 col-12 text-center">
+                            
+                            <div class="col-12 text-center">
                                 <button type="submit" class="btn btn-md btn-success rounded-1">Submit</button>
                             </div>
                         </div>
