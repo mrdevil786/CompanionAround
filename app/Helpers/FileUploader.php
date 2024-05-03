@@ -16,24 +16,22 @@ class FileUploader
             if ($deleteOldFile) {
                 Storage::delete($deleteOldFile);
             }
-
+    
             $extension = $uploadedFile->getClientOriginalExtension();
             $fileName = Str::random(25) . '.' . $extension;
-
-            $publicPath = public_path();
-
-            if (!is_dir($publicPath . '/' . $targetPath)) {
-                mkdir($publicPath . '/' . $targetPath, 0777, true);
+    
+            if (!is_dir(public_path($targetPath))) {
+                mkdir(public_path($targetPath), 0777, true);
             }
-
-            $filePath = $targetPath ? $targetPath . '/' . $fileName : $fileName;
-
-            $uploadedFile->move($publicPath . '/' . $targetPath, $fileName);
-
+    
+            $filePath = $targetPath . '/' . $fileName;
+    
+            $uploadedFile->move(public_path($targetPath), $fileName);
+    
             return $filePath;
         } catch (Exception $e) {
             Log::error('Exception in file upload: ' . $e->getMessage());
             throw new Exception("Failed to upload file: " . $e->getMessage());
         }
-    }
+    }           
 }

@@ -6,7 +6,6 @@ use App\Models\TourOperator;
 use Illuminate\Http\Request;
 use App\Helpers\FileUploader;
 use App\Http\Controllers\Controller;
-use App\Models\TourGuide;
 
 class TourOperatorController extends Controller
 {
@@ -49,7 +48,7 @@ class TourOperatorController extends Controller
         $user->description = $request->description;
 
         if ($request->hasFile('logo')) {
-            $user->logo = FileUploader::uploadFile($request->file('logo'), 'storage/images/tour-guides', $user->logo);
+            $user->logo = FileUploader::uploadFile($request->file('logo'), 'images/tour-guides', $user->logo);
         }
 
         $user->status = 'active';
