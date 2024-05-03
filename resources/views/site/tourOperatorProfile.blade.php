@@ -169,7 +169,7 @@
                                                                 {{ $user->city . ' ' . $user->state . ' ' . $user->country }}
                                                             </p>
                                                             <button class="btn btn-primary">Follow</button>
-                                                            <button class="btn btn-outline-primary">Message</button>
+                                                            <button class="btn btn-primary">Message</button>
                                                         </div>
                                                     </div>
                                                 </div>

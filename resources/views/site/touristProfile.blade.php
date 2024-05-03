@@ -53,11 +53,11 @@
                                     <div class="service-item rounded pt-3">
                                         <div class="p-4">
                                             <div class="d-flex justify-content-start align-items-center mb-2">
-                                                <i class="fa fa-3x fa-globe text-primary mr-2"></i>
+                                                <i class="fa fa-3x fa-hourglass-half text-primary mr-2"></i>
                                                 <h5 class="mb-0" style="margin-left: 60px !important">
                                                     {{ $totalPendingRequest ?? 0 }}</h5>
                                             </div>
-                                            <h5 style="text-align:center">Total Pending Request</h5>
+                                            <h5 style="text-align:center">Pending Request</h5>
                                             {{-- <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p> --}}
                                         </div>
                                     </div>
@@ -66,7 +66,7 @@
                                     <div class="service-item rounded pt-3">
                                         <div class="p-4">
                                             <div class="d-flex justify-content-start align-items-center mb-2">
-                                                <i class="fa fa-3x fa-globe text-primary mr-2"></i>
+                                                <i class="fa fa-3x fa-link text-primary mr-2"></i>
                                                 <h5 class="mb-0" style="margin-left: 60px !important">
                                                     {{ $totalConnected ?? 0 }}</h5>
                                             </div>
