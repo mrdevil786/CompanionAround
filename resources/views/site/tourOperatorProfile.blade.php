@@ -43,8 +43,8 @@
                             data-bs-target="#v-pills-history" type="button" role="tab" aria-controls="v-pills-history"
                             aria-selected="false">History</button>
                         <div class="col-12 mt-5">
-                            <a href="{{ route('logout') }}" class="btn btn-secondary rounded-1 w-100"
-                                type="submit">Logout <i class="fas fa-sign-out-alt ms-2"></i>
+                            <a href="{{ route('logout') }}" class="btn btn-secondary rounded-1 w-100" type="submit">Logout
+                                <i class="fas fa-sign-out-alt ms-2"></i>
                             </a>
                         </div>
                     </div>
@@ -329,85 +329,86 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="{{ route('touroperator.operator.update') }}" enctype="multipart/form-data" method="post">
+                    <form action="{{ route('touroperator.operator.update') }}" enctype="multipart/form-data"
+                        method="post">
                         @csrf
                         <div class="row">
                             <div class="col-lg-4 col-12">
-                            <label for="name">Your Name</label>
-                                    <input type="text" class="form-control rounded-1" id="name" name="name"
-                                        placeholder="Your Name">
-                                  
-                                
+                                <label for="name">Your Name</label>
+                                <input type="text" class="form-control rounded-1" id="name" name="name"
+                                    placeholder="Your Name">
+
+
                             </div>
                             <div class="col-lg-4 col-12">
-                            <label for="email">Your Email</label>
-                                    <input type="text" class="form-control rounded-1" id="email" name="email"
-                                        placeholder="Your Email">
-                                    
-                                
+                                <label for="email">Your Email</label>
+                                <input type="text" class="form-control rounded-1" id="email" name="email"
+                                    placeholder="Your Email">
+
+
                             </div>
                             <div class="col-lg-4 col-12">
-                            <label for="mobile">Your Mobile</label>
-                                    <input type="text" class="form-control rounded-1" id="mobile" name="mobile"
-                                        placeholder="Your Mobile">
-                                   
-                                
+                                <label for="mobile">Your Mobile</label>
+                                <input type="text" class="form-control rounded-1" id="mobile" name="mobile"
+                                    placeholder="Your Mobile">
+
+
                             </div>
                         </div>
-                        <br/>
-                            <div class="row">
+                        <br />
+                        <div class="row">
                             <div class="col-lg-4 col-12">
-                            <label for="guide_type">Guide Type</label>
-                                    <select name="guide_type" id="guide_type" class="form-control rounded-1">
-                                        <option value="" selected disabled>Select Guide Type</option>
-                                        <option value="free">Free</option>
-                                        <option value="chargeable">Chargeable</option>
-                                    </select>
-                                    
-                                
+                                <label for="guide_type">Guide Type</label>
+                                <select name="guide_type" id="guide_type" class="form-control rounded-1">
+                                    <option value="" selected disabled>Select Guide Type</option>
+                                    <option value="free">Free</option>
+                                    <option value="chargeable">Chargeable</option>
+                                </select>
+
+
                             </div>
                             <div class="col-lg-4 col-12 charges-div">
-                            <label for="charges">Your Charges</label>
-                                    <input type="text" class="form-control rounded-1" id="charges" name="charges"
-                                        placeholder="Your Charges">
-                                    
-                               
+                                <label for="charges">Your Charges</label>
+                                <input type="text" class="form-control rounded-1" id="charges" name="charges"
+                                    placeholder="Your Charges">
+
+
                             </div>
                             <div class="col-lg-4 col-12">
-                            <label for="city">Your City</label>
-                                    <input type="text" class="form-control rounded-1" id="city" name="city"
-                                        placeholder="Your City">
-                                   
-                                
+                                <label for="city">Your City</label>
+                                <input type="text" class="form-control rounded-1" id="city" name="city"
+                                    placeholder="Your City">
+
+
                             </div>
-                                            </div>
-                                            <br/>
-                                            <div class="row">
+                        </div>
+                        <br />
+                        <div class="row">
 
                             <div class="col-lg-4 col-12">
-                            <label for="state">Your State</label>
-                                    <input type="text" class="form-control rounded-1" id="state" name="state"
-                                        placeholder="Your State">
-                                    
-                               
+                                <label for="state">Your State</label>
+                                <input type="text" class="form-control rounded-1" id="state" name="state"
+                                    placeholder="Your State">
+
+
                             </div>
                             <div class="col-lg-4 col-12">
-                            <label for="country">Your Country</label>
-                                    <input type="text" class="form-control rounded-1" id="country" name="country"
-                                        placeholder="Your Country">
-                                   
-                               
+                                <label for="country">Your Country</label>
+                                <input type="text" class="form-control rounded-1" id="country" name="country"
+                                    placeholder="Your Country">
+
+
                             </div>
                             <div class="col-lg-4 col-12">
-                            <label for="profile">Profile</label>
-                                    <input type="file" class="form-control rounded-1" id="profile" name="profile"
-                                        placeholder="Upload Profile">
-                                   
-                               
+                                <label for="profile">Profile</label>
+                                <input type="file" class="form-control rounded-1" id="profile" name="profile"
+                                    placeholder="Upload Profile">
+
+
                             </div>
-                                            </div>
-                                            <br/>
-                                            <div class="row">
+                        </div>
+                        <br />
+                        <div class="row">
                             <div class="col-lg-4 col-12">
                                 <label for="gender">Gender</label>
                                 <div class="form-check form-check-inline">
@@ -426,9 +427,9 @@
                                     <label class="form-check-label" for="inlineRadio3">Other</label>
                                 </div>
                             </div>
-                                            </div>
-                                            <br/>
-                                            
+                        </div>
+                        <br />
+
                         <div class="row">
                             <div class="col-lg-12 col-12">
                                 <div class="form-group">
@@ -437,7 +438,7 @@
                                 </div>
                             </div>
                         </div>
-                        <br/>
+                        <br />
                         <div class="row">
                             <div class="col-lg-12 col-12 text-center">
                                 <button type="submit" class="btn btn-md btn-success rounded-1">Submit</button>
