@@ -6,6 +6,7 @@ use App\Models\TourOperator;
 use Illuminate\Http\Request;
 use App\Helpers\FileUploader;
 use App\Http\Controllers\Controller;
+use App\Models\Package;
 use App\Models\Country;
 
 class TourOperatorController extends Controller
@@ -13,8 +14,9 @@ class TourOperatorController extends Controller
     public function dashboard()
     {
         $user = auth('touroperator')->user();
+        $packages = Package::all();
         $countries = Country::all();
-        return view('site.tourOperatorProfile', compact('user','countries'));
+        return view('site.tourOperatorProfile', compact('user', 'packages','countries'));
     }
 
     public function edit(Request $request)

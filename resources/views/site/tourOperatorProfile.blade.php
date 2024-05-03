@@ -36,6 +36,9 @@
                         <button class="nav-link rounded-1" id="v-pills-profile-tab" data-bs-toggle="pill"
                             data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile"
                             aria-selected="false">Profile</button>
+                        <button class="nav-link rounded-1" id="v-pills-package-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-package" type="button" role="tab" aria-controls="v-pills-package"
+                            aria-selected="false">Packages</button>
                         <button class="nav-link rounded-1" id="v-pills-connection-request" data-bs-toggle="pill"
                             data-bs-target="#v-pills-connection" type="button" role="tab"
                             aria-controls="v-pills-profile" aria-selected="false">Connection Request</button>
@@ -223,6 +226,59 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="tab-pane fade" id="v-pills-package" role="tabpanel"
+                            aria-labelledby="v-pills-package-tab">
+                            <div class="container">
+                                <div class="text-end">
+                                    <button class=" btn btn-success btn-sm" data-bs-target="#add-package"
+                                        data-bs-toggle="modal">Add Package</button>
+                                </div>
+                                <div class="table-responsive">
+                                    <table id="package-table" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>#Sr.No</th>
+                                                <th>Cover Image</th>
+                                                <th>Titile</th>
+                                                <th>Price</th>
+                                                <th>No Of Days</th>
+                                                <th>No Of Nights</th>
+                                                <th>Description</th>
+                                                <th>Created At</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @forelse ($packages as $package)
+                                                <tr>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td><img height="50" width="50"
+                                                            src="{{ $package->cover_image }}" alt=""></td>
+                                                    <td>{{ $package->title }}</td>
+                                                    <td>{{ $package->price }}</td>
+                                                    <td>{{ $package->days }}</td>
+                                                    <td>{{ $package->nights }} </td>
+                                                    <td>{{ $package->description }} </td>
+                                                    <td><span class="badge rounded-pill bg-info">
+                                                            {{ date('jS M, Y', strtotime($package->created_at)) }}</span>
+                                                    </td>
+                                                    <td>
+                                                        <button class="btn btn-warning btn-sm edit-package"
+                                                            data-id="{{ $package->id }}"><i
+                                                                class="fa fa-pen"></i></button>
+                                                        <button class="btn btn-danger btn-sm delete-package"
+                                                            data-id="{{ $package->id }}"><i
+                                                                class="fa fa-trash"></i></button>
+                                                    </td>
+                                                </tr>
+
+                                            @empty
+                                            @endforelse
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                         <div class="tab-pane fade" id="v-pills-connection" role="tabpanel"
                             aria-labelledby="v-pills-connection-request">
                             <div class="container">
@@ -312,6 +368,7 @@
                             </div>
                         </div>
 
+
                     </div>
                 </div>
             </div>
@@ -400,6 +457,143 @@
                                 </div>
                             </div>
 
+
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-md btn-success rounded-1">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Add Package modal --}}
+    <div class="modal fade" id="add-package" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="editProfileLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileLabel">Add Package</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <form action="{{ route('touroperator.package.store') }}" enctype="multipart/form-data"
+                        method="post">
+                        @csrf
+                        <div class="row">
+
+                            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                                <label for="title">Title</label>
+                                <input type="text" class="form-control rounded-1" id="title" required
+                                    name="title" placeholder="Enter Title">
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                                <label for="price">Price</label>
+                                <input class="form-control rounded-1" id="price" type="number" required
+                                    name="price" placeholder="Enter Price">
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                                <label for="days">No of Days</label>
+                                <input class="form-control rounded-1" id="days" type="number" required
+                                    name="days" placeholder="Enter Days">
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                                <label for="nights">No of Nights</label>
+                                <input class="form-control rounded-1" type="number" id="nights" required
+                                    name="nights" placeholder="Enter Nights">
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12 mb-3">
+                                <label for="cover_image">Cover Image</label>
+                                <input type="file" class="form-control rounded-1" id="cover_image" required
+                                    name="cover_image" placeholder="Cover Image">
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12 mb-3">
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea class="form-control rounded-1" name="description" id="description" required rows="2"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-md btn-success rounded-1">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{-- Delete Package Modal --}}
+    <div class="modal fade" id="edit-package-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="editProfileLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editProfileLabel">Edit Package</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <form action="{{ route('touroperator.package.update') }}" enctype="multipart/form-data"
+                        method="post">
+                        @csrf
+                        <input name="id" id="id" value="" type="hidden" />
+                        <div class="row">
+
+                            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                                <label for="edit_title">Title</label>
+                                <input type="text" class="form-control rounded-1" id="edit_title" required
+                                    name="title" placeholder="Enter Title">
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                                <label for="edit_price">Price</label>
+                                <input class="form-control rounded-1" id="edit_price" type="number" required
+                                    name="price" placeholder="Enter Price">
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                                <label for="edit_days">No of Days</label>
+                                <input class="form-control rounded-1" id="edit_days" type="number" required
+                                    name="days" placeholder="Enter Days">
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 col-12 mb-3">
+                                <label for="edit_nights">No of Nights</label>
+                                <input class="form-control rounded-1" type="number" id="edit_nights" required
+                                    name="nights" placeholder="Enter Nights">
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12 mb-3">
+                                <label for="edit_cover_image">Cover Image</label>
+                                <input type="file" class="form-control rounded-1" id="edit_cover_image"
+                                    name="cover_image" placeholder="Cover Image">
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12 mb-3">
+                                <div class="form-group">
+                                    <label for="edit_description">Description</label>
+                                    <textarea class="form-control rounded-1" name="description" id="edit_description" required rows="2"></textarea>
+                                </div>
+                            </div>
                             <div class="col-12 text-center">
                                 <button type="submit" class="btn btn-md btn-success rounded-1">Submit</button>
                             </div>
@@ -433,6 +627,13 @@
             }
         });
         new DataTable('#history-table', {
+            layout: {
+                topStart: {
+                    buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                }
+            }
+        });
+        new DataTable('#package-table', {
             layout: {
                 topStart: {
                     buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
@@ -493,6 +694,50 @@
                                 location.reload();
                             }, 500);
                         }
+                        console.log(response);
+                    }
+                });
+            }
+        });
+
+
+        $('.edit-package').on('click', function() {
+            const id = $(this).data('id');
+            const modal = $('#edit-package-modal')
+            if (id) {
+                $.ajax({
+                    type: "get",
+                    url: `{{ route('touroperator.package.edit') }}`,
+                    data: {
+                        id: id,
+                        _token: "{{ csrf_token() }}"
+                    },
+                    success: function(response) {
+                        console.log(response);
+                        $(modal).find('#id').val(response.id);
+                        $(modal).find('#edit_title').val(response.title);
+                        $(modal).find('#edit_price').val(response.price);
+                        $(modal).find('#edit_days').val(response.days);
+                        $(modal).find('#edit_nights').val(response.nights);
+                        $(modal).find('#edit_description').val(response.description);
+                    }
+                });
+            }
+            $(modal).modal('show');
+        });
+
+        $('.delete-package').on('click', function() {
+            const id = $(this).data('id');
+            alert(id);
+            if (confirm('Sure you want to delete?')) {
+                $.ajax({
+                    type: "post",
+                    url: "{{ route('touroperator.package.destroy') }}",
+                    data: {
+                        id: id,
+                        _token: "{{ csrf_token() }}"
+                    },
+                    success: function(response) {
                         console.log(response);
                     }
                 });
