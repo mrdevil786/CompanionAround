@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Helpers\FileUploader;
 use App\Http\Controllers\Controller;
 use App\Models\Package;
+use App\Models\Country;
 
 class TourOperatorController extends Controller
 {
@@ -14,7 +15,8 @@ class TourOperatorController extends Controller
     {
         $user = auth('touroperator')->user();
         $packages = Package::all();
-        return view('site.tourOperatorProfile', compact('user', 'packages'));
+        $countries = Country::all();
+        return view('site.tourOperatorProfile', compact('user', 'packages','countries'));
     }
 
     public function edit(Request $request)
