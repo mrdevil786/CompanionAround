@@ -6,7 +6,6 @@ use App\Models\TourOperator;
 use Illuminate\Http\Request;
 use App\Helpers\FileUploader;
 use App\Http\Controllers\Controller;
-use App\Models\TourGuide;
 
 class TourOperatorController extends Controller
 {
@@ -34,10 +33,10 @@ class TourOperatorController extends Controller
             'state' => 'required',
             'city' => 'required',
             'description' => 'required',
-            'logo' => 'required|mimes:png,jpg,jpeg,webp,svg,gif'
+            'logo' => 'mimes:png,jpg,jpeg,webp,svg,gif'
         ]);
 
-        $user = TourOperator::findOrFail(auth('tourguard')->user()->id);
+        $user = TourOperator::findOrFail(auth('touroperator')->user()->id);
         $user->name = $request->name;
         $user->email = $request->email;
         $user->mobile = $request->mobile;
@@ -49,7 +48,7 @@ class TourOperatorController extends Controller
         $user->description = $request->description;
 
         if ($request->hasFile('logo')) {
-            $user->logo = FileUploader::uploadFile($request->file('logo'), 'storage/images/tour-guides', $user->logo);
+            $user->logo = FileUploader::uploadFile($request->file('logo'), 'images/tour-operators', $user->logo);
         }
 
         $user->status = 'active';
@@ -64,7 +63,7 @@ class TourOperatorController extends Controller
             'action' => 'required|in:accept,reject'
         ]);
         // return $request->all();
-        $tourist = TourGuide::findOrFail($request->id);
+        $tourist = TourOperator::findOrFail($request->id);
         if ($request->action == 'accept') {
             $tourist->update([
                 'status' => 'accepted',

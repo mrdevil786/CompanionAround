@@ -5,35 +5,30 @@ namespace App\Helpers;
 use Exception;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class FileUploader
 {
-    public static function uploadFile(UploadedFile $uploadedFile, string $targetPath = "", $deleteOldFile = null): string
+    public static function uploadFile(UploadedFile $uploadedFile, string $targetPath, ?string $deleteOldFile = null): string
     {
         try {
-            if ($deleteOldFile) {
-                Storage::delete($deleteOldFile);
+            if ($deleteOldFile && file_exists(public_path($deleteOldFile))) {
+                unlink(public_path($deleteOldFile));
             }
-
-            $extension = $uploadedFile->getClientOriginalExtension();
-            $fileName = Str::random(25) . '.' . $extension;
-
-            $publicPath = public_path();
-
-            if (!is_dir($publicPath . '/' . $targetPath)) {
-                mkdir($publicPath . '/' . $targetPath, 0777, true);
+    
+            $fileName = Str::random(25) . '.' . $uploadedFile->getClientOriginalExtension();
+    
+            $targetDirectory = public_path('storage/' . $targetPath);
+            if (!is_dir($targetDirectory)) {
+                mkdir($targetDirectory, 0777, true);
             }
-
-            $filePath = $targetPath ? $targetPath . '/' . $fileName : $fileName;
-
-            $uploadedFile->move($publicPath . '/' . $targetPath, $fileName);
-
-            return $filePath;
+    
+            $uploadedFile->move($targetDirectory, $fileName);
+    
+            return 'storage/' . $targetPath . '/' . $fileName;
         } catch (Exception $e) {
             Log::error('Exception in file upload: ' . $e->getMessage());
             throw new Exception("Failed to upload file: " . $e->getMessage());
         }
-    }
+    }    
 }
