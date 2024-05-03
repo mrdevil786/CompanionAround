@@ -353,9 +353,13 @@
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-12 mb-3">
-                                <label for="country">Your Country</label>
-                                <input type="text" class="form-control rounded-1" id="country" name="country"
-                                    placeholder="Your Country">
+                                <label for="country">Guide Type</label>
+                                <select name="country" id="country" class="form-control rounded-1 text-capitalize"">
+                                    <option selected disabled>Select Your Country</option>
+                                    @foreach ($countries as $country)
+                                        <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-12 mb-3">
@@ -395,7 +399,7 @@
                                     <textarea class="form-control rounded-1" name="description" id="description" rows="2"></textarea>
                                 </div>
                             </div>
-                            
+
                             <div class="col-12 text-center">
                                 <button type="submit" class="btn btn-md btn-success rounded-1">Submit</button>
                             </div>
