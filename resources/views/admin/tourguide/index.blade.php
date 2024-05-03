@@ -58,8 +58,6 @@
                                                     <span class="custom-switch-indicator"></span>
                                                 </label>
                                             @endif
-                                            {{ $guide->status }}
-
                                         </td>
                                         {{-- <td class="text-center">
                                             <x-buttons.action-pill-button iconClass="fa fa-eye" iconColor="secondary" />
