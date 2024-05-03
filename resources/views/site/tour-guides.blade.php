@@ -56,7 +56,7 @@
                                 <div class="text-center p-4">
                                     <h4 class="mb-0 text-truncate">{{ $tourGuide->name }}</h4>
                                     <h5 class="mb-0 text-secondary">
-                                        {{ $tourGuide->charges ? '₹ ' . $tourGuide->charges : 'Null' }}</h5>
+                                        {{ $tourGuide->charges ? '₹ ' . $tourGuide->charges : 'Free' }}</h5>
                                     <div class="mb-3">
                                         <small class="fa fa-star text-primary"></small>
                                         <small class="fa fa-star text-primary"></small>
