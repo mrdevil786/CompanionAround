@@ -410,9 +410,9 @@
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-12 mb-3">
-                                <label for="country">Guide Type</label>
+                                <label for="country">Select Country</label>
                                 <select name="country" id="country" class="form-control rounded-1 text-capitalize"">
-                                    <option selected disabled>Select Your Country</option>
+                                    <option value="" selected disabled>Select Your Country</option>
                                     @foreach ($countries as $country)
                                         <option value="{{ $country->id }}">{{ $country->name }}</option>
                                     @endforeach
@@ -420,13 +420,13 @@
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-12 mb-3">
-                                <label for="state">Your State</label>
+                                <label for="state">Select State</label>
                                 <input type="text" class="form-control rounded-1" id="state" name="state"
                                     placeholder="Your State">
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-12 mb-3">
-                                <label for="city">Your City</label>
+                                <label for="city">Select City</label>
                                 <input type="text" class="form-control rounded-1" id="city" name="city"
                                     placeholder="Your City">
                             </div>
@@ -728,7 +728,6 @@
 
         $('.delete-package').on('click', function() {
             const id = $(this).data('id');
-            alert(id);
             if (confirm('Sure you want to delete?')) {
                 $.ajax({
                     type: "post",
