@@ -37,7 +37,7 @@ class TourGuideController extends Controller
             'state' => 'required',
             'city' => 'required',
             'short_description' => 'required',
-            'profile' => 'required|mimes:png,jpg,jpeg,webp,svg,gif'
+            'profile' => 'mimes:png,jpg,jpeg,webp,svg,gif'
         ]);
         // return $request->all();
         $user = TourGuide::findOrFail(auth('tourguard')->user()->id);

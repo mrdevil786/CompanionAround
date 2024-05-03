@@ -33,7 +33,7 @@ class TourOperatorController extends Controller
             'state' => 'required',
             'city' => 'required',
             'description' => 'required',
-            'logo' => 'required|mimes:png,jpg,jpeg,webp,svg,gif'
+            'logo' => 'mimes:png,jpg,jpeg,webp,svg,gif'
         ]);
 
         $user = TourOperator::findOrFail(auth('touroperator')->user()->id);
