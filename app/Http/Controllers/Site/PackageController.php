@@ -19,7 +19,7 @@ class PackageController extends Controller
             'days' => 'required|numeric',
             'nights' => 'required|numeric',
         ]);
-        return $request->all();
+        // return $request->all();
         $tourOperator = auth('touroperator')->user();
         $package = Package::create([
             'tour_operator_id' => $tourOperator->id,
@@ -33,9 +33,9 @@ class PackageController extends Controller
 
         return redirect()->back()->with('success', 'Package added successfully!');
     }
-    public function edit($id)
+    public function edit(Request $request)
     {
-        $package = Package::findOrFail($id);
+        $package = Package::findOrFail($request->id);
         return $package;
     }
 
@@ -62,5 +62,13 @@ class PackageController extends Controller
         $package->nights = $request->nights;
         $package->save();
         return redirect()->back()->with('success', 'Package updated successfully!');
+    }
+    public function destroy(Request $request)
+    {
+        $request->validate([
+            'id' => 'required|numeric|exists:packages,id'
+        ]);
+        Package::findOrFail($request->id)->delete();
+        return redirect()->back()->with('success', 'Package deleted successfully!');
     }
 }

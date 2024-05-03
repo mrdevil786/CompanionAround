@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Site\PackageController;
 use App\Http\Controllers\Site\TouristsController;
 use App\Http\Controllers\Site\SiteController;
 use App\Http\Controllers\Site\TourGuideController;
@@ -52,5 +53,11 @@ Route::prefix('touroperator')->name('touroperator.')->middleware(['auth:touroper
         Route::get('edit', 'edit')->name('edit');
         Route::post('update', 'updateProfile')->name('update');
         Route::post('request-action', 'requestAction')->name('request-action');
+    });
+    Route::controller(PackageController::class)->prefix('package')->name('package.')->group(function () {
+        Route::post('store', 'store')->name('store');
+        Route::get('edit', 'edit')->name('edit');
+        Route::post('update', 'update')->name('update');
+        Route::post('destroy', 'destroy')->name('destroy');
     });
 });
