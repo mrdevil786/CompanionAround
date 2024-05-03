@@ -48,7 +48,7 @@ class TourOperatorController extends Controller
         $user->description = $request->description;
 
         if ($request->hasFile('logo')) {
-            $user->logo = FileUploader::uploadFile($request->file('logo'), 'images/tour-guides', $user->logo);
+            $user->logo = FileUploader::uploadFile($request->file('logo'), 'images/tour-operators', $user->logo);
         }
 
         $user->status = 'active';
