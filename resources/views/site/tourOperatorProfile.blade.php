@@ -391,8 +391,8 @@
 
                             <div class="col-lg-6 col-md-6 col-12 mb-3">
                                 <div class="form-group">
-                                    <label for="short_description">Short Description</label>
-                                    <textarea class="form-control rounded-1" name="short_description" id="short_description" rows="2"></textarea>
+                                    <label for="description">Description</label>
+                                    <textarea class="form-control rounded-1" name="description" id="description" rows="2"></textarea>
                                 </div>
                             </div>
                             
@@ -436,15 +436,6 @@
             }
         });
 
-        $(document).on('change', '#guide_type', function() {
-            const value = $(this).val();
-            if (value == 'free') {
-                $('.charges-div').attr('hidden', true);
-            } else {
-                $('.charges-div').attr('hidden', false);
-            }
-        });
-
         $('.edit-profile').on('click', function() {
             const id = $(this).data('id');
             const modal = $('#editProfile');
@@ -460,16 +451,12 @@
                         $(modal).find('#name').val(response.name);
                         $(modal).find('#email').val(response.email);
                         $(modal).find('#mobile').val(response.mobile);
-                        $(modal).find('#guide_type').val(response.guide_type).trigger('change');
-                        $('input[name="gender"][value="' + response.gender + '"]').prop('checked',
-                            true);
-                        if (response.guide_type === 'chargeable') {
-                            $(modal).find('#charges').val(response.charges);
-                        }
-                        $(modal).find('#city').val(response.city);
-                        $(modal).find('#state').val(response.state);
+                        $(modal).find('#address').val(response.address);
+                        $(modal).find('#zipcode').val(response.zipcode);
                         $(modal).find('#country').val(response.country);
-                        $(modal).find('#short_description').val(response.short_description);
+                        $(modal).find('#state').val(response.state);
+                        $(modal).find('#city').val(response.city);
+                        $(modal).find('#description').val(response.description);
                     }
                 });
             }
