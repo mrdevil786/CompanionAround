@@ -377,8 +377,8 @@
                             </div>
 
                             <div class="col-lg-6 col-md-6 col-12 mb-3">
-                                <label for="profile">Business Logo</label>
-                                <input type="file" class="form-control rounded-1" id="profile" name="profile"
+                                <label for="logo">Business Logo</label>
+                                <input type="file" class="form-control rounded-1" id="logo" name="logo"
                                     placeholder="Business Logo">
                             </div>
 
