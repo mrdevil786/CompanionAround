@@ -69,17 +69,17 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'web', 'chec
 
         Route::prefix('users')->name('users.')->group(function () {
             Route::get('/', [UsersController::class, 'index'])->name('index');
-            Route::get('view/{id}', [UsersController::class, 'showUser'])->name('show');
+            Route::get('profile/{id}', [UsersController::class, 'profile'])->name('profile');
         });
 
         Route::prefix('tourists')->name('tourists.')->group(function () {
             Route::get('/', [TouristsController::class, 'index'])->name('index');
-            Route::get('view/{id}', [TouristsController::class, 'showUser'])->name('show');
+            Route::get('profile/{id}', [TouristsController::class, 'profile'])->name('profile');
         });
 
         Route::prefix('touroperators')->name('touroperators.')->group(function () {
             Route::get('/', [TourOperatorController::class, 'index'])->name('index');
-            Route::get('view/{id}', [TourOperatorController::class, 'showUser'])->name('show');
+            Route::get('profile/{id}', [TourOperatorController::class, 'profile'])->name('profile');
         });
     });
 });

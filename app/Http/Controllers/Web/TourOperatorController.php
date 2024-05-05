@@ -13,4 +13,10 @@ class TourOperatorController extends Controller
         $tourOperators = TourOperator::latest()->get();
         return view('admin.touroperator.index', compact('tourOperators'));
     }
+
+    public function profile($id)
+    {
+        $tourOperators = TourOperator::findOrFail($id);
+        return  view('admin.touroperator.profile',compact('tourOperators'));
+    }
 }

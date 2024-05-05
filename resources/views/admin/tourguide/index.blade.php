@@ -46,7 +46,7 @@
                                         <td>{{ Str::ucfirst($guide->city) }}</td>
                                         <td>{{ Str::ucfirst($guide->state) }}</td>
                                         <td>{{ Str::ucfirst($guide->country) }}</td>
-                                        <td>{{ $guide->short_description }}</td>
+                                        <td>{{ ucfirst(Str::limit($guide->short_description, 20)) }}</td>
                                         <td>{{ $guide->created_at }}</td>
                                         <td>{{ $guide->updated_at }}</td>
                                         <td class="text-center">
