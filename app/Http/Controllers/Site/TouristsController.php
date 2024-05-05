@@ -22,10 +22,12 @@ class TouristsController extends Controller
         $totalConnected = TouristGuide::where('status', 'accepted')->count();
         return view('site.touristProfile', compact('user', 'connectionHistory', 'totalPendingRequest', 'totalConnected'));
     }
+
     public function index()
     {
-        return view('site.welcome');
-    }
+        $tourGuides = TourGuide::where('status', 'active')->latest()->take(9)->get();
+        return view('site.welcome', compact('tourGuides'));
+    }    
 
     public function requestConnection(Request $request)
     {

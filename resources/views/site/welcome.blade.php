@@ -833,82 +833,63 @@
     <!-- Process Start -->
 
 
-    <!-- Team Start -->
+    <!-- Tour Guide Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Travel Guide</h6>
-                <h1 class="mb-5">Meet Our Guide</h1>
+                <h6 class="section-title bg-white text-center text-primary px-3">Tour Guide</h6>
+                <h1 class="mb-5">Find Your Tour Guide</h1>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="team-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="{{ asset('site/img/team-1.jpg') }}" alt="">
+            <div class="row g-4 justify-content-center">
+                @if ($tourGuides->isEmpty())
+                    <h4 class="text-secondary text-center wow fadeInUp" data-wow-delay="0.1s"><i
+                            class="fa fa-exclamation-triangle"></i> No tour guides available at the moment.</h4>
+                @else
+                    @foreach ($tourGuides as $tourGuide)
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="package-item">
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid w-100" src="{{ asset($tourGuide->profile) }}" alt="">
+                                </div>
+                                <div class="d-flex border-bottom">
+                                    <small class="flex-fill text-center border-end py-2 text-capitalize"><i
+                                            class="fa fa-map-marker-alt text-primary me-2"></i>{{ $tourGuide->city ?? 'Null' }}</small>
+                                    <small class="flex-fill text-center border-end py-2"><i
+                                            class="fa fa-comment text-primary me-2"></i>24</small>
+                                    <small class="flex-fill text-center py-2 text-capitalize"><i
+                                            class="fa fa-user text-primary me-2"></i>{{ $tourGuide->gender ?? 'Null' }}</small>
+                                </div>
+                                <div class="text-center p-4">
+                                    <h4 class="mb-0 text-truncate">{{ $tourGuide->name }}</h4>
+                                    <h5 class="mb-0 text-secondary">
+                                        {{ $tourGuide->charges ? '₹ ' . $tourGuide->charges : 'Free' }}</h5>
+                                    <div class="mb-3">
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star"></small>
+                                        <small class="fa fa-star"></small>
+                                    </div>
+                                    <p class="text-truncate">{{ $tourGuide->short_description ?? 'Null' }}</p>
+                                    <div class="d-flex justify-content-center mb-2">
+                                        {{-- <a href="#" class="btn btn-sm btn-primary px-3 border-end"
+                                            style="border-radius: 30px 0 0 30px;">Read More</a> --}}
+                                        @auth('tourist')
+                                            <a href="javascript:void(0)" data-id="{{ $tourGuide->id }}"
+                                                class="btn btn-sm btn-primary rounded-1 px-3 connect">Book Now</a>
+                                        @else
+                                            <a href="{{ url('/findCompanion') }}" class="btn btn-sm btn-primary rounded-1 px-3">Book Now</a>
+                                        @endauth
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="team-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="{{ asset('site/img/team-2.jpg') }}" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="team-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="{{ asset('site/img/team-3.jpg') }}" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="team-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="{{ asset('site/img/team-4.jpg') }}" alt="">
-                        </div>
-                        <div class="position-relative d-flex justify-content-center" style="margin-top: -19px;">
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-square mx-1" href=""><i class="fab fa-instagram"></i></a>
-                        </div>
-                        <div class="text-center p-4">
-                            <h5 class="mb-0">Full Name</h5>
-                            <small>Designation</small>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>
-    <!-- Team End -->
+    <!-- Tour Guide End -->
 
 
     <!-- Testimonial Start -->
@@ -955,6 +936,8 @@
         </div>
     </div>
     <!-- Testimonial End -->
+
+    
 @endsection
 @section('website-custom-script')
     <script>
