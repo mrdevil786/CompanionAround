@@ -46,11 +46,11 @@
                                     <img class="img-fluid w-100" src="{{ asset($tourGuide->profile) }}" alt="">
                                 </div>
                                 <div class="d-flex border-bottom">
-                                    <small class="flex-fill text-center border-end py-2"><i
+                                    <small class="flex-fill text-center border-end py-2 text-capitalize"><i
                                             class="fa fa-map-marker-alt text-primary me-2"></i>{{ $tourGuide->city ?? 'Null' }}</small>
                                     <small class="flex-fill text-center border-end py-2"><i
                                             class="fa fa-comment text-primary me-2"></i>24</small>
-                                    <small class="flex-fill text-center py-2"><i
+                                    <small class="flex-fill text-center py-2 text-capitalize"><i
                                             class="fa fa-user text-primary me-2"></i>{{ $tourGuide->gender ?? 'Null' }}</small>
                                 </div>
                                 <div class="text-center p-4">
