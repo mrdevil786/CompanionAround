@@ -146,263 +146,263 @@
                                 </div>
                             </div>
                             <section class="services">
-                            <div class="container text-center mt-4">
+                                <div class="container text-center mt-4">
 
-                                <div class="row">
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-map"></i></div>
-                                    <div class="text">
-                                    <h3 class="h6" style="text-align:left;">Type of Operator</h3>
-                                    </div>
-                                </div>
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-cityscape"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                            <input type="checkbox" id="checkbox1" name="checkbox1">
-                                            <label for="checkbox1">Tour Operator</label>
+                                    <div class="row">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-map"></i></div>
+                                            <div class="text">
+                                                <h3 class="h6" style="text-align:left;">Type of Operator</h3>
+                                            </div>
                                         </div>
-                                </div>
-                                <!-- Item-->
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-cityscape"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox1" name="checkbox1">
+                                                <label for="checkbox1">Tour Operator</label>
+                                            </div>
+                                        </div>
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
                                                 <input type="checkbox" id="checkbox2" name="checkbox2">
-                                                <label for="checkbox2">Tour Guide</label>                  
+                                                <label for="checkbox2">Tour Guide</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">                
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                            </div>
                                         </div>
-                                    </div>
-                                </div><!--row-->
+                                    </div><!--row-->
                                 </div><!--container -->
                             </section>
 
                             <section class="services">
-                            <div class="container text-center mt-4">
-                                <div class="row">
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-map"></i></div>
-                                    <div class="text">
-                                    <h3 class="h6" style="text-align:left;">Languages</h3>
-                                    </div>
-                                </div>
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-cityscape"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                            <input type="checkbox" id="checkbox1" name="checkbox1">
-                                            <label for="checkbox1">English</label>
+                                <div class="container text-center mt-4">
+                                    <div class="row">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-map"></i></div>
+                                            <div class="text">
+                                                <h3 class="h6" style="text-align:left;">Languages</h3>
+                                            </div>
                                         </div>
-                                </div>
-                                <!-- Item-->
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-cityscape"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox1" name="checkbox1">
+                                                <label for="checkbox1">English</label>
+                                            </div>
+                                        </div>
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
                                                 <input type="checkbox" id="checkbox2" name="checkbox2">
-                                                <label for="checkbox2">Spanish</label>                  
+                                                <label for="checkbox2">Spanish</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">  
-                                            <input type="checkbox" id="checkbox3" name="checkbox3"> 
-                                        <label for="checkbox3">German</label>             
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox3" name="checkbox3">
+                                                <label for="checkbox3">German</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div><!--row-->
-                                <div class="row mt-2">
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-map"></i></div>
-                                    <div class="text">
-                                    
-                                    </div>
-                                </div>
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-cityscape"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                            <input type="checkbox" id="checkbox4" name="checkbox4">
-                                            <label for="checkbox4">French</label>
+                                    </div><!--row-->
+                                    <div class="row mt-2">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-map"></i></div>
+                                            <div class="text">
+
+                                            </div>
                                         </div>
-                                </div>
-                                <!-- Item-->
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-cityscape"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox4" name="checkbox4">
+                                                <label for="checkbox4">French</label>
+                                            </div>
+                                        </div>
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
                                                 <input type="checkbox" id="checkbox5" name="checkbox5">
-                                                <label for="checkbox5">Italian</label>                  
+                                                <label for="checkbox5">Italian</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">  
-                                            <input type="checkbox" id="checkbox6" name="checkbox6"> 
-                                        <label for="checkbox6">Chinese</label>             
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox6" name="checkbox6">
+                                                <label for="checkbox6">Chinese</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div><!--row-->
+                                    </div><!--row-->
 
-                            </div><!--container -->
+                                </div><!--container -->
                             </section>
 
 
                             <section class="services">
-                            <div class="container text-center mt-4">
-                                <div class="row">
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-map"></i></div>
-                                    <div class="text">
-                                    <h3 class="h6" style="text-align:left;">Activities</h3>
-                                    </div>
-                                </div>
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-cityscape"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                        <input type="checkbox" id="checkbox1" name="checkbox1">
-                                        <label for="checkbox1">Nightlife & Bars</label>       
+                                <div class="container text-center mt-4">
+                                    <div class="row">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-map"></i></div>
+                                            <div class="text">
+                                                <h3 class="h6" style="text-align:left;">Activities</h3>
+                                            </div>
                                         </div>
-                                </div>
-                                <!-- Item-->
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                        <input type="checkbox" id="checkbox2" name="checkbox2">
-                                        <label for="checkbox2">Food & Restaurants</label>
-                                                                                
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-cityscape"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox1" name="checkbox1">
+                                                <label for="checkbox1">Nightlife & Bars</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">  
-                                        <input type="checkbox" id="checkbox3" name="checkbox3"> 
-                                        <label for="checkbox3">History & Culture</label>
-                                                                        
-                                        </div>
-                                    </div>
-                                </div><!--row-->
-                                <div class="row mt-2">
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-map"></i></div>
-                                    <div class="text">
-                                    
-                                    </div>
-                                </div>
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-cityscape"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                        <input type="checkbox" id="checkbox4" name="checkbox4">
-                                        <label for="checkbox4">Shopping</label>
-                                                            
-                                        </div>
-                                </div>
-                                <!-- Item-->
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                        <input type="checkbox" id="checkbox5" name="checkbox5"> 
-                                        <label for="checkbox5">Sports & Recreat.</label>
-                                                                            
-                                        </div>
-                                    </div>
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">  
-                                        <input type="checkbox" id="checkbox6" name="checkbox6">  
-                                        <label for="checkbox6">Exploration & Sight</label>
-                                                                        
-                                        </div>
-                                    </div>
-                                </div><!--row-->
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox2" name="checkbox2">
+                                                <label for="checkbox2">Food & Restaurants</label>
 
-                                <div class="row mt-2">
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-map"></i></div>
-                                    <div class="text">
-                                    
-                                    </div>
-                                </div>
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-cityscape"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                        <input type="checkbox" id="checkbox7" name="checkbox7">
-                                        <label for="checkbox7">Translation & Interpret.</label>
-                                                            
-                                                            
+                                            </div>
                                         </div>
-                                </div>
-                                <!-- Item-->
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                        <input type="checkbox" id="checkbox8" name="checkbox8">
-                                        <label for="checkbox8">PickUp & Driving Tours</label>
-                                                            
-                                                                            
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox3" name="checkbox3">
+                                                <label for="checkbox3">History & Culture</label>
+
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">  
-                                        <input type="checkbox" id="checkbox9" name="checkbox9">
-                                        <label for="checkbox9">Art & Museums</label>
-                                                                
-                                                                        
+                                    </div><!--row-->
+                                    <div class="row mt-2">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-map"></i></div>
+                                            <div class="text">
+
+                                            </div>
                                         </div>
-                                    </div>
-                                </div><!--row-->
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-cityscape"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox4" name="checkbox4">
+                                                <label for="checkbox4">Shopping</label>
+
+                                            </div>
+                                        </div>
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox5" name="checkbox5">
+                                                <label for="checkbox5">Sports & Recreat.</label>
+
+                                            </div>
+                                        </div>
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox6" name="checkbox6">
+                                                <label for="checkbox6">Exploration & Sight</label>
+
+                                            </div>
+                                        </div>
+                                    </div><!--row-->
+
+                                    <div class="row mt-2">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-map"></i></div>
+                                            <div class="text">
+
+                                            </div>
+                                        </div>
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-cityscape"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox7" name="checkbox7">
+                                                <label for="checkbox7">Translation & Interpret.</label>
 
 
-                            </div><!--container -->
+                                            </div>
+                                        </div>
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox8" name="checkbox8">
+                                                <label for="checkbox8">PickUp & Driving Tours</label>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox9" name="checkbox9">
+                                                <label for="checkbox9">Art & Museums</label>
+
+
+                                            </div>
+                                        </div>
+                                    </div><!--row-->
+
+
+                                </div><!--container -->
                             </section>
 
                             <section class="services">
-                            <div class="container text-center mt-4">
+                                <div class="container text-center mt-4">
 
-                                <div class="row">
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-map"></i></div>
-                                    <div class="text">
-                                    <h3 class="h6" style="text-align:left;">Gender</h3>
-                                    </div>
-                                </div>
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-cityscape"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                        <input type="checkbox" id="checkbox1" name="checkbox1">
-                                        <label for="checkbox1">Female</label>                                        
+                                    <div class="row">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-map"></i></div>
+                                            <div class="text">
+                                                <h3 class="h6" style="text-align:left;">Gender</h3>
+                                            </div>
                                         </div>
-                                </div>
-                                <!-- Item-->
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                        <input type="checkbox" id="checkbox2" name="checkbox2"> 
-                                        <label for="checkbox2">Male</label>                                                         
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-cityscape"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox1" name="checkbox1">
+                                                <label for="checkbox1">Female</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">  
-                                        <input type="checkbox" id="checkbox3" name="checkbox3">   
-                                        <label for="checkbox3">Couple</label>
-                                                                        
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox2" name="checkbox2">
+                                                <label for="checkbox2">Male</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div><!--row-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox3" name="checkbox3">
+                                                <label for="checkbox3">Couple</label>
+
+                                            </div>
+                                        </div>
+                                    </div><!--row-->
                                 </div><!--container -->
                             </section>
                         </div>
@@ -459,90 +459,64 @@
     <!-- About End -->
 
 
-    <!-- Service Start -->
+    <!-- Tour Guide Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Services</h6>
-                <h1 class="mb-5">Our Services</h1>
+                <h6 class="section-title bg-white text-center text-primary px-3">Tour Guide</h6>
+                <h1 class="mb-5">Find Your Tour Guide</h1>
             </div>
-            <div class="row g-4">
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                            <h5>WorldWide Tours</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+            <div class="row g-4 justify-content-center">
+                @if ($tourGuides->isEmpty())
+                    <h4 class="text-secondary text-center wow fadeInUp" data-wow-delay="0.1s"><i
+                            class="fa fa-exclamation-triangle"></i> No tour guides available at the moment.</h4>
+                @else
+                    @foreach ($tourGuides as $tourGuide)
+                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="package-item">
+                                <div class="overflow-hidden">
+                                    <img class="img-fluid w-100" src="{{ asset($tourGuide->profile) }}" alt="">
+                                </div>
+                                <div class="d-flex border-bottom">
+                                    <small class="flex-fill text-center border-end py-2 text-capitalize"><i
+                                            class="fa fa-map-marker-alt text-primary me-2"></i>{{ $tourGuide->city ?? 'Null' }}</small>
+                                    <small class="flex-fill text-center border-end py-2"><i
+                                            class="fa fa-comment text-primary me-2"></i>24</small>
+                                    <small class="flex-fill text-center py-2 text-capitalize"><i
+                                            class="fa fa-user text-primary me-2"></i>{{ $tourGuide->gender ?? 'Null' }}</small>
+                                </div>
+                                <div class="text-center p-4">
+                                    <h4 class="mb-0 text-truncate">{{ $tourGuide->name }}</h4>
+                                    <h5 class="mb-0 text-secondary">
+                                        {{ $tourGuide->charges ? '₹ ' . $tourGuide->charges : 'Free' }}</h5>
+                                    <div class="mb-3">
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star text-primary"></small>
+                                        <small class="fa fa-star"></small>
+                                        <small class="fa fa-star"></small>
+                                    </div>
+                                    <p class="text-truncate">{{ $tourGuide->short_description ?? 'Null' }}</p>
+                                    <div class="d-flex justify-content-center mb-2">
+                                        {{-- <a href="#" class="btn btn-sm btn-primary px-3 border-end"
+                                            style="border-radius: 30px 0 0 30px;">Read More</a> --}}
+                                        @auth('tourist')
+                                            <a href="javascript:void(0)" data-id="{{ $tourGuide->id }}"
+                                                class="btn btn-sm btn-primary rounded-1 px-3 connect">Book Now</a>
+                                        @else
+                                            <a href="{{ url('/findCompanion') }}"
+                                                class="btn btn-sm btn-primary rounded-1 px-3">Book Now</a>
+                                        @endauth
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-hotel text-primary mb-4"></i>
-                            <h5>Hotel Reservation</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-user text-primary mb-4"></i>
-                            <h5>Travel Guides</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-cog text-primary mb-4"></i>
-                            <h5>Event Management</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                            <h5>WorldWide Tours</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-hotel text-primary mb-4"></i>
-                            <h5>Hotel Reservation</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-user text-primary mb-4"></i>
-                            <h5>Travel Guides</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-                    <div class="service-item rounded pt-3">
-                        <div class="p-4">
-                            <i class="fa fa-3x fa-cog text-primary mb-4"></i>
-                            <h5>Event Management</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                        </div>
-                    </div>
-                </div>
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>
-    <!-- Service End -->
+    <!-- Tour Guide End -->
 
 
     <!-- Destination Start -->
@@ -600,114 +574,55 @@
     <!-- Destination Start -->
 
 
-    <!-- Package Start -->
+    <!-- Tour Packages Start -->
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Packages</h6>
-                <h1 class="mb-5">Awesome Packages</h1>
+                <h6 class="section-title bg-white text-center text-primary px-3">Tour Operators</h6>
+                <h1 class="mb-5">Find Your Tour Operators</h1>
             </div>
             <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="package-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="{{ asset('site/img/package-1.jpg') }}" alt="">
-                        </div>
-                        <div class="d-flex border-bottom">
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-map-marker-alt text-primary me-2"></i>Thailand</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2
-                                Person</small>
-                        </div>
-                        <div class="text-center p-4">
-                            <h3 class="mb-0">$149.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
+                @foreach ($tourPackages as $tourPackage)
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="package-item">
+                            <div class="overflow-hidden">
+                                <img class="img-fluid w-100" src="{{ asset($tourPackage->cover_image) }}"
+                                    alt="">
                             </div>
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                            <div class="d-flex justify-content-center mb-2">
-                                <a href="#" class="btn btn-sm btn-primary px-3 border-end"
-                                    style="border-radius: 30px 0 0 30px;">Read More</a>
-                                <a href="#" class="btn btn-sm btn-primary px-3"
-                                    style="border-radius: 0 30px 30px 0;">Book Now</a>
+                            <div class="d-flex border-bottom">
+                                <small class="flex-fill text-center border-end py-2"><i
+                                        class="fa fa-map-marker-alt text-primary me-2"></i>Thailand</small>
+                                <small class="flex-fill text-center border-end py-2"><i
+                                        class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
+                                <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2
+                                    Person</small>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
-                    <div class="package-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="{{ asset('site/img/package-2.jpg') }}" alt="">
-                        </div>
-                        <div class="d-flex border-bottom">
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-map-marker-alt text-primary me-2"></i>Indonesia</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2
-                                Person</small>
-                        </div>
-                        <div class="text-center p-4">
-                            <h3 class="mb-0">$139.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                            </div>
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                            <div class="d-flex justify-content-center mb-2">
-                                <a href="#" class="btn btn-sm btn-primary px-3 border-end"
-                                    style="border-radius: 30px 0 0 30px;">Read More</a>
-                                <a href="#" class="btn btn-sm btn-primary px-3"
-                                    style="border-radius: 0 30px 30px 0;">Book Now</a>
+                            <div class="text-center p-4">
+                                <h4 class="mb-0 text-truncate">{{ $tourPackage->title }}</h4>
+                                <h5 class="mb-0 text-secondary">
+                                    {{ $tourPackage->price ? '₹ ' . $tourPackage->price : 'Free' }}</h5>
+                                <div class="mb-3">
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                    <small class="fa fa-star text-primary"></small>
+                                </div>
+                                <p class="text-truncate">{{ $tourPackage->description ?? 'Null' }}</p>
+                                <div class="d-flex justify-content-center mb-2">
+                                    <a href="#" class="btn btn-sm btn-primary px-3 border-end"
+                                        style="border-radius: 30px 0 0 30px;">Read More</a>
+                                    <a href="#" class="btn btn-sm btn-primary px-3"
+                                        style="border-radius: 0 30px 30px 0;">Book Now</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="package-item">
-                        <div class="overflow-hidden">
-                            <img class="img-fluid" src="{{ asset('site/img/package-3.jpg') }}" alt="">
-                        </div>
-                        <div class="d-flex border-bottom">
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-map-marker-alt text-primary me-2"></i>Malaysia</small>
-                            <small class="flex-fill text-center border-end py-2"><i
-                                    class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2
-                                Person</small>
-                        </div>
-                        <div class="text-center p-4">
-                            <h3 class="mb-0">$189.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                            </div>
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                            <div class="d-flex justify-content-center mb-2">
-                                <a href="#" class="btn btn-sm btn-primary px-3 border-end"
-                                    style="border-radius: 30px 0 0 30px;">Read More</a>
-                                <a href="#" class="btn btn-sm btn-primary px-3"
-                                    style="border-radius: 0 30px 30px 0;">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
-    <!-- Package End -->
+    <!-- Tour Packages End -->
 
 
     <!-- Booking Start -->
@@ -833,111 +748,6 @@
     <!-- Process Start -->
 
 
-    <!-- Tour Guide Start -->
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Tour Guide</h6>
-                <h1 class="mb-5">Find Your Tour Guide</h1>
-            </div>
-            <div class="row g-4 justify-content-center">
-                @if ($tourGuides->isEmpty())
-                    <h4 class="text-secondary text-center wow fadeInUp" data-wow-delay="0.1s"><i
-                            class="fa fa-exclamation-triangle"></i> No tour guides available at the moment.</h4>
-                @else
-                    @foreach ($tourGuides as $tourGuide)
-                        <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="package-item">
-                                <div class="overflow-hidden">
-                                    <img class="img-fluid w-100" src="{{ asset($tourGuide->profile) }}" alt="">
-                                </div>
-                                <div class="d-flex border-bottom">
-                                    <small class="flex-fill text-center border-end py-2 text-capitalize"><i
-                                            class="fa fa-map-marker-alt text-primary me-2"></i>{{ $tourGuide->city ?? 'Null' }}</small>
-                                    <small class="flex-fill text-center border-end py-2"><i
-                                            class="fa fa-comment text-primary me-2"></i>24</small>
-                                    <small class="flex-fill text-center py-2 text-capitalize"><i
-                                            class="fa fa-user text-primary me-2"></i>{{ $tourGuide->gender ?? 'Null' }}</small>
-                                </div>
-                                <div class="text-center p-4">
-                                    <h4 class="mb-0 text-truncate">{{ $tourGuide->name }}</h4>
-                                    <h5 class="mb-0 text-secondary">
-                                        {{ $tourGuide->charges ? '₹ ' . $tourGuide->charges : 'Free' }}</h5>
-                                    <div class="mb-3">
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star text-primary"></small>
-                                        <small class="fa fa-star"></small>
-                                        <small class="fa fa-star"></small>
-                                    </div>
-                                    <p class="text-truncate">{{ $tourGuide->short_description ?? 'Null' }}</p>
-                                    <div class="d-flex justify-content-center mb-2">
-                                        {{-- <a href="#" class="btn btn-sm btn-primary px-3 border-end"
-                                            style="border-radius: 30px 0 0 30px;">Read More</a> --}}
-                                        @auth('tourist')
-                                            <a href="javascript:void(0)" data-id="{{ $tourGuide->id }}"
-                                                class="btn btn-sm btn-primary rounded-1 px-3 connect">Book Now</a>
-                                        @else
-                                            <a href="{{ url('/findCompanion') }}" class="btn btn-sm btn-primary rounded-1 px-3">Book Now</a>
-                                        @endauth
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                @endif
-            </div>
-        </div>
-    </div>
-    <!-- Tour Guide End -->
-
-
-    <!-- Testimonial Start -->
-    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container">
-            <div class="text-center">
-                <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
-                <h1 class="mb-5">Our Clients Say!!!</h1>
-            </div>
-            <div class="owl-carousel testimonial-carousel position-relative">
-                <div class="testimonial-item bg-white text-center border p-4">
-                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3"
-                        src="{{ asset('site/img/testimonial-1.jpg') }}" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">John Doe</h5>
-                    <p>New York, USA</p>
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos.
-                        Clita erat ipsum et lorem et sit.</p>
-                </div>
-                <div class="testimonial-item bg-white text-center border p-4">
-                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3"
-                        src="{{ asset('site/img/testimonial-2.jpg') }}" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">John Doe</h5>
-                    <p>New York, USA</p>
-                    <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos.
-                        Clita erat ipsum et lorem et sit.</p>
-                </div>
-                <div class="testimonial-item bg-white text-center border p-4">
-                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3"
-                        src="{{ asset('site/img/testimonial-3.jpg') }}" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">John Doe</h5>
-                    <p>New York, USA</p>
-                    <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos.
-                        Clita erat ipsum et lorem et sit.</p>
-                </div>
-                <div class="testimonial-item bg-white text-center border p-4">
-                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3"
-                        src="{{ asset('site/img/testimonial-4.jpg') }}" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">John Doe</h5>
-                    <p>New York, USA</p>
-                    <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos.
-                        Clita erat ipsum et lorem et sit.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Testimonial End -->
-
-    
 @endsection
 @section('website-custom-script')
     <script>
