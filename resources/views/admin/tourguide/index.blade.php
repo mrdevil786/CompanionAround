@@ -59,21 +59,6 @@
                                                 </label>
                                             @endif
                                         </td>
-                                        {{-- <td class="text-center">
-                                            <x-buttons.action-pill-button iconClass="fa fa-eye" iconColor="secondary" />
-
-                                            @if (auth()->user()->user_role != 3)
-                                                <x-buttons.action-pill-button
-                                                    href="{{ route('admin.users.edit', $guide->id) }}"
-                                                    iconClass="fa fa-pencil" iconColor="warning"
-                                                    modalTarget="editUserModal" />
-                                            @endif
-                                            @if (auth()->user()->user_role == 1)
-                                                <x-buttons.action-pill-button
-                                                    href="{{ route('admin.users.destroy', $guide->id) }}"
-                                                    iconClass="fa fa-trash" iconColor="danger" />
-                                            @endif
-                                        </td> --}}
                                     </tr>
                                 @endforeach
                             </tbody>

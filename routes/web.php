@@ -5,8 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\Web\AuthController;
 use App\Http\Controllers\Web\BasicController;
-use App\Http\Controllers\Web\TestimonialController;
 use App\Http\Controllers\Web\TouristsController;
+use App\Http\Controllers\Web\TourOperatorController;
 
 Route::prefix('admin')->middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'loginView'])->name('view.login');
@@ -31,10 +31,11 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'web', 'chec
             Route::get('profile/{id}', [TouristsController::class, 'profile'])->name('profile');
         });
 
-        Route::prefix('testimonials')->name('testimonials.')->group(function () {
-            Route::get('/{id}/destroy', [TestimonialController::class, 'destroy'])->name('destroy');
-            Route::put('status', [TestimonialController::class, 'status'])->name('status');
+        Route::prefix('touroperators')->name('touroperators.')->group(function () {
+            Route::get('/{id}/destroy', [TourOperatorController::class, 'destroy'])->name('destroy');
+            Route::put('status', [TourOperatorController::class, 'status'])->name('status');
         });
+
         Route::controller(TourGuideController::class)->prefix('tourguides')->name('tourguides.')->group(function () {
             Route::get('/', 'index')->name('index');
             Route::get('profile/{id}', 'profile')->name('profile');
@@ -57,10 +58,10 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'web', 'chec
             Route::put('update/{id}', [TouristsController::class, 'update'])->name('update');
         });
 
-        Route::prefix('testimonials')->name('testimonials.')->group(function () {
-            Route::post('store', [TouristsController::class, 'store'])->name('store');
-            Route::get('edit/{id}', [TouristsController::class, 'edit'])->name('edit');
-            Route::put('update/{id}', [TouristsController::class, 'update'])->name('update');
+        Route::prefix('touroperators')->name('touroperators.')->group(function () {
+            Route::post('store', [TourOperatorController::class, 'store'])->name('store');
+            Route::get('edit/{id}', [TourOperatorController::class, 'edit'])->name('edit');
+            Route::put('update/{id}', [TourOperatorController::class, 'update'])->name('update');
         });
     });
 
@@ -76,9 +77,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'web', 'chec
             Route::get('view/{id}', [TouristsController::class, 'showUser'])->name('show');
         });
 
-        Route::prefix('testimonials')->name('testimonials.')->group(function () {
-            Route::get('/', [TestimonialController::class, 'index'])->name('index');
-            Route::get('view/{id}', [TestimonialController::class, 'showUser'])->name('show');
+        Route::prefix('touroperators')->name('touroperators.')->group(function () {
+            Route::get('/', [TourOperatorController::class, 'index'])->name('index');
+            Route::get('view/{id}', [TourOperatorController::class, 'showUser'])->name('show');
         });
     });
 });

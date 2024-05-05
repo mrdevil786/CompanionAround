@@ -210,6 +210,13 @@
                                         Guides</span></a>
                             </li>
 
+                            <li class="slide">
+                                <a class="side-menu__item has-link {{ Request::is('admin/touroperators*') ? 'active' : '' }}"
+                                    data-bs-toggle="slide" href="{{ url('admin/touroperators') }}"><i
+                                        class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Tour
+                                        Operators</span></a>
+                            </li>
+
                             <li class="sub-category">
                                 <h3>ADMIN PANEL</h3>
                             </li>
