@@ -146,263 +146,263 @@
                                 </div>
                             </div>
                             <section class="services">
-                            <div class="container text-center mt-4">
+                                <div class="container text-center mt-4">
 
-                                <div class="row">
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-map"></i></div>
-                                    <div class="text">
-                                    <h3 class="h6" style="text-align:left;">Type of Operator</h3>
-                                    </div>
-                                </div>
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-cityscape"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                            <input type="checkbox" id="checkbox1" name="checkbox1">
-                                            <label for="checkbox1">Tour Operator</label>
+                                    <div class="row">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-map"></i></div>
+                                            <div class="text">
+                                                <h3 class="h6" style="text-align:left;">Type of Operator</h3>
+                                            </div>
                                         </div>
-                                </div>
-                                <!-- Item-->
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-cityscape"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox1" name="checkbox1">
+                                                <label for="checkbox1">Tour Operator</label>
+                                            </div>
+                                        </div>
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
                                                 <input type="checkbox" id="checkbox2" name="checkbox2">
-                                                <label for="checkbox2">Tour Guide</label>                  
+                                                <label for="checkbox2">Tour Guide</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">                
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                            </div>
                                         </div>
-                                    </div>
-                                </div><!--row-->
+                                    </div><!--row-->
                                 </div><!--container -->
                             </section>
 
                             <section class="services">
-                            <div class="container text-center mt-4">
-                                <div class="row">
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-map"></i></div>
-                                    <div class="text">
-                                    <h3 class="h6" style="text-align:left;">Languages</h3>
-                                    </div>
-                                </div>
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-cityscape"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                            <input type="checkbox" id="checkbox1" name="checkbox1">
-                                            <label for="checkbox1">English</label>
+                                <div class="container text-center mt-4">
+                                    <div class="row">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-map"></i></div>
+                                            <div class="text">
+                                                <h3 class="h6" style="text-align:left;">Languages</h3>
+                                            </div>
                                         </div>
-                                </div>
-                                <!-- Item-->
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-cityscape"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox1" name="checkbox1">
+                                                <label for="checkbox1">English</label>
+                                            </div>
+                                        </div>
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
                                                 <input type="checkbox" id="checkbox2" name="checkbox2">
-                                                <label for="checkbox2">Spanish</label>                  
+                                                <label for="checkbox2">Spanish</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">  
-                                            <input type="checkbox" id="checkbox3" name="checkbox3"> 
-                                        <label for="checkbox3">German</label>             
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox3" name="checkbox3">
+                                                <label for="checkbox3">German</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div><!--row-->
-                                <div class="row mt-2">
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-map"></i></div>
-                                    <div class="text">
-                                    
-                                    </div>
-                                </div>
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-cityscape"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                            <input type="checkbox" id="checkbox4" name="checkbox4">
-                                            <label for="checkbox4">French</label>
+                                    </div><!--row-->
+                                    <div class="row mt-2">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-map"></i></div>
+                                            <div class="text">
+
+                                            </div>
                                         </div>
-                                </div>
-                                <!-- Item-->
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-cityscape"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox4" name="checkbox4">
+                                                <label for="checkbox4">French</label>
+                                            </div>
+                                        </div>
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
                                                 <input type="checkbox" id="checkbox5" name="checkbox5">
-                                                <label for="checkbox5">Italian</label>                  
+                                                <label for="checkbox5">Italian</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">  
-                                            <input type="checkbox" id="checkbox6" name="checkbox6"> 
-                                        <label for="checkbox6">Chinese</label>             
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox6" name="checkbox6">
+                                                <label for="checkbox6">Chinese</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div><!--row-->
+                                    </div><!--row-->
 
-                            </div><!--container -->
+                                </div><!--container -->
                             </section>
 
 
                             <section class="services">
-                            <div class="container text-center mt-4">
-                                <div class="row">
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-map"></i></div>
-                                    <div class="text">
-                                    <h3 class="h6" style="text-align:left;">Activities</h3>
-                                    </div>
-                                </div>
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-cityscape"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                        <input type="checkbox" id="checkbox1" name="checkbox1">
-                                        <label for="checkbox1">Nightlife & Bars</label>       
+                                <div class="container text-center mt-4">
+                                    <div class="row">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-map"></i></div>
+                                            <div class="text">
+                                                <h3 class="h6" style="text-align:left;">Activities</h3>
+                                            </div>
                                         </div>
-                                </div>
-                                <!-- Item-->
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                        <input type="checkbox" id="checkbox2" name="checkbox2">
-                                        <label for="checkbox2">Food & Restaurants</label>
-                                                                                
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-cityscape"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox1" name="checkbox1">
+                                                <label for="checkbox1">Nightlife & Bars</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">  
-                                        <input type="checkbox" id="checkbox3" name="checkbox3"> 
-                                        <label for="checkbox3">History & Culture</label>
-                                                                        
-                                        </div>
-                                    </div>
-                                </div><!--row-->
-                                <div class="row mt-2">
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-map"></i></div>
-                                    <div class="text">
-                                    
-                                    </div>
-                                </div>
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-cityscape"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                        <input type="checkbox" id="checkbox4" name="checkbox4">
-                                        <label for="checkbox4">Shopping</label>
-                                                            
-                                        </div>
-                                </div>
-                                <!-- Item-->
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                        <input type="checkbox" id="checkbox5" name="checkbox5"> 
-                                        <label for="checkbox5">Sports & Recreat.</label>
-                                                                            
-                                        </div>
-                                    </div>
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">  
-                                        <input type="checkbox" id="checkbox6" name="checkbox6">  
-                                        <label for="checkbox6">Exploration & Sight</label>
-                                                                        
-                                        </div>
-                                    </div>
-                                </div><!--row-->
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox2" name="checkbox2">
+                                                <label for="checkbox2">Food & Restaurants</label>
 
-                                <div class="row mt-2">
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-map"></i></div>
-                                    <div class="text">
-                                    
-                                    </div>
-                                </div>
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-cityscape"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                        <input type="checkbox" id="checkbox7" name="checkbox7">
-                                        <label for="checkbox7">Translation & Interpret.</label>
-                                                            
-                                                            
+                                            </div>
                                         </div>
-                                </div>
-                                <!-- Item-->
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                        <input type="checkbox" id="checkbox8" name="checkbox8">
-                                        <label for="checkbox8">PickUp & Driving Tours</label>
-                                                            
-                                                                            
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox3" name="checkbox3">
+                                                <label for="checkbox3">History & Culture</label>
+
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">  
-                                        <input type="checkbox" id="checkbox9" name="checkbox9">
-                                        <label for="checkbox9">Art & Museums</label>
-                                                                
-                                                                        
+                                    </div><!--row-->
+                                    <div class="row mt-2">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-map"></i></div>
+                                            <div class="text">
+
+                                            </div>
                                         </div>
-                                    </div>
-                                </div><!--row-->
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-cityscape"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox4" name="checkbox4">
+                                                <label for="checkbox4">Shopping</label>
+
+                                            </div>
+                                        </div>
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox5" name="checkbox5">
+                                                <label for="checkbox5">Sports & Recreat.</label>
+
+                                            </div>
+                                        </div>
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox6" name="checkbox6">
+                                                <label for="checkbox6">Exploration & Sight</label>
+
+                                            </div>
+                                        </div>
+                                    </div><!--row-->
+
+                                    <div class="row mt-2">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-map"></i></div>
+                                            <div class="text">
+
+                                            </div>
+                                        </div>
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-cityscape"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox7" name="checkbox7">
+                                                <label for="checkbox7">Translation & Interpret.</label>
 
 
-                            </div><!--container -->
+                                            </div>
+                                        </div>
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox8" name="checkbox8">
+                                                <label for="checkbox8">PickUp & Driving Tours</label>
+
+
+                                            </div>
+                                        </div>
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox9" name="checkbox9">
+                                                <label for="checkbox9">Art & Museums</label>
+
+
+                                            </div>
+                                        </div>
+                                    </div><!--row-->
+
+
+                                </div><!--container -->
                             </section>
 
                             <section class="services">
-                            <div class="container text-center mt-4">
+                                <div class="container text-center mt-4">
 
-                                <div class="row">
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-map"></i></div>
-                                    <div class="text">
-                                    <h3 class="h6" style="text-align:left;">Gender</h3>
-                                    </div>
-                                </div>
-                                <!-- Item-->
-                                <div class="item col-lg-3">
-                                    <div class="icon"><i class="icon-cityscape"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                        <input type="checkbox" id="checkbox1" name="checkbox1">
-                                        <label for="checkbox1">Female</label>                                        
+                                    <div class="row">
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-map"></i></div>
+                                            <div class="text">
+                                                <h3 class="h6" style="text-align:left;">Gender</h3>
+                                            </div>
                                         </div>
-                                </div>
-                                <!-- Item-->
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">
-                                        <input type="checkbox" id="checkbox2" name="checkbox2"> 
-                                        <label for="checkbox2">Male</label>                                                         
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-cityscape"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox1" name="checkbox1">
+                                                <label for="checkbox1">Female</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="item col-lg-3">
-                                        <div class="icon"><i class="icon-script"></i></div>
-                                        <div class="text" style="text-align:left;">  
-                                        <input type="checkbox" id="checkbox3" name="checkbox3">   
-                                        <label for="checkbox3">Couple</label>
-                                                                        
+                                        <!-- Item-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox2" name="checkbox2">
+                                                <label for="checkbox2">Male</label>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div><!--row-->
+                                        <div class="item col-lg-3">
+                                            <div class="icon"><i class="icon-script"></i></div>
+                                            <div class="text" style="text-align:left;">
+                                                <input type="checkbox" id="checkbox3" name="checkbox3">
+                                                <label for="checkbox3">Couple</label>
+
+                                            </div>
+                                        </div>
+                                    </div><!--row-->
                                 </div><!--container -->
                             </section>
                         </div>
@@ -727,43 +727,47 @@
                     </div>
                     <div class="col-md-6">
                         <h1 class="text-white mb-4">Book A Tour</h1>
-                        <form>
+                        <form id="addRequest">
                             <div class="row g-3">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="name"
-                                            placeholder="Your Name">
-                                        <label for="name">Your Name</label>
+                                        <input type="text" name="where_to_go" class="form-control bg-transparent"
+                                            id="name" placeholder="Where next?">
+                                        <label for="name">Where
+                                            are you going?</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control bg-transparent" id="email"
-                                            placeholder="Your Email">
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating date" id="date3" data-target-input="nearest">
+                                    <div class="form-floating date" id="dt_pickr" data-target-input="nearest">
                                         <input type="text" class="form-control bg-transparent datetimepicker-input"
-                                            id="datetime" placeholder="Date & Time" data-target="#date3"
+                                            id="from_date" placeholder="From Date" name="from_date" data-target="#date3"
                                             data-toggle="datetimepicker" />
-                                        <label for="datetime">Date & Time</label>
+                                        <label for="datetime">From Date</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating date" id="dt_pickr1" data-target-input="nearest">
+                                        <input type="text" class="form-control bg-transparent datetimepicker-input"
+                                            id="to_date" placeholder="To Date" name="to_date" data-target="#date4"
+                                            data-toggle="datetimepicker" />
+                                        <label for="datetime">To Date</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <select class="form-select bg-transparent" id="select1">
-                                            <option value="1">Destination 1</option>
-                                            <option value="2">Destination 2</option>
-                                            <option value="3">Destination 3</option>
+                                        <select class="form-select bg-transparent" name="no_of_people" id="select1">
+                                            <option value="1">Just me</option>
+                                            <option value="2">Two people</option>
+                                            <option value="3">Three people</option>
+                                            <option value="0">More than Three</option>
                                         </select>
-                                        <label for="select1">Destination</label>
+                                        <label for="select1">No of people</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                                        <textarea class="form-control bg-transparent" name="message" placeholder="Special Request" id="message"
+                                            style="height: 100px"></textarea>
                                         <label for="message">Special Request</label>
                                     </div>
                                 </div>
@@ -957,6 +961,25 @@
     <!-- Testimonial End -->
 @endsection
 @section('website-custom-script')
+    <script>
+        $('#addRequest').submit(function(e) {
+            e.preventDefault();
+            const data = $(this).serialize();
+            $.ajaxSetup({
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+                },
+            });
+            $.ajax({
+                type: "post",
+                url: "{{ route('tourist.trip.request-trip') }}",
+                data: data,
+                success: function(response) {
+                    console.log(response);
+                }
+            });
+        });
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const searchInput = document.getElementById('searchInput');
