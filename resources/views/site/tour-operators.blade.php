@@ -33,12 +33,14 @@
                                 <img class="img-fluid w-100" src="{{ asset($tourPackage->cover_image) }}" alt="">
                             </div>
                             <div class="d-flex border-bottom">
+                                {{-- <small class="flex-fill text-center border-end py-2"><i
+                                        class="fa fa-map-marker-alt text-primary me-2"></i>Thailand</small> --}}
                                 <small class="flex-fill text-center border-end py-2"><i
-                                        class="fa fa-map-marker-alt text-primary me-2"></i>Thailand</small>
+                                        class="fa fa-calendar-alt text-primary me-2"></i>{{ $tourPackage->days . ' Days' }}</small>
                                 <small class="flex-fill text-center border-end py-2"><i
-                                        class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
-                                <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2
-                                    Person</small>
+                                        class="fa fa-calendar-alt text-primary me-2"></i>{{ $tourPackage->nights . ' Days' }}</small>
+                                {{-- <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 --}}
+                                {{-- Person</small> --}}
                             </div>
                             <div class="text-center p-4">
                                 <h4 class="mb-0 text-truncate">{{ $tourPackage->title }}</h4>
@@ -53,8 +55,8 @@
                                 </div>
                                 <p class="text-truncate">{{ $tourPackage->description ?? 'Null' }}</p>
                                 <div class="d-flex justify-content-center mb-2">
-                                    <a href="#" class="btn btn-sm btn-primary px-3 border-end"
-                                        style="border-radius: 30px 0 0 30px;">Read More</a>
+                                    {{-- <a href="#" class="btn btn-sm btn-primary px-3 border-end"
+                                        style="border-radius: 30px 0 0 30px;">Read More</a> --}}
                                     <a href="#" class="btn btn-sm btn-primary px-3"
                                         style="border-radius: 0 30px 30px 0;">Book Now</a>
                                 </div>
