@@ -6,6 +6,7 @@ use App\Models\TourGuide;
 use App\Models\TourOperator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Package;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -116,7 +117,8 @@ class SiteController extends Controller
 
     public function tour_operators()
     {
-        return view('site.tour-operators');
+        $tourPackages = Package::latest()->get();
+        return view('site.tour-operators', compact('tourPackages'));
     }
 
     public function contact()

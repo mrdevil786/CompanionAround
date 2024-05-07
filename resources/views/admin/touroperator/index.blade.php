@@ -1,13 +1,13 @@
 @extends('layout.main')
 
-@section('page-title', 'Tour Guides')
+@section('page-title', 'Tour Operators')
 
 @section('main-section')
     <div class="row row-sm">
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Tour Guides</h3>
+                    <h3 class="card-title">Tour Operators</h3>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -18,9 +18,8 @@
                                     <th class="wd-20p border-bottom-0">Name</th>
                                     <th class="wd-15p border-bottom-0">Email</th>
                                     <th class="wd-15p border-bottom-0">Mobile</th>
-                                    <th class="wd-15p border-bottom-0">Gender</th>
-                                    <th class="wd-15p border-bottom-0">Guide Type</th>
-                                    <th class="wd-15p border-bottom-0">Charges</th>
+                                    <th class="wd-15p border-bottom-0">Address</th>
+                                    <th class="wd-15p border-bottom-0">Zipcode</th>
                                     <th class="wd-15p border-bottom-0">City</th>
                                     <th class="wd-15p border-bottom-0">State</th>
                                     <th class="wd-15p border-bottom-0">Country</th>
@@ -32,29 +31,28 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($tourGuides as $guide)
+                                @foreach ($tourOperators as $tourOperator)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td><a
-                                                href="{{ route('admin.tourguides.profile', $guide->id) }}">{{ $guide->name }}</a>
+                                                href="{{ route('admin.touroperators.profile', $tourOperator->id) }}">{{ $tourOperator->name }}</a>
                                         </td>
-                                        <td>{{ $guide->email }}</td>
-                                        <td>{{ $guide->mobile }}</td>
-                                        <td>{{ Str::ucfirst($guide->gender) }}</td>
-                                        <td>{{ Str::ucfirst($guide->guide_type) }}</td>
-                                        <td>{{ $guide->charges ?? '-' }}</td>
-                                        <td>{{ Str::ucfirst($guide->city) }}</td>
-                                        <td>{{ Str::ucfirst($guide->state) }}</td>
-                                        <td>{{ Str::ucfirst($guide->country) }}</td>
-                                        <td>{{ ucfirst(Str::limit($guide->short_description, 20)) }}</td>
-                                        <td>{{ $guide->created_at }}</td>
-                                        <td>{{ $guide->updated_at }}</td>
+                                        <td>{{ $tourOperator->email }}</td>
+                                        <td>{{ $tourOperator->mobile }}</td>
+                                        <td>{{ ucfirst(Str::limit($tourOperator->address, 20)) }}</td>
+                                        <td>{{ $tourOperator->zipcode }}</td>
+                                        <td>{{ Str::ucfirst($tourOperator->city) }}</td>
+                                        <td>{{ Str::ucfirst($tourOperator->state) }}</td>
+                                        <td>{{ Str::ucfirst($tourOperator->country) }}</td>
+                                        <td>{{ ucfirst(Str::limit($tourOperator->description, 20)) }}</td>
+                                        <td>{{ $tourOperator->created_at }}</td>
+                                        <td>{{ $tourOperator->updated_at }}</td>
                                         <td class="text-center">
                                             @if (auth()->user()->user_role == 1)
                                                 <label class="custom-switch form-switch mb-0">
                                                     <input type="checkbox" name="custom-switch-radio"
-                                                        class="custom-switch-input" data-status-id="{{ $guide->id }}"
-                                                        {{ $guide->status == 'active' ? 'checked' : '' }}>
+                                                        class="custom-switch-input" data-status-id="{{ $tourOperator->id }}"
+                                                        {{ $tourOperator->status == 'active' ? 'checked' : '' }}>
                                                     <span class="custom-switch-indicator"></span>
                                                 </label>
                                             @endif

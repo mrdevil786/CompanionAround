@@ -1,16 +1,16 @@
 @extends('layout.main')
 
-@section('page-title', 'Tour Guide Profile')
+@section('page-title', 'Tour Operator Profile')
 
 @section('main-section')
     <section>
         <div class="row">
             <div class="card">
                 <div class="card-body d-flex">
-                    <span class="me-5">Name : {{ $guide->name }}</span>
-                    <span class="me-5 mx-5">Email : {{ $guide->email }}</span>
-                    <span class="me-5 mx-5">Mobile : {{ $guide->mobile }}</span>
-                    <span class="me-5 mx-5">Gender : {{ Str::ucfirst($guide->gender) }}</span>
+                    <span class="me-5">Name : {{ $tourOperators->name }}</span>
+                    <span class="me-5 mx-5">Email : {{ $tourOperators->email }}</span>
+                    <span class="me-5 mx-5">Mobile : {{ $tourOperators->mobile }}</span>
+                    <span class="me-5 mx-5">ZipCode : {{ Str::ucfirst($tourOperators->zipcode) }}</span>
                 </div>
             </div>
         </div>
@@ -32,7 +32,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @forelse ($guide->touristguide as $tourist)
+                                {{-- @forelse ($guide->touristguide as $tourist)
                                     @php
                                         $history = json_decode($tourist->tourist_data);
                                     @endphp
@@ -55,7 +55,7 @@
                                     </tr>
 
                                 @empty
-                                @endforelse
+                                @endforelse --}}
                             </tbody>
                         </table>
                     </div>

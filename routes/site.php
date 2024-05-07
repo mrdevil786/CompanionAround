@@ -43,6 +43,7 @@ Route::controller(SiteController::class)->group(function () {
     Route::post('/post-login', 'postLogin')->name('post-login');
     Route::get('get-tourguide', 'getTourGuide')->name('get-tourguide');
 });
+
 Route::prefix('tourguide')->name('tourguide.')->middleware(['auth:tourguard', 'web'])->group(function () {
     Route::controller(TourGuideController::class)->name('guide.')->group(function () {
         Route::get('/', 'dashboard')->name('index');
@@ -51,6 +52,7 @@ Route::prefix('tourguide')->name('tourguide.')->middleware(['auth:tourguard', 'w
         Route::post('request-action', 'requestAction')->name('request-action');
     });
 });
+
 Route::prefix('touroperator')->name('touroperator.')->middleware(['auth:touroperator', 'web'])->group(function () {
     Route::controller(TourOperatorController::class)->name('operator.')->group(function () {
         Route::get('/', 'dashboard')->name('index');
