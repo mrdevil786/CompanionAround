@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SIte\DirectTripController;
 use App\Http\Controllers\Site\PackageController;
 use App\Http\Controllers\Site\TouristsController;
 use App\Http\Controllers\Site\SiteController;
@@ -16,6 +17,9 @@ Route::prefix('tourist')->name('tourist.')->middleware(['auth:tourist', 'web'])-
         Route::get('/', 'dashboard')->name('index');
         Route::post('connect', 'requestConnection')->name('connect');
         Route::get('/logout', 'logout')->name('logout');
+    });
+    Route::controller(DirectTripController::class)->name('trip.')->group(function () {
+        Route::post('request-trip', 'store')->name('request-trip');
     });
 });
 

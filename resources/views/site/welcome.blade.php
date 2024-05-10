@@ -642,43 +642,47 @@
                     </div>
                     <div class="col-md-6">
                         <h1 class="text-white mb-4">Book A Tour</h1>
-                        <form>
+                        <form id="addRequest">
                             <div class="row g-3">
-                                <div class="col-md-6">
+                                <div class="col-md-12">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control bg-transparent" id="name"
-                                            placeholder="Your Name">
-                                        <label for="name">Your Name</label>
+                                        <input type="text" name="where_to_go" class="form-control bg-transparent"
+                                            id="name" placeholder="Where next?">
+                                        <label for="name">Where
+                                            are you going?</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-floating">
-                                        <input type="email" class="form-control bg-transparent" id="email"
-                                            placeholder="Your Email">
-                                        <label for="email">Your Email</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating date" id="date3" data-target-input="nearest">
+                                    <div class="form-floating date" id="dt_pickr" data-target-input="nearest">
                                         <input type="text" class="form-control bg-transparent datetimepicker-input"
-                                            id="datetime" placeholder="Date & Time" data-target="#date3"
+                                            id="from_date" placeholder="From Date" name="from_date" data-target="#date3"
                                             data-toggle="datetimepicker" />
-                                        <label for="datetime">Date & Time</label>
+                                        <label for="datetime">From Date</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating date" id="dt_pickr1" data-target-input="nearest">
+                                        <input type="text" class="form-control bg-transparent datetimepicker-input"
+                                            id="to_date" placeholder="To Date" name="to_date" data-target="#date4"
+                                            data-toggle="datetimepicker" />
+                                        <label for="datetime">To Date</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-floating">
-                                        <select class="form-select bg-transparent" id="select1">
-                                            <option value="1">Destination 1</option>
-                                            <option value="2">Destination 2</option>
-                                            <option value="3">Destination 3</option>
+                                        <select class="form-select bg-transparent" name="no_of_people" id="select1">
+                                            <option value="1">Just me</option>
+                                            <option value="2">Two people</option>
+                                            <option value="3">Three people</option>
+                                            <option value="0">More than Three</option>
                                         </select>
-                                        <label for="select1">Destination</label>
+                                        <label for="select1">No of people</label>
                                     </div>
                                 </div>
                                 <div class="col-12">
                                     <div class="form-floating">
-                                        <textarea class="form-control bg-transparent" placeholder="Special Request" id="message" style="height: 100px"></textarea>
+                                        <textarea class="form-control bg-transparent" name="message" placeholder="Special Request" id="message"
+                                            style="height: 100px"></textarea>
                                         <label for="message">Special Request</label>
                                     </div>
                                 </div>
@@ -750,6 +754,25 @@
 
 @endsection
 @section('website-custom-script')
+    <script>
+        $('#addRequest').submit(function(e) {
+            e.preventDefault();
+            const data = $(this).serialize();
+            $.ajaxSetup({
+                headers: {
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+                },
+            });
+            $.ajax({
+                type: "post",
+                url: "{{ route('tourist.trip.request-trip') }}",
+                data: data,
+                success: function(response) {
+                    console.log(response);
+                }
+            });
+        });
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const searchInput = document.getElementById('searchInput');

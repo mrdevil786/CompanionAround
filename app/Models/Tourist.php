@@ -16,4 +16,8 @@ class Tourist extends Authenticatable
     {
         return $this->hasMany(TouristGuide::class);
     }
+    public function directtrip()
+    {
+        return $this->hasMany(DirectTrip::class);
+    }
 }
