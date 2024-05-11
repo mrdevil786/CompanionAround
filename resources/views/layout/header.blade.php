@@ -184,7 +184,7 @@
                             <li class="sub-category">
                                 <h3>Main</h3>
                             </li>
-                            
+
                             <li class="slide">
                                 <a class="side-menu__item has-link {{ Request::is('admin') ? 'active' : '' }}"
                                     data-bs-toggle="slide" href="{{ url('admin/') }}"><i
@@ -196,6 +196,12 @@
                                 <h3>WEBSITE PANEL</h3>
                             </li>
 
+                            <li class="slide">
+                                <a class="side-menu__item has-link {{ Request::is('admin/tourists*') ? 'active' : '' }}"
+                                    data-bs-toggle="slide" href="{{ url('admin/trips') }}"><i
+                                        class="side-menu__icon fe fe-home"></i><span class="side-menu__label">Direct
+                                        Trips</span></a>
+                            </li>
                             <li class="slide">
                                 <a class="side-menu__item has-link {{ Request::is('admin/tourists*') ? 'active' : '' }}"
                                     data-bs-toggle="slide" href="{{ url('admin/tourists') }}"><i

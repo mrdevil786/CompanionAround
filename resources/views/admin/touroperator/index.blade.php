@@ -39,19 +39,20 @@
                                         </td>
                                         <td>{{ $tourOperator->email }}</td>
                                         <td>{{ $tourOperator->mobile }}</td>
-                                        <td>{{ ucfirst(Str::limit($tourOperator->address, 20)) }}</td>
-                                        <td>{{ $tourOperator->zipcode }}</td>
-                                        <td>{{ Str::ucfirst($tourOperator->city) }}</td>
-                                        <td>{{ Str::ucfirst($tourOperator->state) }}</td>
-                                        <td>{{ Str::ucfirst($tourOperator->country) }}</td>
-                                        <td>{{ ucfirst(Str::limit($tourOperator->description, 20)) }}</td>
+                                        <td>{{ ucfirst(Str::limit($tourOperator->address, 20) ?? 'NA') }}</td>
+                                        <td>{{ $tourOperator->zipcode ?? 'NA' }}</td>
+                                        <td>{{ Str::ucfirst($tourOperator->city ?? 'NA') }}</td>
+                                        <td>{{ Str::ucfirst($tourOperator->state ?? 'NA') }}</td>
+                                        <td>{{ Str::ucfirst($tourOperator->country ?? 'NA') }}</td>
+                                        <td>{{ ucfirst(Str::limit($tourOperator->description, 20) ?? 'NA') }}</td>
                                         <td>{{ $tourOperator->created_at }}</td>
                                         <td>{{ $tourOperator->updated_at }}</td>
                                         <td class="text-center">
                                             @if (auth()->user()->user_role == 1)
                                                 <label class="custom-switch form-switch mb-0">
                                                     <input type="checkbox" name="custom-switch-radio"
-                                                        class="custom-switch-input" data-status-id="{{ $tourOperator->id }}"
+                                                        class="custom-switch-input"
+                                                        data-status-id="{{ $tourOperator->id }}"
                                                         {{ $tourOperator->status == 'active' ? 'checked' : '' }}>
                                                     <span class="custom-switch-indicator"></span>
                                                 </label>

@@ -8,6 +8,7 @@ use App\Helpers\FileUploader;
 use App\Http\Controllers\Controller;
 use App\Models\Package;
 use App\Models\Country;
+use App\Models\TouristEnquiry;
 
 class TourOperatorController extends Controller
 {
@@ -16,7 +17,8 @@ class TourOperatorController extends Controller
         $user = auth('touroperator')->user();
         $packages = Package::all();
         $countries = Country::all();
-        return view('site.tourOperatorProfile', compact('user', 'packages','countries'));
+        $requestConnections = TouristEnquiry::with(['tourist'])->where('tour_operator_id', $user->id)->latest()->get();
+        return view('site.tourOperatorProfile', compact('user', 'packages', 'countries', 'requestConnections'));
     }
 
     public function edit(Request $request)

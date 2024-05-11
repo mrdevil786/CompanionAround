@@ -37,6 +37,9 @@
                         <button class="nav-link rounded-1" id="v-pills-history-tab" data-bs-toggle="pill"
                             data-bs-target="#v-pills-history" type="button" role="tab" aria-controls="v-pills-history"
                             aria-selected="false">History</button>
+                        <button class="nav-link rounded-1" id="v-pills-package-enquiry-tab" data-bs-toggle="pill"
+                            data-bs-target="#v-pills-package-enquiry" type="button" role="tab"
+                            aria-controls="v-pills-package-enquiry" aria-selected="false">Package Enquiry</button>
                         <div class="col-12 mt-5">
                             <a href="{{ route('tourist.tourist.logout') }}" class="btn btn-secondary rounded-1 w-100"
                                 type="submit">Logout <i class="fas fa-sign-out-alt ms-2"></i>
@@ -130,6 +133,44 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="tab-pane fade" id="v-pills-package-enquiry" role="tabpanel"
+                            aria-labelledby="v-pills-package-enquiry-tab">
+                            <div class="container">
+                                <div class="table-responsive">
+                                    <table id="enquiry-table" class="table">
+                                        <thead>
+                                            <tr>
+                                                <th>#Sr.No</th>
+                                                <th>Package</th>
+                                                <th>Price</th>
+                                                <th>Days</th>
+                                                <th>Nights</th>
+                                                <th>Created At</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @forelse ($packageEnquiries as $enquiry)
+                                                @php
+                                                    $package = json_decode($enquiry->package_data);
+                                                @endphp
+                                                <tr>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td>{{ $package->title }}</td>
+                                                    <td>{{ $package->price }}</td>
+                                                    <td>{{ $package->days }}</td>
+                                                    <td>{{ $package->nights }}</td>
+                                                    <td><span class="badge rounded-pill bg-success">
+                                                            {{ date('M jS, Y h:i A', strtotime($enquiry->created_at)) }}</span>
+                                                    </td>
+                                                </tr>
+
+                                            @empty
+                                            @endforelse
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -153,6 +194,13 @@
     <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.print.min.js"></script>
     <script>
         new DataTable('#profile-table', {
+            layout: {
+                topStart: {
+                    buttons: ['copy', 'csv', 'excel', 'pdf', 'print']
+                }
+            }
+        });
+        new DataTable('#enquiry-table', {
             layout: {
                 topStart: {
                     buttons: ['copy', 'csv', 'excel', 'pdf', 'print']

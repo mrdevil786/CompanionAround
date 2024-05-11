@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
+use App\Http\Controllers\Controller;
 use App\Models\TourGuide;
 use Illuminate\Http\Request;
 
@@ -24,13 +25,13 @@ class TourGuideController extends Controller
 
         return response()->json(['message' => 'Tour guide status updated successfully']);
     }
-    
+
     public function profile($id)
     {
         $guide = TourGuide::with(['touristguide'])->findOrFail($id);
         return  view('admin.tourguide.profile',compact('guide'));
     }
-    
+
     // public function destroy($id)
     // {
     //     $user = TourGuide::findOrFail($id);
