@@ -12,4 +12,8 @@ class TourOperator extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
     protected $guarded = [];
+    public function package()
+    {
+        return $this->hasMany(Package::class);
+    }
 }

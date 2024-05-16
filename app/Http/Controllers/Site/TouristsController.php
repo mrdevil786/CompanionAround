@@ -10,6 +10,7 @@ use App\Models\TouristGuide;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
+use App\Models\TouristEnquiry;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
@@ -21,15 +22,16 @@ class TouristsController extends Controller
         $connectionHistory = TouristGuide::with(['tourist', 'tourguide'])->where('tourist_id', auth('tourist')->user()->id)->get();
         $totalPendingRequest = TouristGuide::where('status', 'pending')->count();
         $totalConnected = TouristGuide::where('status', 'accepted')->count();
-        return view('site.touristProfile', compact('user', 'connectionHistory', 'totalPendingRequest', 'totalConnected'));
+        $packageEnquiries = TouristEnquiry::where('tourist_id', auth('tourist')->user()->id)->latest()->get();
+        return view('site.touristProfile', compact('user', 'connectionHistory', 'totalPendingRequest', 'totalConnected', 'packageEnquiries'));
     }
 
     public function index()
     {
         $tourGuides = TourGuide::where('status', 'active')->latest()->take(9)->get();
         $tourPackages = Package::latest()->take(9)->get();
-        return view('site.welcome', compact('tourGuides','tourPackages'));
-    }    
+        return view('site.welcome', compact('tourGuides', 'tourPackages'));
+    }
 
     public function requestConnection(Request $request)
     {

@@ -7,55 +7,51 @@
         <div class="row">
             <div class="card">
                 <div class="card-body d-flex">
-                    <span class="me-5">Name : {{ $tourOperators->name }}</span>
-                    <span class="me-5 mx-5">Email : {{ $tourOperators->email }}</span>
-                    <span class="me-5 mx-5">Mobile : {{ $tourOperators->mobile }}</span>
-                    <span class="me-5 mx-5">ZipCode : {{ Str::ucfirst($tourOperators->zipcode) }}</span>
+                    <span class="me-5">Business Name : {{ $tourOperators->name }}</span>
+                    <span class="me-5 mx-5">Business Email : {{ $tourOperators->email }}</span>
+                    <span class="me-5 mx-5">Business Mobile : {{ $tourOperators->mobile }}</span>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title text-center">Connection History</h4>
+                    <h4 class="card-title text-center">Packages</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
-                        <table id="history-table" class="table">
+                        <table  class="table table-bordered text-nowrap border-bottomm" id="file-datatable">
                             <thead>
                                 <tr>
                                     <th>#Sr.No</th>
-                                    <th>Status</th>
-                                    <th>Tourist</th>
-                                    <th>Email</th>
-                                    <th>Connected At</th>
+                                    <th>Title</th>
+                                    <th>Price</th>
+                                    <th>No Of Days</th>
+                                    <th>No Of Nights</th>
+                                    <th>Cover Image</th>
+                                    <th>Description</th>
+                                    <th>Created At</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @forelse ($guide->touristguide as $tourist)
-                                    @php
-                                        $history = json_decode($tourist->tourist_data);
-                                    @endphp
+                                @forelse ($tourOperators->package as $package)
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>
-                                            <span
-                                                class="badge rounded-pill bg-warning">{{ Str::ucfirst($tourist->status) }}</span>
+                                            {{ $package->title }}
                                         </td>
-                                        <td>{{ $history->full_name }}</td>
-                                        <td>{{ $history->email }}</td>
+                                        <td>{{ $package->price }}</td>
+                                        <td>{{ $package->days }}</td>
+                                        <td>{{ $package->nights }}</td>
+                                        <td><img src="{{ asset($package->cover_image) }}" alt="Tour Operator"></td>
+                                        <td>{{ $package->description }}</td>
                                         <td>
-                                            @if ($tourist->status == 'accept')
-                                                <span class="badge rounded-pill bg-success">
-                                                    {{ date('M jS, Y h:i A', strtotime($tourist->connected_at)) }}</span>
-                                            @else
-                                                {{ '-' }}
-                                            @endif
+                                            <span class="badge rounded-pill bg-success">
+                                                {{ date('M jS, Y h:i A', strtotime($package->created_at)) }}</span>
                                         </td>
                                     </tr>
-
                                 @empty
-                                @endforelse --}}
+                                @endforelse
                             </tbody>
                         </table>
                     </div>

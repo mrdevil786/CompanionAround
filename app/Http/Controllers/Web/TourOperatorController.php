@@ -16,7 +16,7 @@ class TourOperatorController extends Controller
 
     public function profile($id)
     {
-        $tourOperators = TourOperator::findOrFail($id);
-        return  view('admin.touroperator.profile',compact('tourOperators'));
+        $tourOperators = TourOperator::with(['package'])->findOrFail($id);
+        return  view('admin.touroperator.profile', compact('tourOperators'));
     }
 }

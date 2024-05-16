@@ -57,8 +57,14 @@
                                 <div class="d-flex justify-content-center mb-2">
                                     {{-- <a href="#" class="btn btn-sm btn-primary px-3 border-end"
                                         style="border-radius: 30px 0 0 30px;">Read More</a> --}}
-                                    <a href="#" class="btn btn-sm btn-primary px-3"
-                                        style="border-radius: 0 30px 30px 0;">Book Now</a>
+                                    @auth('tourist')
+                                        <a href="javascript:void(0)" class="btn btn-sm btn-primary px-3 enquireNow"
+                                            style="border-radius: 0 30px 30px 0;" data-id="{{ $tourPackage->id }}">Enquire
+                                            Now</a>
+                                    @else
+                                        <a href="{{ route('findCompanion') }}" class="btn btn-sm btn-primary px-3"
+                                            style="border-radius: 0 30px 30px 0;">Enquire Now</a>
+                                    @endauth
                                 </div>
                             </div>
                         </div>
@@ -72,4 +78,25 @@
 @endsection
 
 @section('website-custom-script')
+    <script>
+        $('.enquireNow').on('click', function() {
+            const packageId = $(this).data('id');
+            if (confirm('Sure you want to enquire for this package ?')) {
+                Notiflix.Loading.standard('Please wait...');
+                $.ajax({
+                    type: "post",
+                    url: "{{ route('tourist.trip.enquiry') }}",
+                    data: {
+                        packageId: packageId,
+                        _token: "{{ csrf_token() }}"
+                    },
+                    success: function(response) {
+                        Notiflix.Loading.remove();
+                        Notiflix.Notify.success(response.message);
+                        console.log(response);
+                    }
+                });
+            }
+        });
+    </script>
 @endsection

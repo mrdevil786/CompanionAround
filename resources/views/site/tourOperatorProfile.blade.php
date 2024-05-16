@@ -287,40 +287,38 @@
                                         <thead>
                                             <tr>
                                                 <th>#Sr.No</th>
-                                                <th>Status</th>
-                                                <th>Action</th>
-                                                <th>Tourist</th>
+                                                <th>Name</th>
                                                 <th>Email</th>
-                                                <th>Created At</th>
+                                                <th>Package</th>
+                                                <th>Price</th>
+                                                <th>Days</th>
+                                                <th>Nights</th>
+                                                <th>Requested At</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {{-- @forelse ($connectionRequest as $cr)
+                                            @forelse ($requestConnections as $rc)
+                                                @php
+                                                    $package = json_decode($rc->package_data);
+                                                @endphp
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>
-                                                        <span
-                                                            class="badge rounded-pill bg-warning">{{ Str::ucfirst($cr->status) }}</span>
+                                                        {{ $rc->tourist->full_name }}
                                                     </td>
                                                     <td>
-                                                        <a href="javascript:void()"
-                                                            class="btn btn-sm btn-success requestAction"
-                                                            data-id={{ $cr->id }} data-action="accept"><i
-                                                                class="fa fa-check"></i><br>
-                                                            Accept</a>
-                                                        <a href="javascript:void()"
-                                                            class="btn btn-sm btn-danger requestAction"
-                                                            data-id={{ $cr->id }} data-action="reject"><i
-                                                                class="fa fa-check"></i><br> Reject</a>
+                                                        {{ $rc->tourist->email }}
                                                     </td>
-                                                    <td>{{ $cr->tourist->full_name }}</td>
-                                                    <td>{{ $cr->tourist->email }}</td>
+                                                    <td>{{ $package->title }}</td>
+                                                    <td>{{ $package->price }}</td>
+                                                    <td>{{ $package->days }}</td>
+                                                    <td>{{ $package->nights }}</td>
                                                     <td><span class="badge rounded-pill bg-success">
-                                                            {{ date('M jS, Y h:i A', strtotime($cr->created_at)) }}</span>
+                                                            {{ date('M jS, Y h:i A', strtotime($rc->created_at)) }}</span>
                                                     </td>
                                                 </tr>
                                             @empty
-                                            @endforelse --}}
+                                            @endforelse
                                         </tbody>
                                     </table>
                                 </div>

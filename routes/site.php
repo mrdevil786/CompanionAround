@@ -20,11 +20,12 @@ Route::prefix('tourist')->name('tourist.')->middleware(['auth:tourist', 'web'])-
     });
     Route::controller(DirectTripController::class)->name('trip.')->group(function () {
         Route::post('request-trip', 'store')->name('request-trip');
+        Route::post('enquiry', 'packageEnquiry')->name('enquiry');
     });
 });
 
 Route::get('/', [TouristsController::class, 'index']);
-Route::get('/findCompanion', [SiteController::class, 'findCompanion']);
+Route::get('/findCompanion', [SiteController::class, 'findCompanion'])->name('findCompanion');
 
 Route::get('/login', [SiteController::class, 'login']);
 Route::get('/about', [SiteController::class, 'about']);
