@@ -38,7 +38,7 @@
                                 <small class="flex-fill text-center border-end py-2"><i
                                         class="fa fa-calendar-alt text-primary me-2"></i>{{ $tourPackage->days . ' Days' }}</small>
                                 <small class="flex-fill text-center border-end py-2"><i
-                                        class="fa fa-calendar-alt text-primary me-2"></i>{{ $tourPackage->nights . ' Days' }}</small>
+                                        class="fa fa-calendar-alt text-primary me-2"></i>{{ $tourPackage->nights . ' Nights' }}</small>
                                 {{-- <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>2 --}}
                                 {{-- Person</small> --}}
                             </div>
