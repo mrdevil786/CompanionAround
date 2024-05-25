@@ -66,7 +66,7 @@
                                     </div>
                                     <p class="text-truncate">{{ $tourGuide->short_description ?? 'Null' }}</p>
                                     <div class="d-flex justify-content-center mb-2">
-                                        <a href="#" class="btn btn-sm btn-primary px-3 border-end"
+                                        <a href="{{ url('tour-guide/view/'.$tourGuide->id) }}" class="btn btn-sm btn-primary px-3 border-end"
                                             style="border-radius: 30px 0 0 30px;">Read More</a>
                                         @auth('tourist')
                                             <a href="javascript:void(0)" data-id="{{ $tourGuide->id }}"

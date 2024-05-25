@@ -115,16 +115,22 @@ class SiteController extends Controller
         return view('site.tour-guides', compact('tourGuides'));
     }
 
-    public function tour_guides_detail($id)
+    public function tour_guide_detail($id)
     {
         $tourGuide = TourGuide::findOrFail($id);
-        return view('site.tour-operator-detail', compact('tourGuide'));
+        return view('site.tour-guide-detail', compact('tourGuide'));
     }
 
     public function tour_operators()
     {
         $tourPackages = Package::latest()->get();
         return view('site.tour-operators', compact('tourPackages'));
+    }
+
+    public function tour_operator_detail($id)
+    {
+        $tourPackage = Package::findOrFail($id);
+        return view('site.tour-operator-detail', compact('tourPackage'));
     }
 
     public function contact()

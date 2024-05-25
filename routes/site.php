@@ -31,8 +31,9 @@ Route::get('/login', [SiteController::class, 'login']);
 Route::get('/about', [SiteController::class, 'about']);
 Route::get('/service', [SiteController::class, 'service']);
 Route::get('/tour-guides', [SiteController::class, 'tour_guides']);
-Route::get('/tour-guides/view/{id}', [SiteController::class, 'tour_guides_detail']);
+Route::get('/tour-guide/view/{id}', [SiteController::class, 'tour_guide_detail']);
 Route::get('/tour-operators', [SiteController::class, 'tour_operators']);
+Route::get('/tour-operator/view/{id}', [SiteController::class, 'tour_operator_detail']);
 Route::get('/contact', [SiteController::class, 'contact']);
 
 Route::get('/googleLogin', [TouristsController::class, 'googleLogin']);
