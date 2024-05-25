@@ -55,14 +55,15 @@
                                 </div>
                                 <p class="text-truncate">{{ $tourPackage->description ?? 'Null' }}</p>
                                 <div class="d-flex justify-content-center mb-2">
-                                    {{-- <a href="#" class="btn btn-sm btn-primary px-3 border-end"
-                                        style="border-radius: 30px 0 0 30px;">Read More</a> --}}
+                                    <a href="#" class="btn btn-sm btn-primary px-3 border-end"
+                                        style="border-radius: 30px 0 0 30px;">Read More</a>
                                     @auth('tourist')
-                                        <a href="javascript:void(0)" class="btn btn-sm btn-primary rounded-1 px-3 enquireNow"
-                                            data-id="{{ $tourPackage->id }}">Enquire
+                                        <a href="javascript:void(0)" class="btn btn-sm btn-primary px-3 enquireNow"
+                                            data-id="{{ $tourPackage->id }}" style="border-radius: 0 30px 30px 0;">Enquire
                                             Now</a>
                                     @else
-                                        <a href="{{ route('findCompanion') }}" class="btn btn-sm btn-primary rounded-1 px-3">Enquire Now</a>
+                                        <a href="{{ route('findCompanion') }}" class="btn btn-sm btn-primary px-3"
+                                            style="border-radius: 0 30px 30px 0;">Enquire Now</a>
                                     @endauth
                                 </div>
                             </div>
