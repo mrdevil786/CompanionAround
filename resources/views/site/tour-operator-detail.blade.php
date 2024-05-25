@@ -46,7 +46,7 @@
                         </div>
                         <div class="d-flex align-items-center mb-4">
                             <i class="fa fa-rupee-sign text-primary me-2"></i>
-                            <span>{{ $tourPackage->price ? '₹ ' . $tourPackage->price : 'Free' }}</span>
+                            <span>{{ $tourPackage->price ? $tourPackage->price : 'Free' }}</span>
                         </div>
                         <div class="mb-4">
                             <small class="fa fa-star text-primary"></small>
@@ -56,7 +56,7 @@
                             <small class="fa fa-star text-primary"></small>
                         </div>
                         <div class="d-flex justify-content-center mb-2">
-                            <a href="{{ url('tour-operators/') }}" class="btn btn-primary px-3 me-2">Back to Packages</a>
+                            <a href="{{ url('tour-operators/') }}" class="btn btn-primary px-3 me-2"><i class="fa fa-arrow-left"></i> Back to Packages</a>
                             @auth('tourist')
                                 <a href="javascript:void(0)" data-id="{{ $tourPackage->id }}" class="btn btn-primary px-3 enquireNow">Enquire Now</a>
                             @else
