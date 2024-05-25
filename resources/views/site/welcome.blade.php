@@ -425,7 +425,7 @@
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
-                    <h1 class="mb-4">Welcome to <span class="text-primary">Tourist</span></h1>
+                    <h1 class="mb-4">Welcome to <span class="text-primary">Companion Around</span></h1>
                     <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
                         eos. Clita erat ipsum et lorem et sit.</p>
                     <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
@@ -520,7 +520,7 @@
 
 
     <!-- Destination Start -->
-    <div class="container-xxl py-5 destination">
+    {{-- <div class="container-xxl py-5 destination">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Destination</h6>
@@ -570,7 +570,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- Destination Start -->
 
 
