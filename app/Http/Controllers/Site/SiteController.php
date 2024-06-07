@@ -117,7 +117,7 @@ class SiteController extends Controller
 
     public function tour_guide_detail($id)
     {
-        $tourGuide = TourGuide::findOrFail($id);
+        $tourGuide = TourGuide::with(['tourguidelanguage' => ['language'], 'activity'])->findOrFail($id);
         return view('site.tour-guide-detail', compact('tourGuide'));
     }
 

@@ -16,4 +16,12 @@ class TourGuide extends Authenticatable
     {
         return $this->hasMany(TouristGuide::class);
     }
+    public function tourguidelanguage()
+    {
+        return $this->hasMany(TourGuideLanguage::class, 'tour_guide_id');
+    }
+    public function activity()
+    {
+        return $this->hasMany(TourGuideActivity::class, 'tour_guide_id');
+    }
 }

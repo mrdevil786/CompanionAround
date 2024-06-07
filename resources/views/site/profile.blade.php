@@ -8,14 +8,13 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.0.1/css/buttons.dataTables.css">
     <script>
-$(document).ready(function() {
-    $('#datatable').dataTable();
-    
-     $("[data-toggle=tooltip]").tooltip();
-    
-} );
+        $(document).ready(function() {
+            $('#datatable').dataTable();
 
-</script>
+            $("[data-toggle=tooltip]").tooltip();
+
+        });
+    </script>
 @endsection
 
 @section('website-main-section')
@@ -53,8 +52,8 @@ $(document).ready(function() {
                             data-bs-target="#v-pills-history" type="button" role="tab" aria-controls="v-pills-history"
                             aria-selected="false">History</button>
                         <div class="col-12 mt-5">
-                            <a href="{{ route('logout') }}" class="btn btn-secondary rounded-1 w-100"
-                                type="submit">Logout <i class="fas fa-sign-out-alt ms-2"></i>
+                            <a href="{{ route('logout') }}" class="btn btn-secondary rounded-1 w-100" type="submit">Logout
+                                <i class="fas fa-sign-out-alt ms-2"></i>
                             </a>
                         </div>
                     </div>
@@ -344,79 +343,79 @@ $(document).ready(function() {
 
                         <div class="row">
                             <div class="col-lg-4 col-12">
-                            <label for="name">Your Name</label>
-                                    <input type="text" class="form-control rounded-1" id="name" name="name"
-                                        placeholder="Your Name">
-                                    
-                             
+                                <label for="name">Your Name</label>
+                                <input type="text" class="form-control rounded-1" id="name" name="name"
+                                    placeholder="Your Name">
+
+
                             </div>
                             <div class="col-lg-4 col-12">
-                            <label for="email">Your Email</label>
-                                    <input type="text" class="form-control rounded-1" id="email" name="email"
-                                        placeholder="Your Email">
-                                   
-                              
+                                <label for="email">Your Email</label>
+                                <input type="text" class="form-control rounded-1" id="email" name="email"
+                                    placeholder="Your Email">
+
+
                             </div>
                             <div class="col-lg-4 col-12">
-                            <label for="mobile">Your Mobile</label>
-                                    <input type="text" class="form-control rounded-1" id="mobile" name="mobile"
-                                        placeholder="Your Mobile">
-                                    
-                               
+                                <label for="mobile">Your Mobile</label>
+                                <input type="text" class="form-control rounded-1" id="mobile" name="mobile"
+                                    placeholder="Your Mobile">
+
+
                             </div>
                         </div>
                         <br>
                         <div class="row">
                             <div class="col-lg-4 col-12">
-                            <label for="guide_type">Guide Type</label>
-                                    <select name="guide_type" id="guide_type" class="form-control rounded-1">
-                                        <option value="" selected disabled>Select Guide Type</option>
-                                        <option value="free">Free</option>
-                                        <option value="chargeable">Chargeable</option>
-                                    </select>
-                                   
-                                
+                                <label for="guide_type">Guide Type</label>
+                                <select name="guide_type" id="guide_type" class="form-control rounded-1">
+                                    <option value="" selected disabled>Select Guide Type</option>
+                                    <option value="free">Free</option>
+                                    <option value="chargeable">Chargeable</option>
+                                </select>
+
+
                             </div>
                             <div class="col-lg-4 col-12 charges-div">
-                            <label for="charges">Your Charges</label>
-                                    <input type="text" class="form-control rounded-1" id="charges" name="charges"
-                                        placeholder="Your Charges">
-                                    
-                                
+                                <label for="charges">Your Charges</label>
+                                <input type="text" class="form-control rounded-1" id="charges" name="charges"
+                                    placeholder="Your Charges">
+
+
                             </div>
                             <div class="col-lg-4 col-12">
-                            <label for="city">Your City</label>
-                                    <input type="text" class="form-control rounded-1" id="city" name="city"
-                                        placeholder="Your City">
-                                   
+                                <label for="city">Your City</label>
+                                <input type="text" class="form-control rounded-1" id="city" name="city"
+                                    placeholder="Your City">
+
                             </div>
                         </div>
-                            <br/>
-                            <div class="row">
+                        <br />
+                        <div class="row">
                             <div class="col-lg-4 col-12">
-                            <label for="state">Your State</label>
-                                    <input type="text" class="form-control rounded-1" id="state" name="state"
-                                        placeholder="Your State">
-                                    
-                              
-                            </div>
-                            <div class="col-lg-4 col-12">
-                            <label for="country">Your Country</label>
-                                    <input type="text" class="form-control rounded-1" id="country" name="country"
-                                        placeholder="Your Country">
-                                   
-                                
+                                <label for="state">Your State</label>
+                                <input type="text" class="form-control rounded-1" id="state" name="state"
+                                    placeholder="Your State">
+
+
                             </div>
                             <div class="col-lg-4 col-12">
-                            <label for="profile">Profile</label>
-                                    <input type="file" class="form-control rounded-1" id="profile" name="profile"
-                                        placeholder="Upload Profile">
-                                   
-                                
+                                <label for="country">Your Country</label>
+                                <input type="text" class="form-control rounded-1" id="country" name="country"
+                                    placeholder="Your Country">
+
+
                             </div>
+                            <div class="col-lg-4 col-12">
+                                <label for="profile">Profile</label>
+                                <input type="file" class="form-control rounded-1" id="profile" name="profile"
+                                    placeholder="Upload Profile">
+
+
                             </div>
-                            <br/>
-                            <div class="row">
+                        </div>
+                        <br />
+                        <div class="row">
                             <div class="col-lg-4 col-12">
                                 <label for="gender">Gender</label>
                                 <div class="form-check form-check-inline">
@@ -435,17 +434,44 @@ $(document).ready(function() {
                                     <label class="form-check-label" for="inlineRadio3">Other</label>
                                 </div>
                             </div>
+                            <div class="col-lg-4 col-12">
+                                <label for="language">Select Language</label>
+                                <select name="language[]" multiple id="language"
+                                    class="form-control rounded-1 text-capitalize">
+                                    <option value="" selected disabled>Select Language</option>
+                                    @foreach ($languages as $language)
+                                        <option value="{{ $language->id }}">{{ $language->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
-                            <br/>
-                        <div class="row">
-                            <div class="col-lg-12 col-12">
-                            <div class="form-group">
-                                <label for="short_description">Short Description</label>
-                                <textarea class="form-control rounded-1" name="short_description" id="short_description" rows="2"></textarea>
-                            </div>                               
+                            <div class="col-lg-4 col-12">
+                                <label for="activity">Select Activity</label>
+                                <select name="activity[]" multiple id="activity"
+                                    class="form-control rounded-1 text-capitalize"">
+                                    <option value="" selected disabled>Select Activity</option>
+                                    <option value="nightlife_bar">Nightlife & Bars</option>
+                                    <option value="food_restaurant">Food & Restaurant</option>
+                                    <option value="history_culture">History & Culture</option>
+                                    <option value="shopping">Shopping</option>
+                                    <option value="sport_recreat">Sports & Recreat</option>
+                                    <option value="exploration_sight">Exploration & Sight</option>
+                                    <option value="translation_interpret">Translation & Interpret</option>
+                                    <option value="pickup_driving">Pick up & Driving Tours </option>
+                                    <option value="art_museum">Art & Museums </option>
+
+                                </select>
                             </div>
                         </div>
-                        <br/>
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <div class="form-group">
+                                    <label for="short_description">Short Description</label>
+                                    <textarea class="form-control rounded-1" name="short_description" id="short_description" rows="2"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
                         <div class="row">
                             <div class="col-lg-12 col-12 text-center">
                                 <button type="submit" class="btn btn-md btn-success rounded-1">Submit</button>
@@ -509,6 +535,7 @@ $(document).ready(function() {
                         _token: "{{ csrf_token() }}"
                     },
                     success: function(response) {
+                        console.log(response);
                         $(modal).find('#name').val(response.name);
                         $(modal).find('#email').val(response.email);
                         $(modal).find('#mobile').val(response.mobile);
@@ -522,6 +549,21 @@ $(document).ready(function() {
                         $(modal).find('#state').val(response.state);
                         $(modal).find('#country').val(response.country);
                         $(modal).find('#short_description').val(response.short_description);
+                        if (response.tourguidelanguage) {
+                            var languageIds = [];
+                            $.each(response.tourguidelanguage, function(index, value) {
+                                languageIds.push(value.language_id);
+                            });
+                            $(modal).find('#language').val(languageIds).trigger('change');
+                        }
+                        if (response.activity) {
+                            var activityIds = [];
+                            $.each(response.activity, function(index, value) {
+                                activityIds.push(value.activity);
+                            });
+                            console.log(activityIds);
+                            $(modal).find('#activity').val(activityIds).trigger('change');
+                        }
                     }
                 });
             }

@@ -586,8 +586,7 @@
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="package-item">
                             <div class="overflow-hidden">
-                                <img class="img-fluid w-100" src="{{ asset($tourPackage->cover_image) }}"
-                                    alt="">
+                                <img class="img-fluid w-100" src="{{ asset($tourPackage->cover_image) }}" alt="">
                             </div>
                             <div class="d-flex border-bottom">
                                 <small class="flex-fill text-center border-end py-2"><i
