@@ -31,6 +31,25 @@
             <div class="row g-4">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <img class="img-fluid profile-img" src="{{ asset($tourGuide->profile) }}" alt="{{ $tourGuide->name }}">
+                    <hr>
+                    <div class="languages">
+                        <h4>Language Known :</h4>
+                        <ul>
+                            @forelse ($tourGuide->tourguidelanguage as $language)
+                                <li>{{ $language->language->name }}</li>
+                            @empty
+                            @endforelse
+                        </ul>
+                    </div>
+                    <div class="acvitity">
+                        <h4>Activities :</h4>
+                        <ul>
+                            @forelse ($tourGuide->activity as $activity)
+                                <li>{{ Str::ucfirst(str_replace('_', ' ', $activity->activity)) }}</li>
+                            @empty
+                            @endforelse
+                        </ul>
+                    </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="h-100 p-4 bg-light">
@@ -56,9 +75,11 @@
                             <small class="fa fa-star"></small>
                         </div>
                         <div class="d-flex justify-content-center mb-2">
-                            <a href="{{ url('tour-guides/') }}" class="btn btn-primary px-3 me-2"><i class="fa fa-arrow-left"></i> Back to Guides</a>
+                            <a href="{{ url('tour-guides/') }}" class="btn btn-primary px-3 me-2"><i
+                                    class="fa fa-arrow-left"></i> Back to Guides</a>
                             @auth('tourist')
-                                <a href="javascript:void(0)" data-id="{{ $tourGuide->id }}" class="btn btn-primary px-3 connect">Book Now</a>
+                                <a href="javascript:void(0)" data-id="{{ $tourGuide->id }}"
+                                    class="btn btn-primary px-3 connect">Book Now</a>
                             @else
                                 <a href="{{ url('/findCompanion') }}" class="btn btn-primary px-3">Book Now</a>
                             @endauth
