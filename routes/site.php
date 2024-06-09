@@ -25,6 +25,7 @@ Route::prefix('tourist')->name('tourist.')->middleware(['auth:tourist', 'web'])-
 });
 
 Route::get('/', [TouristsController::class, 'index']);
+Route::get('/search', [TouristsController::class, 'search'])->name('search');
 Route::get('/findCompanion', [SiteController::class, 'findCompanion'])->name('findCompanion');
 
 Route::get('/login', [SiteController::class, 'login']);
