@@ -10,6 +10,7 @@ use App\Models\TouristGuide;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
+use App\Models\Language;
 use App\Models\TouristEnquiry;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
@@ -30,7 +31,8 @@ class TouristsController extends Controller
     {
         $tourGuides = TourGuide::where('status', 'active')->latest()->take(9)->get();
         $tourPackages = Package::latest()->take(9)->get();
-        return view('site.welcome', compact('tourGuides', 'tourPackages'));
+        $languages = Language::all();
+        return view('site.welcome', compact('tourGuides', 'tourPackages', 'languages'));
     }
 
     public function requestConnection(Request $request)
@@ -95,5 +97,54 @@ class TouristsController extends Controller
             auth('tourist')->logout();
         }
         return redirect('/');
+    }
+
+    public function search(Request $request)
+    {
+        $request->validate([
+            'activity' => 'array|nullable',
+            'language' => 'nullable',
+            'type' => 'nullable|in:tour_guide,tour_operator',
+            'search' => 'string|nullable'
+        ]);
+        \Log::info($request->type);
+        if ($request->type === 'tour_operator') {
+            $tourPackages = Package::when($request->search, function ($q) use ($request) {
+                $q->where('title', 'like', '%' . $request->search . '%');
+                $q->orWhere('description', 'like', '%' . $request->search . '%');
+            })->latest()->get();
+
+            $html = view('components.miscellaneous.searchTourOperator', compact('tourPackages'))->render();
+            return response([
+                'type' => 'tourOperator',
+                'html' => $html
+            ]);
+        } else {
+            $tourGuides = TourGuide::where('status', 'active')
+                ->when($request->search, function ($query) use ($request) {
+                    $query->where('name', 'like', '%' . $request->search . '%');
+                })
+                ->when($request->gender, function ($query) use ($request) {
+                    $query->where('gender', $request->gender);
+                })
+                ->when($request->language, function ($query) use ($request) {
+                    $query->whereHas('tourguidelanguage', function ($subQuery) use ($request) {
+                        $subQuery->where('language_id', $request->language);
+                    });
+                })
+                ->when($request->activity, function ($query) use ($request) {
+                    $query->whereHas('activity', function ($subQuery) use ($request) {
+                        $subQuery->whereIn('activity', $request->activity);
+                    });
+                })
+                ->latest()
+                ->get();
+
+            $html = view('components.miscellaneous.search', compact('tourGuides'))->render();
+            return response([
+                'type' => 'tourGuide',
+                'html' => $html
+            ]);
+        }
     }
 }
