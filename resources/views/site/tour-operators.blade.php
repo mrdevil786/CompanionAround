@@ -54,7 +54,7 @@
                                 <p class="text-truncate">{{ $tourPackage->description ?? 'Null' }}</p>
                                 <div class="d-flex justify-content-center mb-2">
                                     <a href="{{ url('tour-operator/view/'.$tourPackage->id) }}" class="btn btn-sm btn-primary px-3 border-end"
-                                        style="border-radius: 30px 0 0 30px;">Read More</a>
+                                        style="border-radius: 30px 0 0 30px;">Know More</a>
                                     @auth('tourist')
                                         <a href="javascript:void(0)" class="btn btn-sm btn-primary px-3 enquireNow"
                                             data-id="{{ $tourPackage->id }}" style="border-radius: 0 30px 30px 0;">Enquire

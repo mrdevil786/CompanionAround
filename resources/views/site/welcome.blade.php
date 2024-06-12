@@ -465,8 +465,8 @@
                                     </div>
                                     <p class="text-truncate">{{ $tourGuide->short_description ?? 'Null' }}</p>
                                     <div class="d-flex justify-content-center mb-2">
-                                        {{-- <a href="#" class="btn btn-sm btn-primary px-3 border-end"
-                                            style="border-radius: 30px 0 0 30px;">Read More</a> --}}
+                                        <a href="#" class="btn btn-sm btn-primary px-3 border-end"
+                                            style="border-radius: 30px 0 0 30px;">Know More</a>
                                         @auth('tourist')
                                             <a href="javascript:void(0)" data-id="{{ $tourGuide->id }}"
                                                 class="btn btn-sm btn-primary rounded-1 px-3 connect">Book Now</a>
@@ -578,9 +578,9 @@
                                 <p class="text-truncate">{{ $tourPackage->description ?? 'Null' }}</p>
                                 <div class="d-flex justify-content-center mb-2">
                                     <a href="#" class="btn btn-sm btn-primary px-3 border-end"
-                                        style="border-radius: 30px 0 0 30px;">Read More</a>
+                                        style="border-radius: 30px 0 0 30px;">Know More</a>
                                     <a href="#" class="btn btn-sm btn-primary px-3"
-                                        style="border-radius: 0 30px 30px 0;">Book Now</a>
+                                        style="border-radius: 0 30px 30px 0;">Connect</a>
                                 </div>
                             </div>
                         </div>
