@@ -61,7 +61,7 @@ class TourGuideController extends Controller
         }
         if ($request->language) {
             foreach ($request->language as $key => $language) {
-                TourGuideLanguage::create([
+                TourGuideLanguage::firstOrCreate([
                     'tour_guide_id' => $user->id,
                     'language_id' => $language,
                 ], [

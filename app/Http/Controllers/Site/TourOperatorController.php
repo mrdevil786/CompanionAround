@@ -39,7 +39,8 @@ class TourOperatorController extends Controller
             'state' => 'required',
             'city' => 'required',
             'description' => 'required',
-            'logo' => 'mimes:png,jpg,jpeg,webp,svg,gif'
+            'logo' => 'mimes:png,jpg,jpeg,webp,svg,gif',
+            'website_link' => 'nullable|url',
         ]);
 
         $user = TourOperator::findOrFail(auth('touroperator')->user()->id);
@@ -52,6 +53,7 @@ class TourOperatorController extends Controller
         $user->state = $request->state;
         $user->city = $request->city;
         $user->description = $request->description;
+        $user->website_link = $request->website_link;
 
         if ($request->hasFile('logo')) {
             $user->logo = FileUploader::uploadFile($request->file('logo'), 'images/tour-operators', $user->logo);
