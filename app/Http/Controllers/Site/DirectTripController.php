@@ -18,7 +18,8 @@ class DirectTripController extends Controller
             'to_date' => 'required|date',
             'no_of_people' => 'required',
             'message' => 'nullable|string',
-            // 'looking_for' => 'nullable',
+            'budget' => 'nullable',
+            'type' => 'required',
         ]);
         // return $request->all();
         $user = auth('tourist')->user();
@@ -30,6 +31,8 @@ class DirectTripController extends Controller
             'no_of_people' => $request->no_of_people,
             'message' => $request->message,
             'looking_for' => $request->looking_for,
+            'budget' => $request->budget,
+            'request_type' => $request->type,
         ]);
         return redirect()->back()->with('success', 'Thank you for your request our team get back to you soon!');
     }
