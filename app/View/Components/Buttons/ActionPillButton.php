@@ -23,6 +23,6 @@ class ActionPillButton extends Component
 
     public function render(): View|Closure|string
     {
-        return view('components.buttons.action-pill-button');
+        return view('Components.Buttons.Action-Pill-Button');
     }
 }

@@ -20,6 +20,6 @@ class SmallPill extends Component
 
     public function render(): View|Closure|string
     {
-        return view('components.extras.small-pill');
+        return view('Components.Extras.Small-Pill');
     }
 }

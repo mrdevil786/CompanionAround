@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\modal;
+namespace App\View\Components\Modal;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -23,6 +23,6 @@ class RightOffcanvas extends Component
 
     public function render(): View|Closure|string
     {
-        return view('components.modal.right-offcanvas');
+        return view('Components.Modal.Right-Offcanvas');
     }
 }

@@ -5,7 +5,7 @@
                 class="fe fe-x fs-18"></i></button>
     </div>
     <div class="offcanvas-body">
-        <form method="{{ $method }}" action="{{ $action }}">
+        <form method="{{ $method }}" action="{{ $action }}" enctype="multipart/form-data">
             @csrf
 
             <div class="form-row">

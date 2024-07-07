@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\fields;
+namespace App\View\Components\Fields;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -33,6 +33,6 @@ class DropdownField extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.fields.dropdown-field');
+        return view('Components.Fields.Dropdown-Field');
     }
 }
