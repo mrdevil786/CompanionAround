@@ -94,15 +94,15 @@
     <!-- End Row -->
 
     <!--Add Modal - Right Offcanvas-->
-    <x-modal.right-offcanvas title="Add New User" action="{{ route('admin.users.store') }}" method="POST">
+    <x-modal.Right-Offcanvas title="Add New User" action="{{ route('admin.users.store') }}" method="POST">
 
-        <x-fields.input-field label="Full Name" name="name" />
-        <x-fields.input-field label="Email" name="email" />
-        <x-fields.input-field label="Password" name="password" type="password" />
-        <x-fields.input-field label="Confirm Password" name="password_confirmation" type="password" />
-        <x-fields.dropdown-field label="User Role" name="role" :options="[1 => 'Administrator', 2 => 'Editor', 3 => 'Viewer']" />
+        <x-fields.Input-Field label="Full Name" name="name" />
+        <x-fields.Input-Field label="Email" name="email" />
+        <x-fields.Input-Field label="Password" name="password" type="password" />
+        <x-fields.Input-Field label="Confirm Password" name="password_confirmation" type="password" />
+        <x-fields.Dropdown-Field label="User Role" name="role" :options="[1 => 'Administrator', 2 => 'Editor', 3 => 'Viewer']" />
 
-    </x-modal.right-offcanvas>
+    </x-modal.Right-Offcanvas>
     <!--/Right Offcanvas-->
 
 @endsection
