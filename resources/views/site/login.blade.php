@@ -112,7 +112,7 @@
                                     <div class="col-12">
                                         <div class="form-floating">
                                             <input type="text" class="form-control" id="mobile" name="mobile"
-                                                placeholder="Mobile" maxLength="10" pattern="[1-9]{1}[0-9]{9}">
+                                                placeholder="Mobile">
                                             <label for="mobile">Mobile</label>
                                         </div>
                                     </div>
