@@ -27,7 +27,7 @@ class SiteController extends Controller
             'type' => 'required|in:tour_guide,tour_operator',
             'name' => 'required|string',
             'email' => 'required|email',
-            'mobile' => 'required',
+            'mobile' => 'required|digits:10',
             'password' => 'required|string'
         ]);
         if ($request->type === 'tour_guide') {
