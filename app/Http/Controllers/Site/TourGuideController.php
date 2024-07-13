@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Site;
 
 use App\Helpers\FileUploader;
 use App\Http\Controllers\Controller;
+use App\Models\City;
+use App\Models\Country;
 use App\Models\Language;
+use App\Models\State;
 use App\Models\TourGuide;
 use App\Models\TourGuideActivity;
 use App\Models\TourGuideLanguage;
@@ -16,20 +19,33 @@ class TourGuideController extends Controller
     public function dashboard()
     {
         $languages = Language::select('id', 'name')->get();
+        $countries = Country::select('id', 'name')->get();
         $user = TourGuide::findOrFail(auth('tourguard')->user()->id);
         $connectionHistory = TouristGuide::with(['tourist', 'tourguide'])->where('status', '!=', 'pending')->where('tour_guide_id', auth('tourguard')->user()->id)->get();
         $connectionRequest = TouristGuide::with(['tourist', 'tourguide'])->where('status', '=', 'pending')->where('tour_guide_id', auth('tourguard')->user()->id)->get();
-        return view('site.profile', compact('user', 'connectionHistory', 'connectionRequest', 'languages'));
+        return view('site.profile', compact('user', 'connectionHistory', 'connectionRequest', 'languages','countries'));
     }
 
     public function edit(Request $request)
     {
-        $user = TourGuide::with(['tourguidelanguage', 'activity'])->findOrFail($request->id);
+        $user = TourGuide::with(['tourguidelanguage', 'activity',])->findOrFail($request->id);
         return $user;
     }
+    public function states($country_id)
+    {
+        $states = State::where('country_id', $country_id)->pluck('name', 'id');
+        return response()->json($states);
+    }
+    
 
+    public function cities($state_id)
+    {
+        $cities = City::where('state_id', $state_id)->pluck('name', 'id');
+        return response()->json($cities);
+    }
     public function updateProfile(Request $request)
     {
+        // dd($request);
         $request->validate([
             'name' => 'required|string',
             'email' => 'required|email',

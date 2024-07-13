@@ -3,10 +3,34 @@
 @section('website-page-title', 'Tour-Guide Profile')
 @section('website-custom-style')
     <style>
+
     </style>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/2.0.3/css/dataTables.dataTables.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/buttons/3.0.1/css/buttons.dataTables.css">
+
+    <!-- Select2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
+
+    <style>
+        .select2-container {
+            width: 100% !important;
+        }
+
+        .select2-selection__rendered {
+            word-wrap: break-word !important;
+            text-overflow: ellipsis !important;
+        }
+
+        .select2-container--default .select2-selection--multiple {
+            height: auto !important;
+        }
+
+        .modal-open .modal {
+
+            z-index: 1045;
+        }
+    </style>
     <script>
         $(document).ready(function() {
             $('#datatable').dataTable();
@@ -337,6 +361,7 @@
                     <h5 class="modal-title" id="editProfileLabel">Update Profile Detail</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+
                 <div class="modal-body">
                     <form action="{{ route('tourguide.guide.update') }}" enctype="multipart/form-data" method="post">
                         @csrf
@@ -346,21 +371,27 @@
                                 <label for="name">Your Name</label>
                                 <input type="text" class="form-control rounded-1" id="name" name="name"
                                     placeholder="Your Name">
-
+                                @if ($errors->has('name'))
+                                    <span class="text-danger">{{ $errors->first('name') }}</span>
+                                @endif
 
                             </div>
                             <div class="col-lg-4 col-12">
                                 <label for="email">Your Email</label>
                                 <input type="text" class="form-control rounded-1" id="email" name="email"
                                     placeholder="Your Email">
-
+                                @if ($errors->has('email'))
+                                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                                @endif
 
                             </div>
                             <div class="col-lg-4 col-12">
                                 <label for="mobile">Your Mobile</label>
                                 <input type="text" class="form-control rounded-1" id="mobile" name="mobile"
                                     placeholder="Your Mobile">
-
+                                @if ($errors->has('mobile'))
+                                    <span class="text-danger">{{ $errors->first('mobile') }}</span>
+                                @endif
 
                             </div>
                         </div>
@@ -373,44 +404,64 @@
                                     <option value="free">Free</option>
                                     <option value="chargeable">Chargeable</option>
                                 </select>
-
+                                @if ($errors->has('guide_type'))
+                                    <span class="text-danger">{{ $errors->first('guide_type') }}</span>
+                                @endif
 
                             </div>
                             <div class="col-lg-4 col-12 charges-div">
                                 <label for="charges">Your Charges</label>
                                 <input type="text" class="form-control rounded-1" id="charges" name="charges"
                                     placeholder="Your Charges">
-
-
-                            </div>
-                            <div class="col-lg-4 col-12">
-                                <label for="city">Your City</label>
-                                <input type="text" class="form-control rounded-1" id="city" name="city"
-                                    placeholder="Your City">
-
-                            </div>
-                        </div>
-                        <br />
-                        <div class="row">
-                            <div class="col-lg-4 col-12">
-                                <label for="state">Your State</label>
-                                <input type="text" class="form-control rounded-1" id="state" name="state"
-                                    placeholder="Your State">
-
+                                @if ($errors->has('charges'))
+                                    <span class="text-danger">{{ $errors->first('charges') }}</span>
+                                @endif
 
                             </div>
                             <div class="col-lg-4 col-12">
                                 <label for="country">Your Country</label>
-                                <input type="text" class="form-control rounded-1" id="country" name="country"
-                                    placeholder="Your Country">
+                                <select class="form-control" id="country" name="country">
+                                    <option value="">Select Country</option>
+                                    @foreach ($countries as $country)
+                                        <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                    @endforeach
+                                </select>
 
+                                @if ($errors->has('country'))
+                                    <span class="text-danger">{{ $errors->first('country') }}</span>
+                                @endif
+                            </div>
+
+                        </div>
+                        <br />
+                        <div class="row">
+                            <div class="col-lg-4 col-12">
+                                <label for="state">State</label>
+                                <select class="form-control" id="state" name="state">
+                                    <option value="">Select State</option>
+                                </select>
+                                @if ($errors->has('state'))
+                                    <span class="text-danger">{{ $errors->first('state') }}</span>
+                                @endif
 
                             </div>
+                            <div class="col-lg-4 col-12">
+                                <label for="city">City</label>
+                                <select class="form-control" id="city" name="city">
+                                    <option value="">Select City</option>
+                                </select>
+                                @if ($errors->has('city'))
+                                    <span class="text-danger">{{ $errors->first('city') }}</span>
+                                @endif
+                            </div>
+
                             <div class="col-lg-4 col-12">
                                 <label for="profile">Profile</label>
                                 <input type="file" class="form-control rounded-1" id="profile" name="profile"
                                     placeholder="Upload Profile">
-
+                                @if ($errors->has('profile'))
+                                    <span class="text-danger">{{ $errors->first('profile') }}</span>
+                                @endif
 
                             </div>
                         </div>
@@ -447,21 +498,21 @@
                             <div class="col-lg-4 col-12">
                                 <label for="activity">Select Activity</label>
                                 <select name="activity[]" multiple id="activity"
-                                    class="form-control rounded-1 text-capitalize"">
+                                    class="form-control rounded-1 text-capitalize">
                                     <option value="" selected disabled>Select Activity</option>
                                     <option value="nightlife_bar">Nightlife & Bars</option>
                                     <option value="food_restaurant">Food & Restaurant</option>
                                     <option value="history_culture">History & Culture</option>
                                     <option value="shopping">Shopping</option>
-                                    <option value="sport_recreat">Sports & Recreat</option>
+                                    <option value="sport_recreat">Sports & Recreation</option>
                                     <option value="exploration_sight">Exploration & Sight</option>
-                                    <option value="translation_interpret">Translation & Interpret</option>
-                                    <option value="pickup_driving">Pick up & Driving Tours </option>
-                                    <option value="art_museum">Art & Museums </option>
-
+                                    <option value="translation_interpret">Translation & Interpretation</option>
+                                    <option value="pickup_driving">Pick up & Driving Tours</option>
+                                    <option value="art_museum">Art & Museums</option>
                                 </select>
                             </div>
                         </div>
+
                         <br />
                         <div class="row">
                             <div class="col-lg-12 col-12">
@@ -498,6 +549,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.print.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Select2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#language').select2({
+                placeholder: "Select Language",
+                allowClear: true
+            });
+            $('#activity').select2({
+                placeholder: "Select Activity",
+                allowClear: true
+            });
+        });
+    </script>
     <script>
         new DataTable('#profile-table', {
             layout: {
@@ -545,9 +615,9 @@
                         if (response.guide_type === 'chargeable') {
                             $(modal).find('#charges').val(response.charges);
                         }
-                        $(modal).find('#city').val(response.city);
-                        $(modal).find('#state').val(response.state);
                         $(modal).find('#country').val(response.country);
+                        $(modal).find('#state').val(response.state);
+                        // $(modal).find('#city').val(response.city);
                         $(modal).find('#short_description').val(response.short_description);
                         if (response.tourguidelanguage) {
                             var languageIds = [];
@@ -601,5 +671,80 @@
                 });
             }
         });
+
+
+        
     </script>
+
+
+   
+<script>
+
+$(document).ready(function() {
+    // Function to fetch states based on selected country
+    $('#country').change(function() {
+        var countryId = $(this).val();
+        if(countryId) {
+            $.ajax({
+                url: "{{ route('tourguide.guide.getStates', '') }}/" + countryId,
+                type: "GET",
+                dataType: "json",
+                success:function(data) {
+                    $('#state').empty();
+                    $('#state').append('<option value="">Select State</option>');
+                    $.each(data, function(key, value) {
+                        $('#state').append('<option value="'+ key +'">'+ value +'</option>');
+                    });
+                    $('#city').empty(); // Clear city dropdown when country changes
+                }
+            });
+        } else {
+            $('#state').empty(); // Clear state dropdown if no country selected
+            $('#city').empty(); // Clear city dropdown if no country selected
+        }
+    });
+
+    // Function to fetch cities based on selected state
+    $('#state').change(function() {
+        var stateId = $(this).val();
+        if(stateId) {
+            $.ajax({
+                url: "{{ route('tourguide.guide.getCities', '') }}/" + stateId,
+                type: "GET",
+                dataType: "json",
+                success:function(data) {
+                    $('#city').empty();
+                    $('#city').append('<option value="">Select City</option>');
+                    $.each(data, function(key, value) {
+                        $('#city').append('<option value="'+ key +'">'+ value +'</option>');
+                    });
+                }
+            });
+        } else {
+            $('#city').empty(); // Clear city dropdown if no state selected
+        }
+    });
+
+    // Trigger change event on country dropdown to populate states and cities after update
+    var initialCountryId = "{{ old('country') }}"; // Replace with actual value if available
+    if (initialCountryId) {
+        $('#country').val(initialCountryId);
+        $('#country').trigger('change');
+    }
+
+    // Trigger change event on state dropdown to populate cities after update
+    var initialStateId = "{{ old('state') }}"; // Replace with actual value if available
+    if (initialStateId) {
+        $('#state').val(initialStateId);
+        $('#state').trigger('change');
+    }
+
+    // Optional: Pre-select city dropdown after update
+    var initialCityId = "{{ old('city') }}"; // Replace with actual value if available
+    if (initialCityId) {
+        $('#city').val(initialCityId);
+    }
+});
+</script>
+
 @endsection

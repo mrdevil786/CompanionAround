@@ -54,6 +54,10 @@ Route::prefix('tourguide')->name('tourguide.')->middleware(['auth:tourguard', 'w
         Route::get('edit', 'edit')->name('edit');
         Route::post('update', 'updateProfile')->name('update');
         Route::post('request-action', 'requestAction')->name('request-action');
+       
+
+        Route::get('states/{country_id}', [TourGuideController::class, 'states'])->name('getStates');
+        Route::get('cities/{state_id}', [TourGuideController::class, 'cities'])->name('getCities'); 
     });
 });
 

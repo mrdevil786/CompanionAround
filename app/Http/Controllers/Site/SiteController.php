@@ -75,6 +75,12 @@ class SiteController extends Controller
                     'route' => route('tourguide.guide.index'),
                     'message' => 'Loggedin SUccessfully!'
                 ]);
+
+                 } else {
+            return response()->json([
+                'success' => false,
+                'message' => 'Invalid credentials. Please check your email and password.'
+            ]); 
             }
         }
         if ($request->type === 'tour_operator') {
@@ -84,6 +90,11 @@ class SiteController extends Controller
                     'route' => route('touroperator.operator.index'),
                     'message' => 'Loggedin SUccessfully!'
                 ]);
+            } else {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Invalid credentials. Please check your email and password.'
+                ]); 
             }
         }
     }

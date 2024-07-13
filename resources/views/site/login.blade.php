@@ -64,12 +64,18 @@
                                                 placeholder="Your Email">
                                             <label for="email">Your Email</label>
                                         </div>
+                                        @if ($errors->has('email'))
+                                        <span class="text-danger">{{ $errors->first('email') }}</span>
+                                    @endif
                                     </div>
                                     <div class="col-12">
                                         <div class="form-floating">
                                             <input type="password" class="form-control" name="password" id="password"
                                                 placeholder="Enter the password">
                                             <label for="password">Password</label>
+                                            @if ($errors->has('password'))
+                                            <span class="text-danger">{{ $errors->first('password') }}</span>
+                                        @endif
                                         </div>
                                     </div>
                                 </div>
@@ -172,19 +178,31 @@
                 },
             });
             $.ajax({
-                type: "post",
-                url: "{{ route('post-login') }}",
-                data: data,
-                success: function(response) {
-                    Notiflix.Loading.remove();
-                    console.log(response);
-                    if (response.success) {
-                        Notiflix.Notify.success(response.message);
-                        console.log(response.route);
-                        window.location.href = response.route;
-                    }
-                }
-            });
+    type: "POST",
+    url: "{{ route('post-login') }}",
+    data: data,
+    success: function(response) {
+        Notiflix.Loading.remove();
+        console.log(response);
+
+        if (response.success) {
+            Notiflix.Notify.success(response.message);
+            console.log(response.route);
+            window.location.href = response.route;
+        } else {
+            Notiflix.Notify.failure(response.message); 
+            // Handle other scenarios if needed
+        }
+    },
+    error: function(xhr, status, error) {
+        Notiflix.Loading.remove();
+        console.error(xhr.responseText);
+
+        // Display a generic error message
+        Notiflix.Notify.failure('An error occurred. Please try again.');
+    }
+});
+
         });
     </script>
 @endsection
