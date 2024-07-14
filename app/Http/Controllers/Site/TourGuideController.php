@@ -67,9 +67,10 @@ class TourGuideController extends Controller
         $user->gender = $request->gender;
         $user->guide_type = $request->guide_type;
         $user->charges = $request->charges;
-        $user->country = $request->country;
-        $user->state = $request->state;
-        $user->city = $request->city;
+      $user->country = Country::find($request->country)->name;
+$user->state = State::find($request->state)->name;
+$user->city = City::find($request->city)->name;
+
         $user->short_description = $request->short_description;
 
         if ($request->hasFile('profile')) {

@@ -54,8 +54,7 @@ Route::prefix('tourguide')->name('tourguide.')->middleware(['auth:tourguard', 'w
         Route::get('edit', 'edit')->name('edit');
         Route::post('update', 'updateProfile')->name('update');
         Route::post('request-action', 'requestAction')->name('request-action');
-       
-
+   
         Route::get('states/{country_id}', [TourGuideController::class, 'states'])->name('getStates');
         Route::get('cities/{state_id}', [TourGuideController::class, 'cities'])->name('getCities'); 
     });
@@ -67,6 +66,9 @@ Route::prefix('touroperator')->name('touroperator.')->middleware(['auth:touroper
         Route::get('edit', 'edit')->name('edit');
         Route::post('update', 'updateProfile')->name('update');
         Route::post('request-action', 'requestAction')->name('request-action');
+
+        Route::get('states/{country_id}', 'states')->name('getStates');
+        Route::get('cities/{state_id}',  'cities')->name('getCities'); 
     });
     Route::controller(PackageController::class)->prefix('package')->name('package.')->group(function () {
         Route::post('store', 'store')->name('store');

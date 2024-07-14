@@ -68,6 +68,15 @@ class SiteController extends Controller
             'email' => 'required|email',
             'password' => 'required|string'
         ]);
+        if ($request->type != 'tour_guide' && $request->type != 'tour_operator') {
+            return response([
+                'success' => false,
+                'message' => 'Please select a valid user type!'
+               
+            ]);
+        } else {
+           
+           
         if ($request->type === 'tour_guide') {
             if (Auth::guard('tourguard')->attempt($request->only(['email', 'password']))) {
                 return response([
@@ -97,6 +106,8 @@ class SiteController extends Controller
                 ]); 
             }
         }
+    }
+   
     }
 
     public function logout()

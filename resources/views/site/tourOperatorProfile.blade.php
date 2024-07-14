@@ -393,18 +393,27 @@
                                 <label for="name">Business Name</label>
                                 <input type="text" class="form-control rounded-1" id="name" name="name"
                                     placeholder="Business Name">
+                                    @if ($errors->has('name'))
+                                    <span class="text-danger">{{ $errors->first('name') }}</span>
+                                @endif
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-12 mb-3">
                                 <label for="email">Business Email</label>
                                 <input type="text" class="form-control rounded-1" id="email" name="email"
                                     placeholder="Business Email">
+                                    @if ($errors->has('email'))
+                                    <span class="text-danger">{{ $errors->first('email') }}</span>
+                                @endif
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-12 mb-3">
                                 <label for="mobile">Business Mobile</label>
                                 <input type="text" class="form-control rounded-1" id="mobile" name="mobile"
                                     placeholder="Business Mobile">
+                                    @if ($errors->has('mobile'))
+                                    <span class="text-danger">{{ $errors->first('mobile') }}</span>
+                                @endif
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-12 mb-3">
@@ -414,37 +423,56 @@
                                     @foreach ($countries as $country)
                                         <option value="{{ $country->id }}">{{ $country->name }}</option>
                                     @endforeach
+                                    @if ($errors->has('country'))
+                                    <span class="text-danger">{{ $errors->first('country') }}</span>
+                                @endif
                                 </select>
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-12 mb-3">
-                                <label for="state">Select State</label>
-                                <input type="text" class="form-control rounded-1" id="state" name="state"
-                                    placeholder="Your State">
+                                <label for="state">State</label>
+                                <select class="form-control" id="state" name="state">
+                                    <option value="">Select State</option>
+                                </select>
+                                @if ($errors->has('state'))
+                                    <span class="text-danger">{{ $errors->first('state') }}</span>
+                                @endif
                             </div>
 
                             <div class="col-lg-4 col-md-6 col-12 mb-3">
-                                <label for="city">Select City</label>
-                                <input type="text" class="form-control rounded-1" id="city" name="city"
-                                    placeholder="Your City">
+                                <label for="city">City</label>
+                                <select class="form-control" id="city" name="city">
+                                    <option value="">Select City</option>
+                                </select>
+                                @if ($errors->has('city'))
+                                    <span class="text-danger">{{ $errors->first('city') }}</span>
+                                @endif
+                                
                             </div>
 
                             <div class="col-lg-6 col-md-6 col-12 mb-3">
                                 <label for="zipcode">Zipcode</label>
                                 <input type="text" class="form-control rounded-1" id="zipcode" name="zipcode"
                                     placeholder="Zipcode">
+                                    @if ($errors->has('zipcode'))
+                                    <span class="text-danger">{{ $errors->first('zipcode') }}</span>
+                                @endif
                             </div>
 
                             <div class="col-lg-6 col-md-6 col-12 mb-3">
                                 <label for="logo">Business Logo</label>
                                 <input type="file" class="form-control rounded-1" id="logo" name="logo"
                                     placeholder="Business Logo">
+                                   
                             </div>
 
                             <div class="col-lg-6 col-md-6 col-12 mb-3">
                                 <div class="form-group">
                                     <label for="address">Address</label>
                                     <textarea class="form-control rounded-1" name="address" id="address" rows="2"></textarea>
+                                    @if ($errors->has('address'))
+                                    <span class="text-danger">{{ $errors->first('address') }}</span>
+                                @endif
                                 </div>
                             </div>
 
@@ -452,6 +480,9 @@
                                 <div class="form-group">
                                     <label for="description">Description</label>
                                     <textarea class="form-control rounded-1" name="description" id="description" rows="2"></textarea>
+                                    @if ($errors->has('description'))
+                                    <span class="text-danger">{{ $errors->first('description') }}</span>
+                                @endif
                                 </div>
                             </div>
 
@@ -740,5 +771,57 @@
                 });
             }
         });
+
+        $(document).ready(function() {
+    $('#country').on('change', function() {
+        var countryId = $(this).val();
+        console.log("Country ID selected: ", countryId); // Debug log
+        if (countryId) {
+            $.ajax({
+                url: "{{ route('touroperator.operator.getStates', '') }}/" + countryId,
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    console.log("States data received: ", data); // Debug log
+                    $('#state').empty().append('<option value="">Select State</option>');
+                    $.each(data, function(key, value) {
+                        $('#state').append('<option value="'+ key +'">'+ value +'</option>');
+                    });
+                    $('#city').empty().append('<option value="">Select City</option>'); // Reset city dropdown
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error fetching states: ", xhr.responseText); // Debug log
+                }
+            });
+        } else {
+            $('#state').empty().append('<option value="">Select State</option>');
+            $('#city').empty().append('<option value="">Select City</option>');
+        }
+    });
+
+    $('#state').on('change', function() {
+        var stateId = $(this).val();
+        console.log("State ID selected: ", stateId); // Debug log
+        if (stateId) {
+            $.ajax({
+                url: "{{ route('touroperator.operator.getCities', '') }}/" + stateId,
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    console.log("Cities data received: ", data); // Debug log
+                    $('#city').empty().append('<option value="">Select City</option>');
+                    $.each(data, function(key, value) {
+                        $('#city').append('<option value="'+ key +'">'+ value +'</option>');
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error fetching cities: ", xhr.responseText); // Debug log
+                }
+            });
+        } else {
+            $('#city').empty().append('<option value="">Select City</option>');
+        }
+    });
+});
     </script>
 @endsection

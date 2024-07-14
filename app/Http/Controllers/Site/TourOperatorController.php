@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Site;
 
+use App\Models\City;
+use App\Models\State;
 use App\Models\TourOperator;
 use Illuminate\Http\Request;
 use App\Helpers\FileUploader;
@@ -26,7 +28,19 @@ class TourOperatorController extends Controller
         $user = TourOperator::findOrFail($request->id);
         return $user;
     }
+  
+    public function states($country_id)
+    {
+        $states = State::where('country_id', $country_id)->pluck('name', 'id');
+        return response()->json($states);
+    }
+    
 
+    public function cities($state_id)
+    {
+        $cities = City::where('state_id', $state_id)->pluck('name', 'id');
+        return response()->json($cities);
+    }
     public function updateProfile(Request $request)
     {
         $request->validate([

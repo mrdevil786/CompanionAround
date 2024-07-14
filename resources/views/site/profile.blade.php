@@ -672,79 +672,63 @@
             }
         });
 
+        $(document).ready(function() {
+    $('#country').on('change', function() {
+        var countryId = $(this).val();
+        console.log("Country ID selected: ", countryId); // Debug log
+        if (countryId) {
+            $.ajax({
+                url: "{{ route('tourguide.guide.getStates', '') }}/" + countryId,
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    console.log("States data received: ", data); // Debug log
+                    $('#state').empty().append('<option value="">Select State</option>');
+                    $.each(data, function(key, value) {
+                        $('#state').append('<option value="'+ key +'">'+ value +'</option>');
+                    });
+                    $('#city').empty().append('<option value="">Select City</option>'); // Reset city dropdown
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error fetching states: ", xhr.responseText); // Debug log
+                }
+            });
+        } else {
+            $('#state').empty().append('<option value="">Select State</option>');
+            $('#city').empty().append('<option value="">Select City</option>');
+        }
+    });
+
+    $('#state').on('change', function() {
+        var stateId = $(this).val();
+        console.log("State ID selected: ", stateId); // Debug log
+        if (stateId) {
+            $.ajax({
+                url: "{{ route('tourguide.guide.getCities', '') }}/" + stateId,
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    console.log("Cities data received: ", data); // Debug log
+                    $('#city').empty().append('<option value="">Select City</option>');
+                    $.each(data, function(key, value) {
+                        $('#city').append('<option value="'+ key +'">'+ value +'</option>');
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.error("Error fetching cities: ", xhr.responseText); // Debug log
+                }
+            });
+        } else {
+            $('#city').empty().append('<option value="">Select City</option>');
+        }
+    });
+});
 
         
     </script>
 
 
    
-<script>
 
-$(document).ready(function() {
-    // Function to fetch states based on selected country
-    $('#country').change(function() {
-        var countryId = $(this).val();
-        if(countryId) {
-            $.ajax({
-                url: "{{ route('tourguide.guide.getStates', '') }}/" + countryId,
-                type: "GET",
-                dataType: "json",
-                success:function(data) {
-                    $('#state').empty();
-                    $('#state').append('<option value="">Select State</option>');
-                    $.each(data, function(key, value) {
-                        $('#state').append('<option value="'+ key +'">'+ value +'</option>');
-                    });
-                    $('#city').empty(); // Clear city dropdown when country changes
-                }
-            });
-        } else {
-            $('#state').empty(); // Clear state dropdown if no country selected
-            $('#city').empty(); // Clear city dropdown if no country selected
-        }
-    });
-
-    // Function to fetch cities based on selected state
-    $('#state').change(function() {
-        var stateId = $(this).val();
-        if(stateId) {
-            $.ajax({
-                url: "{{ route('tourguide.guide.getCities', '') }}/" + stateId,
-                type: "GET",
-                dataType: "json",
-                success:function(data) {
-                    $('#city').empty();
-                    $('#city').append('<option value="">Select City</option>');
-                    $.each(data, function(key, value) {
-                        $('#city').append('<option value="'+ key +'">'+ value +'</option>');
-                    });
-                }
-            });
-        } else {
-            $('#city').empty(); // Clear city dropdown if no state selected
-        }
-    });
-
-    // Trigger change event on country dropdown to populate states and cities after update
-    var initialCountryId = "{{ old('country') }}"; // Replace with actual value if available
-    if (initialCountryId) {
-        $('#country').val(initialCountryId);
-        $('#country').trigger('change');
-    }
-
-    // Trigger change event on state dropdown to populate cities after update
-    var initialStateId = "{{ old('state') }}"; // Replace with actual value if available
-    if (initialStateId) {
-        $('#state').val(initialStateId);
-        $('#state').trigger('change');
-    }
-
-    // Optional: Pre-select city dropdown after update
-    var initialCityId = "{{ old('city') }}"; // Replace with actual value if available
-    if (initialCityId) {
-        $('#city').val(initialCityId);
-    }
-});
-</script>
 
 @endsection
