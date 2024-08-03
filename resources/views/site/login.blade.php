@@ -17,7 +17,7 @@
         </div>
     </div>
     <!-- Navbar & Hero End -->
-    
+
     <!-- Contact Start -->
     <div class="container-xxl py-5">
         <div class="container">
@@ -34,12 +34,12 @@
                     <form>
 
                         <div class="col-12 mt-5">
-                            <a href="{{ URL::TO('googleLogin') }}" class="btn btn-primary w-100 py-3" type="submit"><i
+                            <a href="{{ URL::TO('googleLogin') }}" class="btn btn-primary w-100 rounded-1 py-3" type="submit"><i
                                     class="fab fa-google me-3"></i> Continue with Google</a>
                         </div>
 
                         <div class="col-12 mt-3">
-                            <a href="" class="btn btn-primary w-100 py-3" type="submit"><i
+                            <a href="" class="btn btn-primary w-100 rounded-1 py-3" type="submit"><i
                                     class="fab fa-facebook me-3"></i> Continue with
                                 Facebook</a>
                         </div>
@@ -98,7 +98,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">Login</button>
+                                        <button class="btn btn-primary w-100 rounded-1 py-3" type="submit">Login</button>
                                     </div>
                                     <!--</div>-->
                                 </form>
@@ -149,7 +149,7 @@
                                             </div>
                                         </div>
                                         <div class="col-12">
-                                            <button class="btn btn-primary w-100 py-3" type="submit">Sign Up</button>
+                                            <button class="btn btn-primary w-100 rounded-1 py-3" type="submit">Sign Up</button>
                                         </div>
                                     </div>
                                 </form>
