@@ -628,30 +628,31 @@
                         <form id="addRequest">
                             <div class="row g-3">
                                 <!-- Item-->
-                                <div class="item col-lg-3">
+                                {{-- <div class="item col-lg-3">
                                     <div class="icon"><i class="icon-script"></i></div>
                                     <div class="text" style="text-align:left;">
                                         <input type="radio" id="book_tour_guide" name="type" value="tour_guide">
                                         <label for="book_tour_guide">Tour Guide</label>
                                     </div>
-                                </div>
+                                </div> --}}
                                 <!-- Item-->
-                                <div class="item col-lg-3">
+                                {{-- <div class="item col-lg-3">
                                     <div class="icon"><i class="icon-cityscape"></i></div>
                                     <div class="text" style="text-align:left;">
                                         <input type="radio" id="book_tour_operator" name="type"
                                             value="tour_operator">
                                         <label for="book_tour_operator">Tour Operator</label>
                                     </div>
-                                </div>
-                                <div class="col-md-12">
+                                </div> --}}
+                                {{-- <div class="col-md-12">
                                     <div class="form-floating">
                                         <input type="text" name="where_to_go" class="form-control bg-transparent"
                                             id="name" placeholder="Where next?">
                                         <label for="name">Where
                                             are you going?</label>
                                     </div>
-                                </div>
+                                </div> --}}
+                               
                                 <div class="col-md-6">
                                     <div class="form-floating date" id="dt_pickr" data-target-input="nearest">
                                         <input type="text" class="form-control bg-transparent datetimepicker-input"
@@ -666,6 +667,27 @@
                                             id="to_date" placeholder="To Date" name="to_date" data-target="#date4"
                                             data-toggle="datetimepicker" />
                                         <label for="datetime">To Date</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12 budget-div">
+                                    <div class="form-floating">
+                                        <input type="text" name="budget" class="form-control bg-transparent"
+                                            id="budget" placeholder="Whats your budget">
+                                        <label for="budget">Country</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12 budget-div">
+                                    <div class="form-floating">
+                                        <input type="text" name="budget" class="form-control bg-transparent"
+                                            id="budget" placeholder="Whats your budget">
+                                        <label for="budget">State</label>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-12 budget-div">
+                                    <div class="form-floating">
+                                        <input type="text" name="budget" class="form-control bg-transparent"
+                                            id="budget" placeholder="Whats your budget">
+                                        <label for="budget">City</label>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -695,7 +717,7 @@
                                 </div>
                                 <div class="col-12">
                                     @guest
-                                        <a href="{{ route('findCompanion') }}" class="btn btn-outline-light w-100 py-3"
+                                        <a href="{{ route('login') }}" class="btn btn-outline-light w-100 py-3"
                                             type="submit">Book Now</a>
                                     @endguest
                                     @auth
