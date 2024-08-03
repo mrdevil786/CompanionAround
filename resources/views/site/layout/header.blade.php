@@ -127,8 +127,8 @@
                 @else
                     <a href="{{ url('/login') }}" class="btn btn-primary rounded-1 py-2 px-4">Login</a>
                     &nbsp;
-                    <a href="{{ url('/findCompanion') }}" class="btn btn-primary rounded-1 py-2 px-4">Find
-                        Companion</a>
+                    {{-- <a href="{{ url('/findCompanion') }}" class="btn btn-primary rounded-1 py-2 px-4">Find
+                        Companion</a> --}}
                 @endif
 
                 @guest('tourist')
