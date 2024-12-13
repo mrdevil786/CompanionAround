@@ -29,7 +29,7 @@
     <div class="row g-4">
         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
             <h5>Get In Touch</h5>
-            <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos</p>
+            <p class="mb-4">Get in touch with Companion Around to get ready for your next vacation destination.</p>
             <div class="d-flex align-items-center mb-4">
                 <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
                     <i class="fa fa-map-marker-alt text-white"></i>

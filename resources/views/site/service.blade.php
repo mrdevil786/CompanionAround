@@ -33,7 +33,7 @@
                 <div class="p-4">
                     <i class="fa fa-3x fa-globe text-primary mb-4"></i>
                     <h5>WorldWide Tours</h5>
-                    <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                    <p>Explore the world with Company Around’s custom tours, offering unforgettable experiences in diverse destinations worldwide.</p>
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@
                 <div class="p-4">
                     <i class="fa fa-3x fa-hotel text-primary mb-4"></i>
                     <h5>Hotel Reservation</h5>
-                    <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                    <p>Book your stay effortlessly with our hotel reservation service, offering a range of accommodations to fit every need and budget.</p>
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
                 <div class="p-4">
                     <i class="fa fa-3x fa-user text-primary mb-4"></i>
                     <h5>Travel Guides</h5>
-                    <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                    <p>Enhance your travels with our expert travel guides, providing insightful and memorable tours to make your journey special.</p>
                 </div>
             </div>
         </div>
@@ -60,43 +60,7 @@
                 <div class="p-4">
                     <i class="fa fa-3x fa-cog text-primary mb-4"></i>
                     <h5>Event Management</h5>
-                    <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="service-item rounded pt-3">
-                <div class="p-4">
-                    <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                    <h5>WorldWide Tours</h5>
-                    <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.3s">
-            <div class="service-item rounded pt-3">
-                <div class="p-4">
-                    <i class="fa fa-3x fa-hotel text-primary mb-4"></i>
-                    <h5>Hotel Reservation</h5>
-                    <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
-            <div class="service-item rounded pt-3">
-                <div class="p-4">
-                    <i class="fa fa-3x fa-user text-primary mb-4"></i>
-                    <h5>Travel Guides</h5>
-                    <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.7s">
-            <div class="service-item rounded pt-3">
-                <div class="p-4">
-                    <i class="fa fa-3x fa-cog text-primary mb-4"></i>
-                    <h5>Event Management</h5>
-                    <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                    <p>From corporate to special events, Company Around ensures every detail is handled with care for a flawless experience.</p>
                 </div>
             </div>
         </div>
@@ -116,27 +80,27 @@
     <div class="owl-carousel testimonial-carousel position-relative">
         <div class="testimonial-item bg-white text-center border p-4">
             <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="{{asset('site/img/testimonial-1.jpg')}}" style="width: 80px; height: 80px;">
-            <h5 class="mb-0">John Doe</h5>
-            <p>New York, USA</p>
-            <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+            <h5 class="mb-0">User 1</h5>
+            <p>City-1, Country-1</p>
+            <p class="mb-0">This is a dummy text to show how the testminial of the user will be showed.</p>
         </div>
         <div class="testimonial-item bg-white text-center border p-4">
-            <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="{{asset('site/img/testimonial-2.jpg')}}" style="width: 80px; height: 80px;">
-            <h5 class="mb-0">John Doe</h5>
-            <p>New York, USA</p>
-            <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+            <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="{{asset('site/img/testimonial-1.jpg')}}" style="width: 80px; height: 80px;">
+            <h5 class="mb-0">User 1</h5>
+            <p>City-1, Country-1</p>
+            <p class="mt-2 mb-0">This is a dummy text to show how the testminial of the user will be showed.</p>
         </div>
         <div class="testimonial-item bg-white text-center border p-4">
-            <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="{{asset('site/img/testimonial-3.jpg')}}" style="width: 80px; height: 80px;">
-            <h5 class="mb-0">John Doe</h5>
-            <p>New York, USA</p>
-            <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+            <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="{{asset('site/img/testimonial-1.jpg')}}" style="width: 80px; height: 80px;">
+            <h5 class="mb-0">User 1</h5>
+            <p>City-1, Country-1</p>
+            <p class="mt-2 mb-0">This is a dummy text to show how the testminial of the user will be showed.</p>
         </div>
         <div class="testimonial-item bg-white text-center border p-4">
-            <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="{{asset('site/img/testimonial-4.jpg')}}" style="width: 80px; height: 80px;">
-            <h5 class="mb-0">John Doe</h5>
-            <p>New York, USA</p>
-            <p class="mt-2 mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+            <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3" src="{{asset('site/img/testimonial-1.jpg')}}" style="width: 80px; height: 80px;">
+            <h5 class="mb-0">User 1</h5>
+            <p>City-1, Country-1</p>
+            <p class="mt-2 mb-0">This is a dummy text to show how the testminial of the user will be showed.</p>
         </div>
     </div>
 </div>
