@@ -119,9 +119,8 @@
         <div class="container py-5">
             <div class="row justify-content-center py-5">
                 <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
-                    <h1 class="display-3 text-white mb-3 animated slideInDown">Enjoy Your Vacation With Us</h1>
-                    <p class="fs-4 text-white mb-4 animated slideInDown">Tempor erat elitr rebum at clita diam amet diam et
-                        eos erat ipsum lorem sit</p>
+                    <h1 class="display-3 text-white mb-3 animated slideInDown">Your Dream Vacation Awaits!</h1>
+                    <p class="fs-4 text-white mb-4 animated slideInDown">Relax, Explore, and Create unforgettable memories with us!</p>
                     <form id="searchForm">
                         @csrf
                         <div class="position-relative w-75 mx-auto animated slideInDown">
@@ -397,10 +396,8 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
                     <h1 class="mb-4">Welcome to <span class="text-primary">Companion Around</span></h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
-                        eos. Clita erat ipsum et lorem et sit.</p>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
-                        eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <p class="mb-4">Discover the world with Company Around by your side. From iconic landmarks to hidden gems, our expert guides turn every journey into an unforgettable adventure.</p>
+                    <p class="mb-4">Travel with confidence and ease, knowing you’re in trusted hands. Let Company Around make your trips special and your memories timeless.</p>
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>First Class Flights</p>
@@ -616,11 +613,8 @@
                     <div class="col-md-6 text-white">
                         <h6 class="text-white text-uppercase">Booking</h6>
                         <h1 class="text-white mb-4">Online Booking</h1>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam
-                            et eos. Clita erat ipsum et lorem et sit.</p>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam
-                            et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat
-                            amet</p>
+                        <p class="mb-4">Ready to explore? Book your next adventure with Company Around! Our expert tour guides will take you to must see landmarks and uncover hidden gems, ensuring an unforgettable experience tailored just for you.</p>
+                        <p class="mb-4">Don’t wait secure your spot today! With Company Around, every journey is seamless, exciting, and packed with memories you'll treasure forever. Let’s make your trip extraordinary!</p>
                         <a class="btn btn-outline-light py-3 px-5 mt-2" href="">Read More</a>
                     </div>
                     <div class="col-md-6">
@@ -731,8 +725,7 @@
                         <h5 class="mt-4">Choose A Destination</h5>
                         <hr class="w-25 mx-auto bg-primary mb-1">
                         <hr class="w-50 mx-auto bg-primary mt-0">
-                        <p class="mb-0">Tempor erat elitr rebum clita dolor diam ipsum sit diam amet diam eos erat ipsum
-                            et lorem et sit sed stet lorem sit</p>
+                        <p class="mb-0">Choose the destination that matches your dream adventure! From tranquil beaches to vibrant cities, the world is yours to explore. Let your journey begin with the perfect pick.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.3s">
@@ -744,8 +737,7 @@
                         <h5 class="mt-4">Pay Online</h5>
                         <hr class="w-25 mx-auto bg-primary mb-1">
                         <hr class="w-50 mx-auto bg-primary mt-0">
-                        <p class="mb-0">Tempor erat elitr rebum clita dolor diam ipsum sit diam amet diam eos erat ipsum
-                            et lorem et sit sed stet lorem sit</p>
+                        <p class="mb-0">With just a few clicks, you can reserve your spot and skip the hassle. Enjoy the convenience of booking from anywhere, anytime, and get ready for your next adventure!</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.5s">
@@ -757,8 +749,7 @@
                         <h5 class="mt-4">Fly Today</h5>
                         <hr class="w-25 mx-auto bg-primary mb-1">
                         <hr class="w-50 mx-auto bg-primary mt-0">
-                        <p class="mb-0">Tempor erat elitr rebum clita dolor diam ipsum sit diam amet diam eos erat ipsum
-                            et lorem et sit sed stet lorem sit</p>
+                        <p class="mb-0">Experience the freedom of immediate travel. With everything ready, you can take off without waiting. Your adventure is just a flight away, so why wait? Book now and begin your journey today!</p>
                     </div>
                 </div>
             </div>
