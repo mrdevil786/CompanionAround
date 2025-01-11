@@ -33,6 +33,20 @@
     <!-- Template Stylesheet -->
     <link href="{{ asset('site/css/style.css') }}" rel="stylesheet">
     @yield('website-custom-style')
+
+    <style>
+        .textweight {
+            font-weight: bolder;
+        }
+
+        .tableData tr td {
+            border: 1px solid black;
+        }
+
+        .tableData tr th {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 
 <body>
@@ -104,13 +118,25 @@
                         class="nav-item nav-link {{ Request::is('/') ? 'active' : '' }}">Home</a>
                     <a href="{{ url('/about') }}"
                         class="nav-item nav-link {{ Request::is('about') ? 'active' : '' }}">About</a>
-                    <a href="{{ url('/service') }}"
-                        class="nav-item nav-link {{ Request::is('service') ? 'active' : '' }}">Services</a>
-                    <a href="{{ url('/tour-guides') }}"
+                    {{-- <a href="{{ url('/service') }}"
+                        class="nav-item nav-link {{ Request::is('service') ? 'active' : '' }}">Services</a> --}}
+                    <div class="dropdown">
+                        <a class="nav-item nav-link dropdown-toggle {{ Request::is('service*') ? 'active' : '' }}"
+                            href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item {{ Request::is('tour-guides') ? 'active' : '' }}" href="#tourGuide">Tour Guides</a></li>
+                            <li><a class="dropdown-item {{ Request::is('tour-operators') ? 'active' : '' }}" href="#tourOperator">Tour
+                                Operators</a></li>
+                        </ul>
+                    </div>
+                    {{-- <a href="{{ url('/tour-guides') }}"
                         class="nav-item nav-link {{ Request::is('tour-guides') ? 'active' : '' }}">Tour Guides</a>
                     <a href="{{ url('/tour-operators') }}"
                         class="nav-item nav-link {{ Request::is('tour-operators') ? 'active' : '' }}">Tour
-                        Operators</a>
+                        Operators</a> --}}
                     <a href="{{ url('/contact') }}"
                         class="nav-item nav-link {{ Request::is('contact') ? 'active' : '' }}">Contact</a>
                 </div>

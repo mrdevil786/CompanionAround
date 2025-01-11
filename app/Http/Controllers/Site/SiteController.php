@@ -101,7 +101,8 @@ class SiteController extends Controller
 
     public function about()
     {
-        return view('site.about');
+        $tourGuides = TourGuide::where('status', 'active')->latest()->get();
+        return view('site.about',compact('tourGuides'));
     }
 
     public function service()
@@ -136,5 +137,17 @@ class SiteController extends Controller
     public function contact()
     {
         return view('site.contact');
+    }
+    public function terms()
+    {
+        return view('site.terms');
+    }
+    public function policy()
+    {
+        return view('site.policy');
+    }
+    public function security()
+    {
+        return view('site.security');
     }
 }

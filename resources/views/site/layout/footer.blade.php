@@ -3,11 +3,12 @@
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">Company</h4>
-                <a class="btn btn-link" href="">About Us</a>
-                <a class="btn btn-link" href="">Contact Us</a>
-                <a class="btn btn-link" href="">Privacy Policy</a>
-                <a class="btn btn-link" href="">Terms & Condition</a>
+                <h4 class="text-white mb-3">Companion Around</h4>
+                <a class="btn btn-link {{ Request::is('about') ? 'active' : '' }}" href="{{url('/about')}}">About Us</a>
+                <a class="btn btn-link {{ Request::is('terms') ? 'active' : '' }}" href="{{url('/terms')}}">Terms & Condition</a>
+                <a class="btn btn-link {{ Request::is('policy') ? 'active' : '' }}" href="{{url('/policy')}}">Privacy Policy</a>
+                <a class="btn btn-link {{ Request::is('security') ? 'active' : '' }}" href="{{url('/security')}}">Security</a>
+                <a class="btn btn-link {{ Request::is('contact') ? 'active' : '' }}" href="{{url('/contact')}}">Contact Us</a>
                 <a class="btn btn-link" href="">FAQs & Help</a>
             </div>
             <div class="col-lg-3 col-md-6">
@@ -67,7 +68,7 @@
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <div class="footer-menu">
-                        <a href="">Home</a>
+                        <a href="{{url('/')}}" class="{{ Request::is('/') ? 'active' : '' }}">Home</a>
                         <a href="">Cookies</a>
                         <a href="">Help</a>
                         <a href="">FQAs</a>

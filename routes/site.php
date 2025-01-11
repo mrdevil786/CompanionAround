@@ -36,6 +36,9 @@ Route::get('/tour-guide/view/{id}', [SiteController::class, 'tour_guide_detail']
 Route::get('/tour-operators', [SiteController::class, 'tour_operators']);
 Route::get('/tour-operator/view/{id}', [SiteController::class, 'tour_operator_detail']);
 Route::get('/contact', [SiteController::class, 'contact']);
+Route::get('/terms', [SiteController::class, 'terms']);
+Route::get('/policy', [SiteController::class, 'policy']);
+Route::get('/security', [SiteController::class, 'security']);
 
 Route::get('/googleLogin', [TouristsController::class, 'googleLogin']);
 Route::get('/auth/google/callback', [TouristsController::class, 'googleHandle']);
