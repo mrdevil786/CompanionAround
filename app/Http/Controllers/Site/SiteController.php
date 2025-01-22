@@ -6,6 +6,7 @@ use App\Models\TourGuide;
 use App\Models\TourOperator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Language;
 use App\Models\Package;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -108,6 +109,11 @@ class SiteController extends Controller
     public function service()
     {
         return view('site.service');
+    }
+
+    public function filter(){
+        $languages = Language::all();
+        return view('site.filter', compact('languages'));
     }
 
     public function tour_guides()

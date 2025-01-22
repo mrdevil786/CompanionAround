@@ -127,9 +127,11 @@
                         <div class="position-relative w-75 mx-auto animated slideInDown">
                             <input id="searchInput" class="form-control border-0 rounded-1 w-100 py-3 ps-4 pe-5"
                                 type="text" placeholder="Eg: Thailand" name="search">
-                            <button type="submit"
-                                class="btn btn-primary rounded-1 py-2 px-4 position-absolute top-0 end-0 me-2"
-                                style="margin-top: 7px;">Search</button>
+                            <a href="{{ url('/filter') }}"
+                                class="btn btn-primary rounded-1 py-2 px-4 position-absolute top-0 end-0 me-2 {{ Request::is('filter') ? 'active' : '' }}"
+                                style="margin-top: 7px;">
+                                <i class="fas fa-search"></i>
+                            </a>
                             <div id="searchPopup" class="search-popup rounded-1" style="font-size: 15px;">
                                 <!-- Content of the search popup -->
                                 <!--<p>This is the search popup content.</p>-->
@@ -733,7 +735,9 @@
                         <h5 class="mt-4">Choose A Guide</h5>
                         <hr class="w-25 mx-auto bg-primary mb-1">
                         <hr class="w-50 mx-auto bg-primary mt-0">
-                        <p class="mb-0">Choose a guide that fits your dream journey! From expert locals to seasoned explorers, the right guide elevates your trip. Let your adventure begin with the perfect companion.
+                        <p class="mb-0">Choose a guide that fits your dream journey! From expert locals to seasoned
+                            explorers, the right guide elevates your trip. Let your adventure begin with the perfect
+                            companion.
                         </p>
                     </div>
                 </div>
@@ -759,7 +763,9 @@
                         <h5 class="mt-4">Connect</h5>
                         <hr class="w-25 mx-auto bg-primary mb-1">
                         <hr class="w-50 mx-auto bg-primary mt-0">
-                        <p class="mb-0">Experience the ease of instant connect. With everything set, you can link up without delay. Your next journey is just a step away, so why wait? Reach out now and start today!</p>
+                        <p class="mb-0">Experience the ease of instant connect. With everything set, you can link up
+                            without delay. Your next journey is just a step away, so why wait? Reach out now and start
+                            today!</p>
                     </div>
                 </div>
             </div>

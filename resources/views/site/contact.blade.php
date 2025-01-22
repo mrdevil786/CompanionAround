@@ -65,30 +65,40 @@
                 tabindex="0"></iframe>
         </div>
         <div class="col-lg-4 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
-            <form>
+            @if (session('success'))
+                <div class="alert alert-success">
+                    {{ session('success') }}
+                </div>
+            @endif
+            <form name="sentDetail" novalidate="novalidate" method="POST" action="{{ route('contact.store') }}">
+                @csrf
                 <div class="row g-3">
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <input type="text" class="form-control" id="name" placeholder="Your Name">
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" required="required" data-validation-required-message="Please enter your name" value="{{old('name')}}">
+                            <p class="help-block text-danger">@error('name') {{ $message }} @enderror</p>
                             <label for="name">Your Name</label>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-floating">
-                            <input type="email" class="form-control" id="email" placeholder="Your Email">
-                            <label for="email">Your Email</label>
+                            <input type="text" class="form-control" id="email" placeholder="Your Email Address" required="required" data-validation-required-message="Please enter your email address" value="{{old('email')}}">
+                            <p class="help-block text-danger">@error('email') {{ $message }} @enderror</p>
+                            <label for="email">Your Email Address</label>
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="form-floating">
-                            <input type="text" class="form-control" id="subject" placeholder="Subject">
-                            <label for="subject">Subject</label>
+                            <input type="text" class="form-control" id="phone" placeholder="Your Phone Number" required="required" data-validation-required-message="Please enter your phone number" value="{{old('phone')}}">
+                            <p class="help-block text-danger">@error('phone') {{ $message }} @enderror</p>
+                            <label for="phone">Your Phone Number</label>
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="form-floating">
-                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
-                            <label for="message">Message</label>
+                            <textarea type="text" class="form-control" id="phone" placeholder="Your Message" style="height: 100px" required="required" data-validation-required-message="Please enter your message" value="{{old('message')}}"></textarea>
+                            <p class="help-block text-danger">@error('message') {{ $message }} @enderror</p>
+                            <label for="message">Your Message</label>
                         </div>
                     </div>
                     <div class="col-12">

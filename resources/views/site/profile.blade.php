@@ -28,6 +28,16 @@
         </div>
     </div>
     </div>
+
+
+    {{-- Text to remind user to complete their profile --}}
+    <div class="container mt-5">
+        <!-- Danger Alert -->
+        <div class="alert alert-danger" role="alert">
+            <strong>Warning:</strong> Your profile is incomplete. Please fill out the necessary fields to complete your
+            profile and access all features.
+        </div>
+    </div>
     <!-- Navbar & Hero End -->
 
     {{-- ##############################################################################################     --}}
