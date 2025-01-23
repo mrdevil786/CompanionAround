@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Site;
 use App\Helpers\FileUploader;
 use App\Http\Controllers\Controller;
 use App\Models\Language;
+use App\Models\Country;
+use App\Models\State;
+use App\Models\City;
 use App\Models\TourGuide;
 use App\Models\TourGuideActivity;
 use App\Models\TourGuideLanguage;
@@ -15,11 +18,27 @@ class TourGuideController extends Controller
 {
     public function dashboard()
     {
+        $countries = Country::all();
         $languages = Language::select('id', 'name')->get();
         $user = TourGuide::findOrFail(auth('tourguard')->user()->id);
         $connectionHistory = TouristGuide::with(['tourist', 'tourguide'])->where('status', '!=', 'pending')->where('tour_guide_id', auth('tourguard')->user()->id)->get();
         $connectionRequest = TouristGuide::with(['tourist', 'tourguide'])->where('status', '=', 'pending')->where('tour_guide_id', auth('tourguard')->user()->id)->get();
-        return view('site.profile', compact('user', 'connectionHistory', 'connectionRequest', 'languages'));
+        return view('site.profile', compact('user', 'connectionHistory', 'connectionRequest', 'languages', 'countries'));
+    }
+
+    public function getStates(Request $request)
+    {
+        $request->validate(['country_id' => 'required|exists:countries,id']);
+        $states = State::where('country_id', $request->country_id)->select('id', 'name')->get();
+        return response()->json($states);
+    }
+
+
+    public function getCities(Request $request)
+    {
+        $request->validate(['state_id' => 'required|exists:states,id']);
+        $cities = City::where('state_id', $request->state_id)->select('id', 'name')->get();
+        return response()->json($cities);
     }
 
     public function edit(Request $request)
@@ -37,14 +56,15 @@ class TourGuideController extends Controller
             'gender' => 'required|in:male,female,other',
             'guide_type' => 'required|in:free,chargeable',
             'charges' => 'nullable|numeric',
-            'country' => 'required',
-            'state' => 'required',
-            'city' => 'required',
+            'country' => 'required|exists:countries,id',
+            'state' => 'required|exists:states,id',
+            'city' => 'required|exists:cities,id',
             'short_description' => 'required',
-            'profile' => 'mimes:png,jpg,jpeg,webp,svg,gif'
+            'profile' => 'mimes:png,jpg,jpeg,webp,svg,gif',
         ]);
-        // return $request->all();
+
         $user = TourGuide::findOrFail(auth('tourguard')->user()->id);
+
         $user->name = $request->name;
         $user->email = $request->email;
         $user->mobile = $request->mobile;
@@ -59,37 +79,31 @@ class TourGuideController extends Controller
         if ($request->hasFile('profile')) {
             $user->profile = FileUploader::uploadFile($request->file('profile'), 'images/tour-guides', $user->profile);
         }
+
         if ($request->language) {
-            foreach ($request->language as $key => $language) {
+            foreach ($request->language as $language) {
                 TourGuideLanguage::firstOrCreate([
                     'tour_guide_id' => $user->id,
                     'language_id' => $language,
-                ], [
-                    'tour_guide_id' => $user->id,
-                    'language_id' => $language,
-                    'created_at' => now(),
-                    'updated_at' => now(),
                 ]);
             }
         }
+
         if ($request->activity) {
-            foreach ($request->activity as $key => $activity) {
+            foreach ($request->activity as $activity) {
                 TourGuideActivity::updateOrInsert([
                     'tour_guide_id' => $user->id,
                     'activity' => $activity,
-                ], [
-                    'tour_guide_id' => $user->id,
-                    'activity' => $activity,
-                    'created_at' => now(),
-                    'updated_at' => now(),
                 ]);
             }
         }
 
         $user->status = 'active';
         $user->save();
+
         return redirect()->back()->with('success', 'Profile detail updated successfully!');
     }
+
 
     public function requestAction(Request $request)
     {
@@ -97,7 +111,7 @@ class TourGuideController extends Controller
             'id' => 'required|numeric',
             'action' => 'required|in:accept,reject'
         ]);
-        // return $request->all();
+
         $tourist = TouristGuide::findOrFail($request->id);
         if ($request->action == 'accept') {
             $tourist->update([

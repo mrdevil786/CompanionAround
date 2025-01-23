@@ -40,7 +40,7 @@ class TouristsController extends Controller
         $request->validate([
             'id' => 'required|numeric|exists:tour_guides,id',
         ]);
-        // $request->all();
+      
         $tourist = Tourist::findOrFail(auth('tourist')->user()->id);
         $guide = TourGuide::findOrFail($request->id);
         $connection = TouristGuide::create([
@@ -107,7 +107,7 @@ class TouristsController extends Controller
             'type' => 'nullable|in:tour_guide,tour_operator',
             'search' => 'string|nullable'
         ]);
-        \Log::info($request->type);
+      
         if ($request->type === 'tour_operator') {
             $tourPackages = Package::when($request->search, function ($q) use ($request) {
                 $q->where('title', 'like', '%' . $request->search . '%');

@@ -82,7 +82,7 @@ class SiteController extends Controller
                 return response([
                     'success' => true,
                     'route' => route('touroperator.operator.index'),
-                    'message' => 'Loggedin SUccessfully!'
+                    'message' => 'Loggedin Successfully!'
                 ]);
             }
         }
@@ -112,6 +112,8 @@ class SiteController extends Controller
     public function tour_guides()
     {
         $tourGuides = TourGuide::where('status', 'active')->latest()->get();
+
+        ///condtion add to show tour guide 
         return view('site.tour-guides', compact('tourGuides'));
     }
 

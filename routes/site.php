@@ -52,10 +52,16 @@ Route::prefix('tourguide')->name('tourguide.')->middleware(['auth:tourguard', 'w
     Route::controller(TourGuideController::class)->name('guide.')->group(function () {
         Route::get('/', 'dashboard')->name('index');
         Route::get('edit', 'edit')->name('edit');
+        
         Route::post('update', 'updateProfile')->name('update');
         Route::post('request-action', 'requestAction')->name('request-action');
+
+        // Add these routes for fetching states and cities
+        Route::post('states', 'getStates')->name('getStates');  // For fetching states
+        Route::post('cities', 'getCities')->name('getCities');  // For fetching cities
     });
 });
+
 
 Route::prefix('touroperator')->name('touroperator.')->middleware(['auth:touroperator', 'web'])->group(function () {
     Route::controller(TourOperatorController::class)->name('operator.')->group(function () {

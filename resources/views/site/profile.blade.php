@@ -384,28 +384,29 @@
 
                             </div>
                             <div class="col-lg-4 col-12">
-                                <label for="city">Your City</label>
-                                <input type="text" class="form-control rounded-1" id="city" name="city"
-                                    placeholder="Your City">
-
+                                <label for="country">Your Country</label>
+                                <select class="form-control rounded-1" id="country" name="country">
+                                    <option value="" selected disabled>Select Country</option>
+                                    @foreach ($countries as $country)
+                                        <option value="{{ $country->id }}">{{ $country->name }}</option>
+                                    @endforeach
+                                </select>
                             </div>
-                        </div>
-                        <br />
-                        <div class="row">
+                            
                             <div class="col-lg-4 col-12">
                                 <label for="state">Your State</label>
-                                <input type="text" class="form-control rounded-1" id="state" name="state"
-                                    placeholder="Your State">
-
-
+                                <select class="form-control rounded-1" id="state" name="state" disabled>
+                                    <option value="" selected disabled>Select State</option>
+                                </select>
                             </div>
+                            
                             <div class="col-lg-4 col-12">
-                                <label for="country">Your Country</label>
-                                <input type="text" class="form-control rounded-1" id="country" name="country"
-                                    placeholder="Your Country">
-
-
+                                <label for="city">Your City</label>
+                                <select class="form-control rounded-1" id="city" name="city" disabled>
+                                    <option value="" selected disabled>Select City</option>
+                                </select>
                             </div>
+                            
                             <div class="col-lg-4 col-12">
                                 <label for="profile">Profile</label>
                                 <input type="file" class="form-control rounded-1" id="profile" name="profile"
@@ -484,6 +485,7 @@
         </div>
     </div>
 @endsection
+
 @section('website-custom-script')
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
@@ -498,7 +500,56 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
     <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/3.0.1/js/buttons.print.min.js"></script>
-    <script>
+    <script>$('#country').on('change', function () {
+        const countryId = $(this).val();
+        if (countryId) {
+            $.ajax({
+                type: "POST",
+                url: "{{ route('tourguide.guide.getStates') }}",
+                data: {
+                    country_id: countryId,
+                    _token: "{{ csrf_token() }}"  // Include CSRF token here
+                },
+                success: function (states) {
+                    let stateOptions = '<option value="" selected disabled>Select State</option>';
+                    $.each(states, function (index, state) {
+                        stateOptions += `<option value="${state.id}">${state.name}</option>`;
+                    });
+                    $('#state').html(stateOptions).prop('disabled', false);
+                },
+                error: function () {
+                    alert("Failed to fetch states.");
+                }
+            });
+        }
+    });
+    
+    $('#state').on('change', function () {
+        const stateId = $(this).val();
+        if (stateId) {
+            $.ajax({
+                type: "POST",
+                url: "{{ route('tourguide.guide.getCities') }}",
+                data: {
+                    state_id: stateId,
+                    _token: "{{ csrf_token() }}"  // Include CSRF token here
+                },
+                success: function (cities) {
+                    let cityOptions = '<option value="" selected disabled>Select City</option>';
+                    $.each(cities, function (index, city) {
+                        cityOptions += `<option value="${city.id}">${city.name}</option>`;
+                    });
+                    $('#city').html(cityOptions).prop('disabled', false);
+                },
+                error: function () {
+                    alert("Failed to fetch cities.");
+                }
+            });
+        }
+    });
+    
+
+
         new DataTable('#profile-table', {
             layout: {
                 topStart: {

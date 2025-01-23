@@ -70,7 +70,7 @@
                                 aria-labelledby="pills-home-tab">
                                 <form id="post-login">
                                     <div class="row g-3" style="padding-bottom:20px">
-                                        {{-- <div class="col-md-12">
+                                        <div class="col-md-12">
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" name="type" id="inlineRadio2"
                                                 value="tour_guide">
@@ -81,7 +81,7 @@
                                                 value="tour_operator">
                                             <label class="form-check-label" for="inlineRadio1">Tour Operator</label>
                                         </div>
-                                    </div> --}}
+                                    </div>
                                         <div class="col-12">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" name="email" id="email"
@@ -108,7 +108,7 @@
                                 aria-labelledby="pills-profile-tab">
                                 <form id="sign-up">
                                     <div class="row g-3">
-                                        {{-- <div class="col-md-12">
+                                        <div class="col-md-12">
                                         <div class="form-check form-check-inline">
                                             <input class="form-check-input" type="radio" name="type" id="inlineRadio2"
                                                 value="tour_guide">
@@ -119,7 +119,7 @@
                                                 id="inlineRadio1" value="tour_operator">
                                             <label class="form-check-label" for="inlineRadio1">Tour Operator</label>
                                         </div>
-                                    </div> --}}
+                                    </div>
                                         <div class="col-md-6">
                                             <div class="form-floating">
                                                 <input type="text" class="form-control" id="name" name="name"
