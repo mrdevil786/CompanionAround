@@ -1,10 +1,12 @@
 <?php
 
+use App\Http\Controllers\Web\ContactsController;
 use App\Http\Controllers\Web\TourGuideController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\Web\AuthController;
 use App\Http\Controllers\Web\BasicController;
+use App\Http\Controllers\Web\ContactController;
 use App\Http\Controllers\Web\DirectTripController;
 use App\Http\Controllers\Web\TouristsController;
 use App\Http\Controllers\Web\TourOperatorController;
@@ -45,6 +47,14 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'web', 'chec
         });
         Route::controller(DirectTripController::class)->prefix('trips')->name('trips.')->group(function () {
             Route::get('/',  'index')->name('index');
+
+        });
+
+        Route::controller(ContactController::class)->prefix('contacts')->name('contacts.')->group(function () {
+            Route::get('/', 'index')->name('index');
+            // Route::get('profile/{id}', 'profile')->name('profile');
+            Route::get('/{id}/destroy', 'destroy')->name('destroy');
+            // Route::put('status', 'status')->name('status');
         });
     });
 
@@ -85,6 +95,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth:sanctum', 'web', 'chec
             Route::get('/', [TourOperatorController::class, 'index'])->name('index');
             Route::get('profile/{id}', [TourOperatorController::class, 'profile'])->name('profile');
         });
+
     });
 });
 

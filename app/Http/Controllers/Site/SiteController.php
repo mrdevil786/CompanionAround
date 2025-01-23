@@ -6,6 +6,7 @@ use App\Models\TourGuide;
 use App\Models\TourOperator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Language;
 use App\Models\Package;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -101,12 +102,18 @@ class SiteController extends Controller
 
     public function about()
     {
-        return view('site.about');
+        $tourGuides = TourGuide::where('status', 'active')->latest()->get();
+        return view('site.about',compact('tourGuides'));
     }
 
     public function service()
     {
         return view('site.service');
+    }
+
+    public function filter(){
+        $languages = Language::all();
+        return view('site.filter', compact('languages'));
     }
 
     public function tour_guides()
@@ -138,5 +145,17 @@ class SiteController extends Controller
     public function contact()
     {
         return view('site.contact');
+    }
+    public function terms()
+    {
+        return view('site.terms');
+    }
+    public function policy()
+    {
+        return view('site.policy');
+    }
+    public function security()
+    {
+        return view('site.security');
     }
 }

@@ -3,11 +3,16 @@
     <div class="container py-5">
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
-                <h4 class="text-white mb-3">Company</h4>
-                <a class="btn btn-link" href="">About Us</a>
-                <a class="btn btn-link" href="">Contact Us</a>
-                <a class="btn btn-link" href="">Privacy Policy</a>
-                <a class="btn btn-link" href="">Terms & Condition</a>
+                <h4 class="text-white mb-3">Companion Around</h4>
+                <a class="btn btn-link {{ Request::is('about') ? 'active' : '' }}" href="{{ url('/about') }}">About Us</a>
+                <a class="btn btn-link {{ Request::is('terms') ? 'active' : '' }}" href="{{ url('/terms') }}">Terms &
+                    Condition</a>
+                <a class="btn btn-link {{ Request::is('policy') ? 'active' : '' }}" href="{{ url('/policy') }}">Privacy
+                    Policy</a>
+                <a class="btn btn-link {{ Request::is('security') ? 'active' : '' }}"
+                    href="{{ url('/security') }}">Security</a>
+                <a class="btn btn-link {{ Request::is('contact') ? 'active' : '' }}"
+                    href="{{ url('/contact') }}">Contact Us</a>
                 <a class="btn btn-link" href="">FAQs & Help</a>
             </div>
             <div class="col-lg-3 col-md-6">
@@ -61,15 +66,20 @@
         <div class="copyright">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; {{ date('Y') }} <a class="border-bottom" href="{{ env('APP_URL') }}">{{ env('APP_NAME') }}</a>, All Right Reserved.
+                    &copy; {{ date('Y') }} <a class="border-bottom"
+                        href="{{ env('APP_URL') }}">{{ env('APP_NAME') }}</a>, All Right Reserved.
 
                     Designed By <a class="border-bottom" href="{{ env('COMPANY_URL') }}">{{ env('COMPANY_NAME') }}</a>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                     <div class="footer-menu">
-                        <a href="">Home</a>
-                        <a href="">Cookies</a>
-                        <a href="">Help</a>
+                        <a href="{{ url('/') }}" class="{{ Request::is('/') ? 'active' : '' }}">Home</a>
+                        <a href="{{ url('/tour-guides') }}"
+                            class="{{ Request::is('tour-guides') ? 'active' : '' }}">Tour Guide</a>
+                        <a href="{{ url('/tour-operators') }}"
+                            class="{{ Request::is('tour-operators') ? 'active' : '' }}">Tour Operator</a>
+                        {{-- <a href="">Cookies</a> --}}
+                        {{-- <a href="">Help</a> --}}
                         <a href="">FQAs</a>
                     </div>
                 </div>
@@ -85,6 +95,7 @@
 
 
 <!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{ asset('site/lib/wow/wow.min.js') }}"></script>
@@ -103,6 +114,17 @@
     });
 </script>
 
+<script>
+    document.getElementById('filterButton').addEventListener('click', function() {
+        var popup = document.getElementById('searchPopup');
+        // Toggle visibility of the popup
+        if (popup.style.display === 'none' || popup.style.display === '') {
+            popup.style.display = 'block';
+        } else {
+            popup.style.display = 'none';
+        }
+    });
+</script>
 @yield('website-custom-script')
 </body>
 

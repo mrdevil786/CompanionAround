@@ -120,15 +120,18 @@
             <div class="row justify-content-center py-5">
                 <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
                     <h1 class="display-3 text-white mb-3 animated slideInDown">Your Dream Vacation Awaits!</h1>
-                    <p class="fs-4 text-white mb-4 animated slideInDown">Relax, Explore, and Create unforgettable memories with us!</p>
+                    <p class="fs-4 text-white mb-4 animated slideInDown">Relax, Explore, and Create unforgettable memories
+                        with us!</p>
                     <form id="searchForm">
                         @csrf
                         <div class="position-relative w-75 mx-auto animated slideInDown">
                             <input id="searchInput" class="form-control border-0 rounded-1 w-100 py-3 ps-4 pe-5"
                                 type="text" placeholder="Eg: Thailand" name="search">
-                            <button type="submit"
-                                class="btn btn-primary rounded-1 py-2 px-4 position-absolute top-0 end-0 me-2"
-                                style="margin-top: 7px;">Search</button>
+                            <a href="{{ url('/filter') }}"
+                                class="btn btn-primary rounded-1 py-2 px-4 position-absolute top-0 end-0 me-2 {{ Request::is('filter') ? 'active' : '' }}"
+                                style="margin-top: 7px;">
+                                <i class="fas fa-search"></i>
+                            </a>
                             <div id="searchPopup" class="search-popup rounded-1" style="font-size: 15px;">
                                 <!-- Content of the search popup -->
                                 <!--<p>This is the search popup content.</p>-->
@@ -396,8 +399,12 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
                     <h1 class="mb-4">Welcome to <span class="text-primary">Companion Around</span></h1>
-                    <p class="mb-4">Discover the world with Company Around by your side. From iconic landmarks to hidden gems, our expert guides turn every journey into an unforgettable adventure.</p>
-                    <p class="mb-4">Travel with confidence and ease, knowing you’re in trusted hands. Let Company Around make your trips special and your memories timeless.</p>
+                    <p class="mb-4">Welcome to Companion, your trusted travel partner for exploring the incredible
+                        wonders of India. At Companion, we specialize in providing top-notch tourist guide and operator
+                        services across the entire country, ensuring that every journey you embark on is filled with
+                        unforgettable memories and seamless experiences</p>
+                    <p class="mb-4">Travel with confidence and ease, knowing you’re in trusted hands. Let Companion
+                        Around make your trips special and your memories timeless.</p>
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>First Class Flights</p>
@@ -428,7 +435,7 @@
 
 
     <!-- Tour Guide Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-5" id="tourGuide">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Tour Guide</h6>
@@ -545,7 +552,7 @@
 
 
     <!-- Tour Packages Start -->
-    <div class="container-xxl py-5">
+    <div class="container-xxl py-5" id="tourOperator">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Tour Operators</h6>
@@ -613,8 +620,12 @@
                     <div class="col-md-6 text-white">
                         <h6 class="text-white text-uppercase">Booking</h6>
                         <h1 class="text-white mb-4">Online Booking</h1>
-                        <p class="mb-4">Ready to explore? Book your next adventure with Company Around! Our expert tour guides will take you to must see landmarks and uncover hidden gems, ensuring an unforgettable experience tailored just for you.</p>
-                        <p class="mb-4">Don’t wait secure your spot today! With Company Around, every journey is seamless, exciting, and packed with memories you'll treasure forever. Let’s make your trip extraordinary!</p>
+                        <p class="mb-4">Ready to explore? Book your next adventure with Company Around! Our expert tour
+                            guides will take you to must see landmarks and uncover hidden gems, ensuring an unforgettable
+                            experience tailored just for you.</p>
+                        <p class="mb-4">Don’t wait secure your spot today! With Company Around, every journey is
+                            seamless, exciting, and packed with memories you'll treasure forever. Let’s make your trip
+                            extraordinary!</p>
                         <a class="btn btn-outline-light py-3 px-5 mt-2" href="">Read More</a>
                     </div>
                     <div class="col-md-6">
@@ -693,8 +704,7 @@
                                             type="submit">Book Now</a>
                                     @endguest
                                     @auth
-                                        <button class="btn btn-outline-light w-100 py-3"
-                                            type="submit">Book Now</button>
+                                        <button class="btn btn-outline-light w-100 py-3" type="submit">Book Now</button>
 
                                     @endauth
                                 </div>
@@ -720,12 +730,15 @@
                     <div class="position-relative border border-primary pt-5 pb-4 px-4">
                         <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle position-absolute top-0 start-50 translate-middle shadow"
                             style="width: 100px; height: 100px;">
-                            <i class="fa fa-globe fa-3x text-white"></i>
+                            <i class="fa fa-user fa-3x text-white"></i>
                         </div>
-                        <h5 class="mt-4">Choose A Destination</h5>
+                        <h5 class="mt-4">Choose A Guide</h5>
                         <hr class="w-25 mx-auto bg-primary mb-1">
                         <hr class="w-50 mx-auto bg-primary mt-0">
-                        <p class="mb-0">Choose the destination that matches your dream adventure! From tranquil beaches to vibrant cities, the world is yours to explore. Let your journey begin with the perfect pick.</p>
+                        <p class="mb-0">Choose a guide that fits your dream journey! From expert locals to seasoned
+                            explorers, the right guide elevates your trip. Let your adventure begin with the perfect
+                            companion.
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.3s">
@@ -737,25 +750,69 @@
                         <h5 class="mt-4">Pay Online</h5>
                         <hr class="w-25 mx-auto bg-primary mb-1">
                         <hr class="w-50 mx-auto bg-primary mt-0">
-                        <p class="mb-0">With just a few clicks, you can reserve your spot and skip the hassle. Enjoy the convenience of booking from anywhere, anytime, and get ready for your next adventure!</p>
+                        <p class="mb-0">With just a few clicks, you can reserve your spot and skip the hassle. Enjoy the
+                            convenience of booking from anywhere, anytime, and get ready for your next adventure!</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 text-center pt-4 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="position-relative border border-primary pt-5 pb-4 px-4">
                         <div class="d-inline-flex align-items-center justify-content-center bg-primary rounded-circle position-absolute top-0 start-50 translate-middle shadow"
                             style="width: 100px; height: 100px;">
-                            <i class="fa fa-plane fa-3x text-white"></i>
+                            <i class="fa fa-handshake fa-3x text-white"></i>
                         </div>
-                        <h5 class="mt-4">Fly Today</h5>
+                        <h5 class="mt-4">Connect</h5>
                         <hr class="w-25 mx-auto bg-primary mb-1">
                         <hr class="w-50 mx-auto bg-primary mt-0">
-                        <p class="mb-0">Experience the freedom of immediate travel. With everything ready, you can take off without waiting. Your adventure is just a flight away, so why wait? Book now and begin your journey today!</p>
+                        <p class="mb-0">Experience the ease of instant connect. With everything set, you can link up
+                            without delay. Your next journey is just a step away, so why wait? Reach out now and start
+                            today!</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- Process Start -->
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="text-center">
+                <h6 class="section-title bg-white text-center text-primary px-3">Testimonial</h6>
+                <h1 class="mb-5">Our Clients Say!!!</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel position-relative">
+                <div class="testimonial-item bg-white text-center border p-4">
+                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3"
+                        src="{{ asset('site/img/testimonial-1.jpg') }}" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">User 1</h5>
+                    <p>City-1, Country-1</p>
+                    <p class="mb-0">This is a dummy text to show how the testminial of the user will be showed.</p>
+                </div>
+                <div class="testimonial-item bg-white text-center border p-4">
+                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3"
+                        src="{{ asset('site/img/testimonial-1.jpg') }}" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">User 1</h5>
+                    <p>City-1, Country-1</p>
+                    <p class="mt-2 mb-0">This is a dummy text to show how the testminial of the user will be showed.</p>
+                </div>
+                <div class="testimonial-item bg-white text-center border p-4">
+                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3"
+                        src="{{ asset('site/img/testimonial-1.jpg') }}" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">User 1</h5>
+                    <p>City-1, Country-1</p>
+                    <p class="mt-2 mb-0">This is a dummy text to show how the testminial of the user will be showed.</p>
+                </div>
+                <div class="testimonial-item bg-white text-center border p-4">
+                    <img class="bg-white rounded-circle shadow p-1 mx-auto mb-3"
+                        src="{{ asset('site/img/testimonial-1.jpg') }}" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">User 1</h5>
+                    <p>City-1, Country-1</p>
+                    <p class="mt-2 mb-0">This is a dummy text to show how the testminial of the user will be showed.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
 
 
 @endsection

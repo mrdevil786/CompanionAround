@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\Site\ContactsController;
 use App\Http\Controllers\SIte\DirectTripController;
 use App\Http\Controllers\Site\PackageController;
 use App\Http\Controllers\Site\TouristsController;
 use App\Http\Controllers\Site\SiteController;
 use App\Http\Controllers\Site\TourGuideController;
 use App\Http\Controllers\Site\TourOperatorController;
+use App\Http\Controllers\Web\ContactController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/profile', function () {
@@ -35,7 +37,16 @@ Route::get('/tour-guides', [SiteController::class, 'tour_guides']);
 Route::get('/tour-guide/view/{id}', [SiteController::class, 'tour_guide_detail']);
 Route::get('/tour-operators', [SiteController::class, 'tour_operators']);
 Route::get('/tour-operator/view/{id}', [SiteController::class, 'tour_operator_detail']);
-Route::get('/contact', [SiteController::class, 'contact']);
+Route::get('/terms', [SiteController::class, 'terms']);
+Route::get('/policy', [SiteController::class, 'policy']);
+Route::get('/security', [SiteController::class, 'security']);
+Route::get('/filter',[SiteController::class, 'filter']);
+
+
+Route::get('/contact', [ContactsController::class, 'index'])->name('contact.index');
+Route::post('/contact', [ContactsController::class, 'store'])->name('contact.store');
+// Route::post('/contact', [ContactController::class, 'contact.store']);
+
 
 Route::get('/googleLogin', [TouristsController::class, 'googleLogin']);
 Route::get('/auth/google/callback', [TouristsController::class, 'googleHandle']);
